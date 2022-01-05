@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  def show
+    @user = User.find(params[:id])
+  end
 def new_user_skills
   @user_skill = UserSkill.new
   #  @skill = Skill.where(id: params[:offer_id[1]])
@@ -17,10 +20,19 @@ def create_user_skills
   redirect_to root_path
 end
 
-private
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    redirect_to user_path(@user)
+  end
+
+  private
 
 def params_user_skills
   params.require(:user_skill).permit(:level, :skill_id)
 end
-
+  
+  def user_params
+    params.require(:user).permit(:email, :password, :first_name, :last_name, :city, :gender, :birthdate, :recrutor, :description)
+  end
 end
