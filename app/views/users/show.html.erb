@@ -4,13 +4,13 @@
     <%= simple_form_for(@user) do |f| %>
           <%= f.input :last_name, label: 'Nom' %>
           <%= f.input :first_name, label: 'Prénom' %>
-          <%= f.input :email, label: 'Addresse email' %>
-          <%= f.input :password, label: 'Mot de passe' %>
           <%= f.input :gender, label: 'Genre' %>
           <%= f.input :birthdate, label: 'Date de naissance' %>
           <%= f.input :city, label: 'Ville' %>
           <%= f.submit "Modifier" %>
     <% end %>
     <%= link_to "Mon dashboard", "#" %>
+    <%# link_to destroy ?%>
   <% end %>
+  <%# <%= link_to "Modifier mon mot de passe", edit_user_password_path %>
 </div>
