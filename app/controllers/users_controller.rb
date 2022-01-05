@@ -26,12 +26,16 @@ end
     redirect_to user_path(@user)
   end
 
+  def dashboard
+    @user = current_user
+  end
+
   private
 
 def params_user_skills
   params.require(:user_skill).permit(:level, :skill_id)
 end
-  
+
   def user_params
     params.require(:user).permit(:email, :password, :first_name, :last_name, :city, :gender, :birthdate, :recrutor, :description)
   end
