@@ -50,7 +50,13 @@ def create_user_jobs
   redirect_to root_path
 end
 
+
 ########################################################################################
+  def dashboard
+    @user = current_user
+  end
+
+  private
 
   private
 ####################### PARAMS_USER_SKILLS #########################################
@@ -69,6 +75,7 @@ end
 ########################################################################################
 
     ####################### PARAMS_USER #########################################
+
 
   def user_params
     params.require(:user).permit(:email, :password, :first_name, :last_name, :city, :gender, :birthdate, :recrutor, :description)
