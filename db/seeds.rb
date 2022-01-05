@@ -43,8 +43,8 @@ puts "creation des candidats"
 lemon_jon = User.create(email: "jon.lemon@hotmail.com", password: "123456", first_name: "Jon",
                         last_name: "Lemon", city: "Nice", gender: "homme", birthdate: Date.new(1980, 12, 8),
                         description: "concepteur et goûteur de bière.")
-catarina = User.create(email: "catarina@gmail.fr", password: "123456", first_name: "Catarina", last_name: "Bellatchixtchix",
-                       city: "Nice", gender: "femme", birthdate: Date.new(1986, 10, 15),
+catarina = User.create(email: "catarina@gmail.fr", password: "123456", first_name: "Catarina", last_name:
+                       "Bellatchixtchix", city: "Nice", gender: "femme", birthdate: Date.new(1986, 10, 15),
                        description: "developpeuse d'application web et web mobile")
 
 puts "candidats créés"
@@ -135,7 +135,7 @@ skill_wireframe = Skill.create(name: "création de wireframe")
 skill_english = Skill.create(name: "langue: Anglais")
 skill_french = Skill.create(name: "langue: Français")
 skill_spanish = Skill.create(name: "langue: Espagnol")
-skill_Italian = Skill.create(name: "langue: Italien")
+skill_italian = Skill.create(name: "langue: Italien")
 skill_toshop = Skill.create(name: "Photoshop")
 skill_figma = Skill.create(name: "utilisation Figma")
 
