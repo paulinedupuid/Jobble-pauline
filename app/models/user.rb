@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :messages
   has_many :user_jobs
+  has_many :user_skills
   has_many :skills, through: :user_skills
   has_many :offers
   has_many :matches
