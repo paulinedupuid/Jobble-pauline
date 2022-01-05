@@ -1,0 +1,6 @@
+<%= simple_form_for @user_skill, url: create_user_skills_users_path do |f| %>
+<%= f.input :level, collection: UserSkill::LEVEL %>
+<%= f.input :skill_id, as: :check_boxes, collection: Skill.all, wrapper: :vertical_collection_inline %>
+<%= f.submit %>
+<% end %>
+<%= console %>

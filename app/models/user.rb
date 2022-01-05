@@ -1,8 +1,9 @@
 class User < ApplicationRecord
-  has_many :messages
+  has_many :messages, dependent: :destroy
   has_many :user_jobs
   has_many :user_skills
-  has_many :offers
+  has_many :skills, through: :user_skills
+  has_many :offers, dependent: :destroy
   has_many :matches
   # pour les choix dans les form
   RECRUTOR = {oui: true, non: false}
