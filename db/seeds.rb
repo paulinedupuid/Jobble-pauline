@@ -116,6 +116,15 @@ fifth_offer.job = fullstack_developper
 fifth_offer.user = lagardere_arnaud
 fifth_offer.save!
 
+sixth_offer = Offer.new(title: "graphiste web", description: "Nous recherchons actuellement un graphiste avec des
+                        compétences de web-designer, capable de créer l'interface graphique et de dessiner les visuels.
+                        Vous intégrerez une équipe où vous aiderez a la conception du design et a son intégration",
+                        salary: 28_500, number_hour: 38, employement_type: "salarié", contract_type: "mission",
+                        location: "Nice")
+sixth_offer.job = designer
+sixth_offer.user = estrosi_christian
+sixth_offer.save!
+
 puts "Offres créés"
 
 # **************************************************
