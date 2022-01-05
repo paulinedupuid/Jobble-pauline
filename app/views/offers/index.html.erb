@@ -1,4 +1,11 @@
-<h2>index</h2>
-<% @offers.each do |offer| %>
-  <p><%= offer.job_id %></p>
-<% end %>
+<div class="container">
+  <h2>index</h2>
+  <% @offers.each do |offer| %>
+    <p><%= offer.title %></p>
+    <p><%= offer.description %></p>
+    <p><%= offer.location %></p>
+    <p><%= offer.salary %></p>
+    <p><%= offer.number_hour %></p>
+    <p><%= offer.contract_type %></p>
+  <% end %>
+</div>
