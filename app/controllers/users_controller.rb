@@ -40,6 +40,7 @@ def new_user_jobs
 end
 
 def create_user_jobs
+  @user = current_user
   @jobs = params[:user_job][:job_id]
   @jobs.shift(1)
 
@@ -49,7 +50,7 @@ def create_user_jobs
  @user_job.user_id = current_user.id
  @user_job.save
   end
-  redirect_to root_path
+  redirect_to new_user_jobs_users_path
 end
 
 
@@ -60,28 +61,27 @@ end
 
   private
 
-  private
 ####################### PARAMS_USER_SKILLS #########################################
-def params_user_skills
-  params.require(:user_skill).permit(:level, :skill_id)
-end
+  def params_user_skills
+    params.require(:user_skill).permit(:level, :skill_id)
+  end
 
 ########################################################################################
 
 ####################### PARAMS_USER_JOBS #########################################
 
-def params_user_jobs
-  params.require(:user_job).permit(:experience, :job_id)
-end
+  def params_user_jobs
+    params.require(:user_job).permit(:experience, :job_id)
+  end
 
-########################################################################################
+  ########################################################################################
 
-    ####################### PARAMS_USER #########################################
+  ####################### PARAMS_USER #########################################
 
 
   def user_params
     params.require(:user).permit(:email, :password, :first_name, :last_name, :city, :gender, :birthdate, :recrutor, :description)
   end
 
- ########################################################################################
+    ########################################################################################
 end
