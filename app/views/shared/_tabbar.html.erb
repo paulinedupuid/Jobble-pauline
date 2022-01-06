@@ -1,7 +1,9 @@
 <nav class="tabbar">
-  <%= link_to dashboard_user_path(@user), class: "tabbar-icons" do%>
-  <%= render '/shared/svg/dashboard.svg' %>
-  <p>dashboard</p>
+  <% if @user != nil %>
+    <%= link_to dashboard_user_path(@user), class: "tabbar-icons" do%>
+    <%= render '/shared/svg/dashboard.svg' %>
+    <p>dashboard</p>
+    <% end %>
   <% end %>
   <a href="#" class="tabbar-icons">
   <%= render '/shared/svg/matchs.svg' %>
