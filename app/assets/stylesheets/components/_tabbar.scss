@@ -1,0 +1,55 @@
+// ℹ️ the height of the tab bar
+$tab-bar: 100px;
+// ℹ️ the size (height) of the tab bar icons
+$tab-bar-icons: 23px;
+// ℹ️ the left-right margin of the icons
+$tab-bar-icons-margin: 45px;
+// ℹ️ the vertial padding of the icons
+$tab-bar-icons-y-position: 18px;
+// ℹ️ icons color
+$tab-bar-icons-color: rgba(255, 255, 255, 0.6);
+// ℹ️ icons color:hover
+$tab-bar-icons-color-hover: $blanc;
+
+.tabbar {
+  // size
+  // ℹ️ $tab-bar is the height of the tab-bar it can be found on application.scss
+	height: $tab-bar;
+  max-width: 428px;
+  width: 100vw;
+  // position
+  position:fixed;
+  bottom:0;
+	display: flex;
+  //comportement
+  overflow: hidden;
+  padding: 0 $tab-bar-icons-margin $tab-bar-icons-y-position $tab-bar-icons-margin ;
+	background-color: unset;
+}
+
+.tabbar-icons {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex-grow: 1;
+  text-decoration: none;
+  p{
+  color: $tab-bar-icons-color;
+  font-size: 12px;
+  font-weight: 500;
+  padding-top: 2px;
+  margin-bottom: 0rem;
+  }
+  svg {
+  height: $tab-bar-icons;
+  fill: $tab-bar-icons-color;
+  // filter: drop-shadow(10px 0 5px red);
+  }
+  transition: 0.2s ease;
+  &:hover, .active{
+  transition: 0.5s ease;
+  svg { fill:$tab-bar-icons-color-hover; }
+  p { color: $tab-bar-icons-color-hover; }
+  }
+}
