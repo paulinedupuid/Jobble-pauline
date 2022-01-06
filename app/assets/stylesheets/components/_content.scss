@@ -10,6 +10,30 @@
   justify-content: center;
   border-radius: 40px;
   margin: 0 10px;
+  -ms-overflow-style: none;  /* hide scrollbar IE and Edge */
+  scrollbar-width: none;  /* hide scrollbar Firefox */
+}
+
+.content::-webkit-scrollbar {
+  display: none; /*Hide scrollbar for Chrome, Safari and Opera */
+}
+
+.content-long{
+  // iPhone Height - ( status-bar height + tab-bar height ) = usable space
+  // ✅ height: calc( #{$iHeight} - ( #{$status-bar} + #{$tab-bar} ) );
+  height: calc( 100vh - #{$tab-bar} );
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 40px;
+  margin: 0 10px;
+  -ms-overflow-style: none;  /* hide scrollbar IE and Edge */
+  scrollbar-width: none;  /* hide scrollbar Firefox */
+}
+
+.content-long::-webkit-scrollbar {
+  display: none; /*Hide scrollbar for Chrome, Safari and Opera */
 }
 
 // // ℹ️ -- Conteneur basique AVEC scroll (pas de limite de height)-- ℹ️ \\

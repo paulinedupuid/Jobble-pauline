@@ -1,10 +1,42 @@
-<div class="container">
-  <h2>Dashboard</h2>
-  <p><%= @user.first_name %></p>
-  <p><%= @user.last_name %></p>
-  <p><%= link_to "Voir mes matches", "#" %></p>
-  <p><%= link_to "Mes informations", "#" %></p>
-  <p><%= link_to "Mon profil pro", "#" %></p>
-  <p><%= link_to "Devenir recruteur", "#" %></p>
-  <p><%= link_to "Mes affinités", "#" %></p>
+<div class="content dashboard">
+
+  <%= render "shared/usercard"%>
+
+  <div class="b-margin-40"></div>
+
+  <%= link_to '#', class: "dashboard-pill dash-jaune" do%>
+  <h4>🔍</h4> <p>Voir mes matchs</p> <%= render '/shared/svg/arrow_indigo.svg' %>
+
+  <% end %>
+
+  <div class="b-margin-15"></div>
+
+  <%= link_to '#', class: "dashboard-pill dash-grey" do%>
+  <h4>👤</h4> <p>Mes informations</p> <%= render '/shared/svg/arrow.svg' %>
+  <% end %>
+
+  <div class="b-margin-15"></div>
+
+  <%= link_to '#', class: "dashboard-pill dash-grey" do%>
+  <h4>💼</h4> <p>Mon profil pro</p> <%= render '/shared/svg/arrow.svg' %>
+  <% end %>
+
+  <div class="b-margin-15"></div>
+
+  <%= link_to '#', class: "dashboard-pill dash-grey" do%>
+  <h4>👔</h4> <p>Devenir recruteur</p> <%= render '/shared/svg/arrow.svg' %>
+  <% end %>
+
+  <div class="b-margin-15"></div>
+
+  <%= link_to '#', class: "dashboard-pill dash-grey" do%>
+  <h4>😍</h4> <p>Mes affinités</p> <%= render '/shared/svg/arrow.svg' %>
+  <% end %>
+
+  <div class="b-margin-40"></div>
+
+  <%= link_to '#', class: "dashboard-pill dash-orange" do%>
+  <h4>🚪</h4> <p>Me déconnecter</p> <%= render '/shared/svg/arrow.svg' %>
+  <% end %>
+
 </div>
