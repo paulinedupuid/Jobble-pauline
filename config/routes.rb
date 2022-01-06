@@ -30,4 +30,3 @@ Rails.application.routes.draw do
   #   end
   # end
   resources :offers, only: [:index, :show]
-end
