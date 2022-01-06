@@ -1,0 +1,20 @@
+
+<% Job.all.each do |job| %>
+  <%= simple_form_for @job, url: job_update_users_path do |f| %>
+    <%= f.label job.name %>
+    <%= f.input :experience %>
+    <%= hidden_field_tag :job_id, value: job.id %>
+    <%= f.submit %>
+  <% end %>
+<% end %>
+
+<%= simple_form_for @skill, url: skill_update_users_path do |f| %>
+  <%= f.association :skill, input_html: { multiple: true } %>
+  <%= f.input :level, collection: UserSkill::LEVEL %>
+  <%= f.submit %>
+<% end %>
+
+<%= simple_form_for @user, url: description_maj_user_path(@user) do |f| %>
+  <%= f.text_area :description, :cols => 40, :rows => 6 %>
+  <%= f.submit %>
+<% end %>
