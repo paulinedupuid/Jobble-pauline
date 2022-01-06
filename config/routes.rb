@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[show]
   resources :messages, only: %i[show]
-
+  resources :offers, only: [:index, :show]
   end
 ####################################
 # a tester
@@ -29,4 +29,4 @@ Rails.application.routes.draw do
   #     patch :update_user_jobs
   #   end
   # end
-  resources :offers, only: [:index, :show]
+
