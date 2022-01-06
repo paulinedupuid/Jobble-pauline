@@ -4,6 +4,8 @@
     <%= render '/shared/svg/dashboard.svg' %>
     <p>dashboard</p>
     <% end %>
+  <% else %>
+    <%= link_to "sign in", new_user_session_path, class: "tabbar-icons" %>
   <% end %>
   <a href="#" class="tabbar-icons">
   <%= render '/shared/svg/matchs.svg' %>
