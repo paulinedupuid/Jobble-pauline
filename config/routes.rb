@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   resources :messages, only: %i[show]
 
   resources :offers, only: [:index, :show]
-  end
+end
 ####################################
 # a tester
   # resources :users do
