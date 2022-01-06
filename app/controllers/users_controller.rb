@@ -53,6 +53,15 @@ def create_user_jobs
   redirect_to new_user_jobs_users_path
 end
 
+# a faire marcher
+# def edit_user_jobs
+#   @user_job = UserJob.new
+# end
+
+# def update_user_jobs
+#   @user_job = UserJob.where(user_id: params[:id])
+# end
+
 
 ########################################################################################
   def dashboard
@@ -75,6 +84,13 @@ end
   end
 
   ########################################################################################
+# a faire marcher
+
+# def params_update_user_jobs
+#   params.require(:user_job).permit(:experience, :job_id)
+# end
+
+########################################################################################
 
   ####################### PARAMS_USER #########################################
 
