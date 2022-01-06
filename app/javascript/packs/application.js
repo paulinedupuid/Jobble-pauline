@@ -25,6 +25,28 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
+
+
   // Call your functions here, e.g:
+
+  // disable pinch-zoom on smartphone -------------------------
+  document.addEventListener('gesturestart', function(e) {
+      e.preventDefault();
+      // special hack to prevent zoom-to-tabs gesture in safari
+      document.body.style.zoom = 0.99;
+  });
+
+  document.addEventListener('gesturechange', function(e) {
+      e.preventDefault();
+      // special hack to prevent zoom-to-tabs gesture in safari
+      document.body.style.zoom = 0.99;
+  });
+
+  document.addEventListener('gestureend', function(e) {
+      e.preventDefault();
+      // special hack to prevent zoom-to-tabs gesture in safari
+      document.body.style.zoom = 0.99;
+  });
+
   // initSelect2();
 });
