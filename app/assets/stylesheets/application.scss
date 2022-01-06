@@ -1,3 +1,13 @@
+// ❗️ -- SCSS Variables has to be on top -- ❗️ \\
+
+// ℹ️ the iphone pro max width
+$iWidth: 428px;
+// ℹ️ the iphone pro max height
+$iHeight: 926px;
+// ℹ️ the height of the iphone status bar
+$status-bar: 47px;
+// ℹ️ the height of the tab bar is in tabbar.scss
+
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
@@ -12,20 +22,78 @@
 @import "components/index";
 @import "components/tabbar";
 @import "pages/index";
+@import "pages/home";
 
-// ⚠️ A SUPPRIMER SI PROBLEME
-.profiler-result{
-  display: none;
-}// ------------------------
-
-html {
-  margin: 0;
+// ℹ️ -- style used to display in Desktop Browser view -- ℹ️ \\
+html{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $indigo;
 }
 
 body{
+  // ℹ️ bkgnd clr of body : define color of the iphone status bar
   background-color: $indigo;
-  margin: 0;
+  // ℹ️ define all screen usage for bellow max-height/width
+  height: 100vh;
   width: 100vw;
+  // ℹ️ 47px is the height of the iphone status bar
+  // ℹ️ 926px is the height of iphone pro max
+  // ✅ max-height: calc( #{$iHeight} - #{$status-bar} );
+  // ℹ️ 428px is the iphone pro max width
+  max-width: $iWidth;
+  box-shadow: 0 0 90px black;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+// ℹ️ -- Conteneur basique centré sans scroll -- ℹ️ \\
+.content{
+  // iPhone Height - ( status-bar height + tab-bar height ) = usable space
+  // ✅ height: calc( #{$iHeight} - ( #{$status-bar} + #{$tab-bar} ) );
+  height: calc( 100vh - #{$tab-bar} );
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px;
+  margin: 0 10px;
+}
+
+// // ℹ️ -- Conteneur basique AVEC scroll (pas de limite de height)-- ℹ️ \\
+// .long-content{
+//   // iPhone Height - ( status-bar height + tab-bar height ) = usable space
+//   min-height: calc( #{$iHeight} - ( #{$status-bar} + #{$tab-bar} ) );
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   border-radius: 20px;
+// }
+
+
+// ❗️ -- fix the content on the page - use with caution -- ❗️ \\
+.fixed{
+  position: fixed;
+}
+
+
+// ❗️ -- info rails chargement page / SUPPRIMER SI PROBLEME -- ❗️ \\
+.profiler-result{
+  display: none;
+}
+
+
+// ❗️ -- ⬇️ -- prevent default comportement -- ⬇️ -- ❗️ \\
+
+body{
+  margin: 0;
+}
+
+html {
+  margin: 0;
 }
 
 a :link{
