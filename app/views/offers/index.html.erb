@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>index</h2>
+  <div class="row">
+    <% @offers.each do |offer| %>
+      <div class="col-4">
+        <%= link_to(offer) do %>
+          <p><%= offer.title %></p>
+        <% end %>
+        <%= link_to(offer.user) do  %>
+          <p><%= offer.user.first_name %></p>
+        <% end %>
+        <p><%= offer.description %></p>
+        <p><%= offer.location %></p>
+        <p><%= offer.salary %>/an</p>
+        <p><%= offer.number_hour %>h/semaine</p>
+        <p><%= offer.contract_type %></p>
+      </div>
+    <% end %>
+  </div>
+</div>

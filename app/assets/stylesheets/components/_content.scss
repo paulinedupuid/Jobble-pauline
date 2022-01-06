@@ -1,0 +1,23 @@
+// ℹ️ -- Conteneur basique centré sans scroll -- ℹ️ \\
+.content{
+  // iPhone Height - ( status-bar height + tab-bar height ) = usable space
+  // ✅ height: calc( #{$iHeight} - ( #{$status-bar} + #{$tab-bar} ) );
+  height: calc( 100vh - #{$tab-bar} );
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px;
+  margin: 0 10px;
+}
+
+// // ℹ️ -- Conteneur basique AVEC scroll (pas de limite de height)-- ℹ️ \\
+// .long-content{
+//   // iPhone Height - ( status-bar height + tab-bar height ) = usable space
+//   min-height: calc( #{$iHeight} - ( #{$status-bar} + #{$tab-bar} ) );
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   border-radius: 20px;
+// }

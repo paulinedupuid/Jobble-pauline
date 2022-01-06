@@ -1,16 +1,21 @@
 <div class="container">
-  <h2>Mes informations</h2>
   <% if @user.id == current_user.id %>
+    <h2>Mes informations</h2>
     <%= simple_form_for @user, url: update_users_user_path do |f| %>
-          <%= f.input :last_name, label: 'Nom' %>
-          <%= f.input :first_name, label: 'Prénom' %>
-          <%= f.input :gender, label: 'Genre' %>
-          <%= f.input :birthdate, label: 'Date de naissance' %>
-          <%= f.input :city, label: 'Ville' %>
-          <%= f.submit "Modifier" %>
+      <%= f.input :last_name, label: 'Nom' %>
+      <%= f.input :first_name, label: 'Prénom' %>
+      <%= f.input :gender, label: 'Genre' %>
+      <%= f.input :birthdate, label: 'Date de naissance' %>
+      <%= f.input :city, label: 'Ville' %>
+      <%= f.submit "Modifier" %>
     <% end %>
-    <%= link_to "Mon dashboard", "#" %>
-    <%# link_to destroy ?%>
+      <%= link_to "Mon dashboard", "#" %>
+      <%# link_to destroy ?%>
+    <% else %>
+      <h2>Recruteur</h2>
+      <p><%= @user.first_name %></p>
+      <p><%= @user.last_name %></p>
+      <p><%= @user.description %></p>
   <% end %>
   <%# <%= link_to "Modifier mon mot de passe", edit_user_password_path %>
 </div>
