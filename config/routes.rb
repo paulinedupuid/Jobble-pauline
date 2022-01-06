@@ -14,7 +14,10 @@ Rails.application.routes.draw do
       patch :update_users
       get :dashboard
     end
+
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :offers, only: [:index, :show]
+  resources :offers, only: [:index, :show] do
+    resources :matches, only: [:update]
+  end
 end
