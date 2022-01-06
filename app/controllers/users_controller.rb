@@ -14,6 +14,7 @@ class UsersController < ApplicationController
  ################################# USERSKILL ################################
 
 def new_user_skills
+  @user = current_user
   @user_skill = UserSkill.new
 end
 # a essayer de recup le params dans le create le offer id
@@ -34,6 +35,7 @@ end
 ################################# UserJob ############################################
 
 def new_user_jobs
+  @user = current_user
   @user_job = UserJob.new
 end
 
