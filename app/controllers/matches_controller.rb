@@ -1,8 +1,9 @@
 class MatchesController < ApplicationController
 
-  def update
+  def create # like
     @offer = Offer.find(params[:offer_id])
     @user = current_user
+    # check if match exists
     if @user.matches.find_by_offer_id(@offer.id).present?
       @match = @user.matches.find_by_offer_id(@offer.id)
       @match.candidate_status = true

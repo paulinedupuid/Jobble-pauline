@@ -14,7 +14,7 @@
         <p><%= offer.salary %>/an</p>
         <p><%= offer.number_hour %>h/semaine</p>
         <p><%= offer.contract_type %></p>
-        <p><%= link_to "Accepter", "#" %></p>
+        <p><%= link_to "Accepter", offer_matches_path(offer) %></p>
         <p><%= link_to "Rejeter", "#" %></p>
       </div>
     <% end %>
