@@ -1,0 +1,61 @@
+.dashboard-pill{
+display: flex;
+align-items: center;
+justify-content: space-between;
+width: 324px;
+min-height: 60px;
+padding: 0 25px;
+border-radius: 60px;
+p,h1,h2,h3,h4{
+  line-height: 0em;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+}
+
+.button-pill-md{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 200px;
+  border-radius: 60px;
+  p,h1,h2,h3,h4,h5,h6{
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  }
+}
+
+.button-pill-narrow{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 170px;
+  border-radius: 60px;
+  p,h1,h2,h3,h4,h5,h6{
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  }
+}
+
+
+.pill-jaune{
+background-color: $jaune;
+color: black !important;
+}
+
+.pill-blanc{
+background-color: $blanc;
+color: black !important;
+}
+
+.pill-orange{
+background-color: $orange;
+color: $blanc !important;
+}
+
+.pill-indigo{
+background-color: $indigo;
+color: $blanc !important;
+}

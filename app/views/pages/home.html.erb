@@ -1,16 +1,18 @@
-<%unless current_user %>
 <div class="home content-full">
   <img src='<%= image_path 'home.png'%>'><hr>
   <h2>Welcome to</h2>
   <h1 style="margin-top: -18px;">Jobble</h1>
   <p style="text-align: center;">Lorem ipsum dolor sit amet,<br>consectetur adipiscing elit, sed<br>do eiusmod tempor incididunt.</p>
+  <div class="b-margin-40"></div>
 
-    <%= link_to user_session_path, class: "dashboard-pill dash-grey" do%>
-  <p>Se connecter</p>
+  <%= link_to new_user_registration_path, class: "button-pill-md pill-blanc" do%>
+  <h6>S'inscrire</h6>
+  <%end%>
+
+  <div class="b-margin-20"></div>
+
+  <%= link_to user_session_path, class: "button-pill-md pill-jaune" do%>
+  <h6>Se connecter</h6>
   <% end %>
 
-  <%= link_to new_user_registration_path, class: "dashboard-pill dash-grey" do%>
-  <p>S'inscrire</p>
-  <% end %>
 </div>
-<% end %>
