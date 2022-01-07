@@ -1,0 +1,57 @@
+.matchs{
+background-color: $violet;
+}
+
+.match-image{
+height: 500px;
+width: $iWidth;
+background-position: center;
+background-size: cover;
+padding: 35px;
+display: flex;
+align-items: flex-end;
+h1,p{
+line-height: 5px !important;
+}
+}
+
+.match-content{
+  margin-top: -30px;
+  background-color: $violet;
+  border-radius: 40px 40px 0 0;
+  padding: 35px;
+  box-shadow: 0 -20px 100px black;
+  h1,h2,h3{
+  -webkit-hyphens: manual;
+  -ms-hyphens: manual;
+  hyphens: manual;
+  /////// !!!!!!!  \\\\\\\
+  padding-right: 30px;
+  }
+}
+
+.match-buttons-content{
+  display: flex;
+  justify-content: center;
+}
+
+.match-info-content{
+  display: flex;
+  justify-content: space-around;
+  padding: 0 5px;
+  margin-bottom: 20px;
+}
+
+.match-info{
+  background-color: black;
+  padding: 5px 10px;
+  border-radius: 30px;
+  p,h1,h2,h3,h4,h5,h6{
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  }
+}
+
+.button-space{
+  width: 10px;
+}
