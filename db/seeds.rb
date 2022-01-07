@@ -55,7 +55,7 @@ catarina = User.create(email: "catarina@gmail.fr", password: "123456", first_nam
                        "Bellatchixtchix", city: "Nice", gender: "femme", birthdate: Date.new(1986, 10, 15),
                        description: "developpeuse d'application web et web mobile")
 
-puts `user créés #{User.count}`
+puts "candidats créés"
 
 # ********************************************************
 
@@ -74,7 +74,7 @@ accounting = Job.create(name: "comptable")
 jedi = Job.create(name: "maitre Jedi")
 optician = Job.create(name: "opticien")
 
-puts `Job créés #{Job.count}`
+puts "jobs créés"
 
 # ********************************************************
 # Offers creation
@@ -133,7 +133,7 @@ sixth_offer.job = designer
 sixth_offer.user = estrosi_christian
 sixth_offer.save!
 
-puts `Offres créés #{Offer.count}`
+puts "Offres créés"
 
 # **************************************************
 # Skills creation
@@ -156,7 +156,7 @@ skill_italian = Skill.create(name: "langue: Italien")
 skill_toshop = Skill.create(name: "Photoshop")
 skill_figma = Skill.create(name: "utilisation Figma")
 
-puts `skill créés #{Skill.count}`
+puts "compétences créés"
 
 # ***********************************************
 # user_jobs creation
@@ -177,7 +177,7 @@ third_job.user = catarina
 third_job.job = designer
 third_job.save!
 
-puts `userjob créés #{UserJob.count}`
+puts "user_jobs créés"
 
 # **********************************************
 # matches creation
@@ -198,6 +198,6 @@ third_match.offer = sixth_offer
 third_match.user = catarina
 third_match.save!
 
-puts `matches créés #{Match.count}`
+puts 'matches créés'
 
 # ********************************************

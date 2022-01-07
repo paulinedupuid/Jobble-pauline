@@ -3,7 +3,7 @@
   <div class="row">
     <% @offers.each do |offer| %>
     <%# <% revoir la condition %>
-    <% if (offer.matches.where(user_id: current_user) && offer.matches.where(user_id: current_user).first.candidate_status == nil) || !offer.matches.where(user_id: current_user) %>
+    <%# <% if (offer.matches.where(user_id: current_user) && offer.matches.where(user_id: current_user).first.candidate_status == nil) || !offer.matches.where(user_id: current_user) %>
       <div class="col-4">
         <%= link_to offer_path(offer) do %>
           <p><%= offer.title %></p>
@@ -23,6 +23,6 @@
         <p><%= link_to "Rejeter", offer_reject_path(offer), method: "post" %></p>
       </div>
       <% end %>
-    <% end %>
+    <%#<% end %>
   </div>
 </div>
