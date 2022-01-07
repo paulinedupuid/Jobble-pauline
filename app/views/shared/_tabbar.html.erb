@@ -1,8 +1,7 @@
 <nav class="tabbar">
 
-  <%# <%= link_to dashboard_user_path(@user), class: "tabbar-icons" do%>
+  <%= link_to dashboard_path(@user), class: "tabbar-icons" do %>
   <%# ❗️ ajout de ligne pour editer la home à remplacer par la nouvelle %>
-  <%= link_to '#', class: "tabbar-icons" do%>
   <%= render '/shared/svg/dashboard.svg' %>
   <p>dashboard</p>
   <% end %>
