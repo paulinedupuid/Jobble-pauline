@@ -6,10 +6,11 @@
   <p>dashboard</p>
   <% end %>
 
-  <a href="#" class="tabbar-icons">
+  <%= link_to offers_path, class: "tabbar-icons" do%>
   <%= render '/shared/svg/matchs.svg' %>
   <p>Matchs</p>
-  </a>
+  <% end %>
+
   <a href="#" class="tabbar-icons">
   <%= render '/shared/svg/messages.svg' %>
     <p>Messages</p>
