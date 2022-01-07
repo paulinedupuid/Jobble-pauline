@@ -36,8 +36,10 @@
 
   <div class="b-margin-40"></div>
 
-  <%= link_to '#', class: "dashboard-pill dash-orange" do%>
+  <%= link_to destroy_user_session_path, method: :delete, class: "dashboard-pill dash-orange" do%>
   <h4>🚪</h4> <p>Me déconnecter</p> <%= render '/shared/svg/arrow.svg' %>
   <% end %>
 
 </div>
+
+<%= render 'shared/tabbar' %>
