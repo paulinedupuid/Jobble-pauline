@@ -1,20 +1,49 @@
-<div class="container">
-  <h2>index</h2>
-  <div class="row">
+<div class="content-matchs matchs">
+
+  <div>
     <% @offers.each do |offer| %>
-      <div class="col-4">
-        <%= link_to offer_path(offer) do %>
-          <p><%= offer.title %></p>
-        <% end %>
-        <%= link_to profile_path(offer.user.id) do  %>
-          <p><%= offer.user.first_name %></p>
-        <% end %>
-        <p><%= offer.description.first(45) %>...</p>
-        <p><%= offer.location %></p>
-        <p><%= offer.salary %>/an</p>
-        <p><%= offer.number_hour %>h/semaine</p>
-        <p><%= offer.contract_type %></p>
+      <div>
+        <style>.photo{background-image: url(https://thiscatdoesnotexist.com/);}</style>
+        <div class="photo match-image">
+
+
+
+          <%= link_to profile_path(offer.user.id) do  %>
+            <h2><%= offer.user.first_name.capitalize %> <%= offer.user.last_name %>.</h2>
+            <p>Recruteur</p>
+          <% end %>
+
+
+        </div>
+
+        <div class="match-content">
+
+        <div class="match-info-content">
+          <div class="match-info"><p>📍 <%= offer.location %></p></div>
+          <div class="match-info"><p>💰 <%= (offer.salary) / 12 %>€</p></div>
+          <div class="match-info"><p>🕦 <%= offer.number_hour %>h</p></div>
+          <div class="match-info"><p><%= offer.contract_type %></p></div>
+        </div>
+
+          <div class="match-buttons-content">
+          <%= link_to offer_path(offer) do %>
+          <h6 class="button-pill-narrow pill-indigo"><b>No.</b></h6>
+          <% end %>
+
+          <div class="button-space"></div>
+
+          <%= link_to offer_path(offer) do %>
+          <h6 class="button-pill-narrow pill-jaune"><b>👍 Like<b></h6>
+          <% end %>
+        </div>
+
+          <%= link_to offer_path(offer) do %>
+            <h2><%= offer.title %></h2>
+          <% end %>
+          <p><%= offer.description.first(150) %>...</p>
+        </div>
       </div>
     <% end %>
   </div>
+
 </div>
