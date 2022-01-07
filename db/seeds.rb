@@ -8,12 +8,20 @@
 
 # ********************************************
 # Nettoyage de la DB
+
+# Nettoyage des matches
+Match.destroy_all
+# Nettoyage des userjobs
+UserJob.destroy_all
 # Nettoyage des offres
 Offer.destroy_all
+# Nettoyage des userskill
 UserSkill.destroy_all
+# Nettoyage des skills
 Skill.destroy_all
-UserJob.destroy_all
+# Nettoyage des jobs
 Job.destroy_all
+# Nettoyage des users
 User.destroy_all
 
 # ********************************************
@@ -47,7 +55,7 @@ catarina = User.create(email: "catarina@gmail.fr", password: "123456", first_nam
                        "Bellatchixtchix", city: "Nice", gender: "femme", birthdate: Date.new(1986, 10, 15),
                        description: "developpeuse d'application web et web mobile")
 
-puts "candidats créés"
+puts `user créés #{User.count}`
 
 # ********************************************************
 
@@ -66,7 +74,7 @@ accounting = Job.create(name: "comptable")
 jedi = Job.create(name: "maitre Jedi")
 optician = Job.create(name: "opticien")
 
-puts "jobs créés"
+puts `Job créés #{Job.count}`
 
 # ********************************************************
 # Offers creation
@@ -125,7 +133,7 @@ sixth_offer.job = designer
 sixth_offer.user = estrosi_christian
 sixth_offer.save!
 
-puts "Offres créés"
+puts `Offres créés #{Offer.count}`
 
 # **************************************************
 # Skills creation
@@ -148,4 +156,48 @@ skill_italian = Skill.create(name: "langue: Italien")
 skill_toshop = Skill.create(name: "Photoshop")
 skill_figma = Skill.create(name: "utilisation Figma")
 
-puts "compétences créés"
+puts `skill créés #{Skill.count}`
+
+# ***********************************************
+# user_jobs creation
+puts "création des user_jobs"
+
+first_job = UserJob.new(experience: 4)
+first_job.user = lemon_jon
+first_job.job = back_developper
+first_job.save!
+
+second_job = UserJob.new(experience: 1)
+second_job.user = lemon_jon
+second_job.job = fullstack_developper
+second_job.save!
+
+third_job = UserJob.new(experience: 6)
+third_job.user = catarina
+third_job.job = designer
+third_job.save!
+
+puts `userjob créés #{UserJob.count}`
+
+# **********************************************
+# matches creation
+puts "création des matches"
+
+first_match = Match.new(recrutor_status: true)
+first_match.offer = second_offer
+first_match.user = lemon_jon
+first_match.save!
+
+second_match = Match.new(recrutor_status: true)
+second_match.offer = fifth_offer
+second_match.user = lemon_jon
+second_match.save!
+
+third_match = Match.new(recrutor_status: true)
+third_match.offer = sixth_offer
+third_match.user = catarina
+third_match.save!
+
+puts `matches créés #{Match.count}`
+
+# ********************************************
