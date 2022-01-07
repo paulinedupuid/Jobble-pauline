@@ -23,13 +23,19 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+
+import { jobDisplay } from 'controllers/display_jobs';
 import { initChatroomCable } from '../channels/chatroom_channel';
+
 
 document.addEventListener('turbolinks:load', () => {
 
 
   // Call your functions here, e.g:
+
+  jobDisplay()
   initChatroomCable()
+
 
   // disable pinch-zoom on smartphone -------------------------
   document.addEventListener('gesturestart', function(e) {
