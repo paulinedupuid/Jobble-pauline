@@ -1,7 +1,7 @@
 <div class="container">
-  <% if @user.id == current_user.id %>
+  <% if @user == @profile_user %>
     <h2>Mes informations</h2>
-    <%= simple_form_for @user, url: update_users_user_path do |f| %>
+    <%= simple_form_for @user, url: update_users_path do |f| %>
       <%= f.input :last_name, label: 'Nom' %>
       <%= f.input :first_name, label: 'Prénom' %>
       <%= f.input :gender, label: 'Genre' %>
@@ -13,9 +13,9 @@
       <%# link_to destroy ?%>
     <% else %>
       <h2>Recruteur</h2>
-      <p><%= @user.first_name %></p>
-      <p><%= @user.last_name %></p>
-      <p><%= @user.description %></p>
+      <p><%= @profile_user.first_name %></p>
+      <p><%= @profile_user.last_name %></p>
+      <p><%= @profile_user.description %></p>
   <% end %>
   <%# <%= link_to "Modifier mon mot de passe", edit_user_password_path %>
 </div>

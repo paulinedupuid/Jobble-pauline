@@ -1,13 +1,17 @@
 class UsersController < ApplicationController
  ################################# USER ################################
-  def show
-    @user = User.find(params[:id])
+  def profile
+    @user = current_user
+    @profile_user = User.find(params[:format])
+  end
+
+  def sign_out
   end
 
   def update_users
-    @user = User.find(params[:id])
+    @user = current_user
     @user.update(user_params)
-    redirect_to user_path(@user)
+    redirect_to profile_path(@user)
   end
  #######################################################################
 
@@ -76,7 +80,7 @@ class UsersController < ApplicationController
       @user_job.user = @user
       @user_job.save!
     end
-    redirect_to professional_update_users_path
+    redirect_to professional_update_path
   end
 
   # Update of the skill if it curently exist for the current_user and creation if it doesn't exist
@@ -96,7 +100,7 @@ class UsersController < ApplicationController
         @user_skill.save!
       end
     end
-    redirect_to professional_update_users_path
+    redirect_to professional_update_path
   end
 
   # Update of the description of the current_user
@@ -106,7 +110,7 @@ class UsersController < ApplicationController
     @description = params[:user][:description]
     @user.description = @description
     @user.save!
-    redirect_to professional_update_users_path
+    redirect_to professional_update_path
   end
 
 ########################################################################################

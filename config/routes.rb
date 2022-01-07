@@ -1,23 +1,16 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  resources :users do
-    collection do
-      get :professional_update
-      post :job_update
-      post :skill_update
-      # get :new_user_skills
-      # post :create_user_skills
-      # get :new_user_jobs
-      # post :create_user_jobs
-    end
-    member do
-      get :show
-      patch :description_maj
-      patch :update_users
-      get :dashboard
-    end
-  end
+
+  get 'professional_update', to: 'users#professional_update'
+  post 'job_update', to: 'users#job_update'
+  post 'skill_update', to: 'users#skill_update'
+  get 'profile', to: 'users#profile'
+  get 'dashboard', to: 'users#dashboard'
+  patch 'update_users', to: 'users#update_users'
+  patch 'description_maj', to: 'users#description_maj'
+  get 'dashboard', to: 'users#dashboard', as: :user_root
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :users, only: %i[show]
@@ -25,13 +18,5 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
 
-  resources :offers, only: [:index, :show]
+  resources :offers, only: %i[index show]
 end
-####################################
-# a tester
-  # resources :users do
-  #   member do
-  #     get :edit_user_jobs
-  #     patch :update_user_jobs
-  #   end
-  # end

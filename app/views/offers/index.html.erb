@@ -3,10 +3,10 @@
   <div class="row">
     <% @offers.each do |offer| %>
       <div class="col-4">
-        <%= link_to(offer) do %>
+        <%= link_to offer_path(offer) do %>
           <p><%= offer.title %></p>
         <% end %>
-        <%= link_to(offer.user) do  %>
+        <%= link_to profile_path(offer.user_id) do  %>
           <p><%= offer.user.first_name %></p>
         <% end %>
         <p><%= offer.description.first(45) %>...</p>
