@@ -2,19 +2,27 @@
   <h2>index</h2>
   <div class="row">
     <% @offers.each do |offer| %>
+    <%# <% revoir la condition %>
+    <% if (offer.matches.where(user_id: current_user) && offer.matches.where(user_id: current_user).first.candidate_status == nil) || !offer.matches.where(user_id: current_user) %>
       <div class="col-4">
         <%= link_to offer_path(offer) do %>
           <p><%= offer.title %></p>
         <% end %>
         <%= link_to profile_path(offer.user_id) do  %>
-          <p><%= offer.user.first_name %></p>
+          <p><%= offer.user.first_name %> <%= offer.user.last_name %></p>
         <% end %>
+
         <p><%= offer.description.first(45) %>...</p>
         <p><%= offer.location %></p>
         <p><%= offer.salary %>/an</p>
         <p><%= offer.number_hour %>h/semaine</p>
         <p><%= offer.contract_type %></p>
+        <%# <% if match saved, offer filtered out of index and transferred to matches view avec index (link) %>
+        <p><%= link_to "Accepter", offer_matches_path(offer), method: "post" %></p>
+        <%# <% if offer rejected, offer transferred filtered out of index %>
+        <p><%= link_to "Rejeter", offer_reject_path(offer), method: "post" %></p>
       </div>
+      <% end %>
     <% end %>
   </div>
 </div>
