@@ -3,15 +3,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+// $body-font: "sf-regular";
+// $headers-font: "sf-regular";
 
 // To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
+@font-face {
+  font-family: "sf-black";
+  src: font-url('SFNSDisplay-Black.otf') format('opentype');
+  font-family: "sf-bold";
+  src: font-url('SFNSDisplay-Bold.otf') format('opentype');
+  font-family: "sf-semibold";
+  src: font-url('SFNSDisplay-Semibold.otf') format('opentype');
+  font-family: "sf-heavy";
+  src: font-url('SFNSDisplay-Heavy.otf') format('opentype');
+  font-family: "sf-medium";
+  src: font-url('SFNSDisplay-Medium.otf') format('opentype');
+  font-family: "sf-regular";
+  src: font-url('SFNSDisplay-Regular.otf') format('opentype');
+  font-family: "sf-light";
+  src: font-url('SFNSDisplay-Light.otf') format('opentype');
+  font-family: "sf-thin";
+  src: font-url('SFNSDisplay-Thin.otf') format('opentype');
+}
+$regular: "sf-regular";
+$bold: "sf-bold";
