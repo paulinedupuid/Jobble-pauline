@@ -27,14 +27,14 @@
 
           <div class="match-buttons-content">
             <%# <% if offer rejected, offer transferred filtered out of index %>
-          <%= link_to "Rejeter", offer_reject_path(offer), method: "post" do %>
+          <%= link_to offer_reject_path(offer), method: "post" do %>
           <h6 class="button-pill-narrow pill-indigo"><b>No.</b></h6>
           <% end %>
 
           <div class="button-space"></div>
 
            <%# <% if match saved, offer filtered out of index and transferred to matches view avec index (link) %>
-          <%= link_to "Accepter", offer_matches_path(offer), method: "post"  do %>
+          <%= link_to offer_matches_path(offer), method: "post"  do %>
           <h6 class="button-pill-narrow pill-jaune"><b>👍 Like<b></h6>
           <% end %>
         </div>
@@ -56,7 +56,7 @@
         <% end %>
 
 
-        
+
 
       </div>
       <% end %>
