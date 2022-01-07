@@ -28,5 +28,8 @@
   <body>
     <%= render 'shared/flashes' %>
     <%= yield %>
+    <%if current_user %>
+      <%= render 'shared/tabbar'%>
+    <%end%>
   </body>
 </html>
