@@ -12,7 +12,7 @@
 
   <div class="b-margin-15"></div>
 
-  <%= link_to profile_path, class: "dashboard-pill dash-grey" do%>
+  <%= link_to profile_path(@user), class: "dashboard-pill dash-grey" do%>
   <h4>👤</h4> <p>Mes informations</p> <%= render '/shared/svg/arrow.svg' %>
   <% end %>
 
