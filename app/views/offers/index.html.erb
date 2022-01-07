@@ -26,13 +26,15 @@
         </div>
 
           <div class="match-buttons-content">
-          <%= link_to offer_path(offer) do %>
+            <%# <% if offer rejected, offer transferred filtered out of index %>
+          <%= link_to "Rejeter", offer_reject_path(offer), method: "post" do %>
           <h6 class="button-pill-narrow pill-indigo"><b>No.</b></h6>
           <% end %>
 
           <div class="button-space"></div>
 
-          <%= link_to offer_path(offer) do %>
+           <%# <% if match saved, offer filtered out of index and transferred to matches view avec index (link) %>
+          <%= link_to "Accepter", offer_matches_path(offer), method: "post"  do %>
           <h6 class="button-pill-narrow pill-jaune"><b>👍 Like<b></h6>
           <% end %>
         </div>
@@ -42,7 +44,22 @@
           <% end %>
           <p><%= offer.description.first(150) %>...</p>
         </div>
+
+    <%# <% revoir la condition %>
+    <% if (offer.matches.where(user_id: current_user) && offer.matches.where(user_id: current_user).first.candidate_status == nil) || !offer.matches.where(user_id: current_user) %>
+      <div class="col-4">
+        <%= link_to offer_path(offer) do %>
+          <p><%= offer.title %></p>
+        <% end %>
+        <%= link_to profile_path(offer.user_id) do  %>
+          <p><%= offer.user.first_name %> <%= offer.user.last_name %></p>
+        <% end %>
+
+
+        
+
       </div>
+      <% end %>
     <% end %>
   </div>
 
