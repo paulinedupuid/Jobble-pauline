@@ -12,13 +12,13 @@
 
   <div class="b-margin-15"></div>
 
-  <%= link_to user_path, class: "dashboard-pill dash-grey" do%>
+  <%= link_to profile_path, class: "dashboard-pill dash-grey" do%>
   <h4>👤</h4> <p>Mes informations</p> <%= render '/shared/svg/arrow.svg' %>
   <% end %>
 
   <div class="b-margin-15"></div>
 
-  <%= link_to professional_update_users_path, class: "dashboard-pill dash-grey" do%>
+  <%= link_to professional_update_path, class: "dashboard-pill dash-grey" do%>
   <h4>💼</h4> <p>Mon profil pro</p> <%= render '/shared/svg/arrow.svg' %>
   <% end %>
 
@@ -36,7 +36,7 @@
 
   <div class="b-margin-40"></div>
 
-  <%= link_to '#', class: "dashboard-pill dash-orange" do%>
+  <%= link_to destroy_user_session_path, method: :delete, class: "dashboard-pill dash-orange" do%>
   <h4>🚪</h4> <p>Me déconnecter</p> <%= render '/shared/svg/arrow.svg' %>
   <% end %>
 
