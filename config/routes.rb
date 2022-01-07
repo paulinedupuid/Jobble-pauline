@@ -9,11 +9,12 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'users#dashboard'
   patch 'update_users', to: 'users#update_users'
   patch 'description_maj', to: 'users#description_maj'
-
+  get 'matches', to: "offers#matches"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :messages, only: %i[show]
 
   resources :offers, only: %i[index show] do
-    resources :matches, only: :create
+    resources :matches, only: %i[create]
+    post 'reject', to: 'matches#reject'
   end
 end

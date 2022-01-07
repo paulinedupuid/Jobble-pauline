@@ -1,0 +1,13 @@
+<div class="container">
+  <h2>Mes matches</h2>
+  <% @offers.each do |offer| %>
+    <h2><%= offer.title %></h2>
+    <p><%= offer.user.first_name %> <%= offer.user.last_name %></p>
+    <p><%= offer.description %></p>
+    <p><%= offer.location %></p>
+    <p><%= offer.salary %>/an</p>
+    <p><%= offer.number_hour %>h/semaine</p>
+    <p><%= offer.contract_type %></p>
+    <p><%= offer.employement_type %></p>
+  <% end %>
+</div>

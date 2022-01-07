@@ -3,19 +3,21 @@
   <div class="row">
     <% @offers.each do |offer| %>
       <div class="col-4">
-        <%= link_to(offer) do %>
+        <%# <%= link_to(offer) do %>
           <p><%= offer.title %></p>
-        <% end %>
-        <%= link_to(offer.user) do  %>
+        <%# <% end %>
+        <%# <%= link_to(offer.user) do  %>
           <p><%= offer.user.first_name %> <%= offer.user.last_name %></p>
-        <% end %>
+        <%# <% end %>
         <p><%= offer.description.first(45) %>...</p>
         <p><%= offer.location %></p>
         <p><%= offer.salary %>/an</p>
         <p><%= offer.number_hour %>h/semaine</p>
         <p><%= offer.contract_type %></p>
-        <p><%= link_to "Accepter", offer_matches_path(offer) %></p>
-        <p><%= link_to "Rejeter", "#" %></p>
+        <%# <% if match saved, offer filtered out of index and transferred to matches view avec index (link) %>
+        <p><%= link_to "Accepter", offer_matches_path(offer), method: "post" %></p>
+        <%# <% if offer rejected, offer transferred filtered out of index %>
+        <p><%= link_to "Rejeter", offer_reject_path(offer), method: "post" %></p>
       </div>
     <% end %>
   </div>
