@@ -1,5 +1,5 @@
 <div class="container">
-  <% if @user.id == current_user.id %>
+  <% if current_user %>
     <h2>Mes informations</h2>
     <%= simple_form_for @user, url: update_users_path do |f| %>
       <%= f.input :last_name, label: 'Nom' %>
