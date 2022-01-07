@@ -2,6 +2,7 @@ class UsersController < ApplicationController
  ################################# USER ################################
   def profile
     @user = current_user
+    @profile_user = User.find(params[:format])
   end
 
   def sign_out
