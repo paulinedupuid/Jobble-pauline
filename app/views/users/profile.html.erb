@@ -1,6 +1,18 @@
 <div class="container">
+<%# Condition to verify if the user is on is own profile and can access to the change %>
   <% if @user == @profile_user %>
     <h2>Mes informations</h2>
+    <%# !!!! Attention, don't modify the existing class for JS !!!!! %>
+    <%# This div is here to display the user infos %>
+    <div class="user-info">
+    <p><%= @user.last_name %></p>
+    <p><%= @user.first_name %></p>
+    <p><%= @user.gender %></p>
+    <p><%= @user.birthdate.strftime('%e %B %Y') %></p>
+    <p><%= @user.city %></p>
+    </div>
+    <%# This div contains the form to modify the user info (and send the new entry to the DB)%>
+    <div class="user-form d-none">
     <%= simple_form_for @user, url: update_users_path do |f| %>
       <%= f.input :last_name, label: 'Nom' %>
       <%= f.input :first_name, label: 'Prénom' %>
@@ -8,9 +20,13 @@
       <%= f.input :birthdate, label: 'Date de naissance' %>
       <%= f.input :city, label: 'Ville' %>
       <%= f.submit "Modifier" %>
+    </div>
+    <%# This div is the button to display the form and hidde the user info (and can be use to toggle) %>
+    <div class= "user-info-btn", remote="true" >Modifier mes informations</div>
     <% end %>
       <%= link_to "Mon dashboard", "#" %>
       <%# link_to destroy ?%>
+    <%# If the user just visit another profile, display some information.%>
     <% else %>
       <h2>Recruteur</h2>
       <p><%= @profile_user.first_name %></p>
