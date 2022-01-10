@@ -9,63 +9,46 @@
 
         <div class="offer-global-content">
 
-        <div class="offer-name">
-        <%= link_to profile_path(offer.user.id) do  %>
-        <h2><%= offer.user.first_name.capitalize %> <%= offer.user.last_name %>.</h2>
-        <p>Recruteur</p>
-        <% end %> </div>
+          <div class="offer-name">
+            <%= link_to profile_path(offer.user.id) do  %>
+            <h2><%= offer.user.first_name.capitalize %> <%= offer.user.last_name %>.</h2>
+            <p>Recruteur</p>
+            <% end %>
+          </div>
 
-        <div class="offer-content">
+          <div class="offer-content">
 
-        <div class="offer-info-content">
-          <p class="info-pill">📍 <%= offer.location %></p>
-          <p class="info-pill">💰 <%= (offer.salary) / 12 %>€</p>
-          <p class="info-pill">🕦 <%= offer.number_hour %>h</p>
-          <p class="info-pill"><%= offer.contract_type %></p>
+            <div class="offer-info-content">
+              <p class="info-pill">📍 <%= offer.location %></p>
+              <p class="info-pill">💰 <%= (offer.salary) / 12 %>€</p>
+              <p class="info-pill">🕦 <%= offer.number_hour %>h</p>
+              <p class="info-pill"><%= offer.contract_type %></p>
+            </div>
+
+            <div class="offer-buttons-content">
+            <%# <% if offer rejected, offer transferred filtered out of index %>
+              <%= link_to offer_reject_path(offer), method: "post" do %>
+                <h6 class="button-pill-narrow pill-indigo"><b>❌ Non.</b></h6>
+              <% end %>
+            <%# <% if match saved, offer filtered out of index and transferred to matches view avec index (link) %>
+              <%= link_to offer_matches_path(offer), method: "post" do %>
+                <h6 class="button-pill-narrow pill-jaune"><b>Like</b></h6>
+              <% end %>
+            </div>
+
+
+            <div class="b-margin-20"></div>
+            <h2><%= offer.title %></h2>
+            <div class="b-margin-30"></div>
+            <p><%= offer.description.first(150) %>...</p>
+            <div class="b-margin-30"></div>
+            <%= link_to offer_path(offer) do %>
+              <h6 class="button-pill-large pill-indigo"><b>🧐 Decouvrir</b></h6>
+            <% end %>
+          </div>
         </div>
-
-        <div class="offer-buttons-content">
-        <%# <% if offer rejected, offer transferred filtered out of index %>
-        <%= link_to offer_reject_path(offer), method: "post" do %>
-        <h6 class="button-pill-narrow pill-indigo"><b>❌ Non.</b></h6>
-        <% end %>
-        <%# <% if match saved, offer filtered out of index and transferred to matches view avec index (link) %>
-        <%= link_to offer_matches_path(offer), method: "post" do %>
-        <h6 class="button-pill-narrow pill-jaune"><b>Like</b></h6>
-        <% end %>
-        </div>
-
-
-        <div class="b-margin-20"></div>
-        <h2><%= offer.title %></h2>
-        <div class="b-margin-30"></div>
-        <p><%= offer.description.first(150) %>...</p>
-        <div class="b-margin-30"></div>
-        <%= link_to offer_path(offer) do %>
-        <h6 class="button-pill-large pill-indigo"><b>🧐 Decouvrir</b></h6>
-        <% end %>
-
-        </div>
-        </div>
-
-
-
-
-<!-- <%#<% revoir la condition %>
-
-    <%# <% if (offer.matches.where(user_id: current_user) && offer.matches.where(user_id: current_user).first.candidate_status == nil) || !offer.matches.where(user_id: current_user) %>
-      <div class="col-4">
-        <%= link_to offer_path(offer) do %>
-          <p><%= offer.title %></p>
-        <% end %>
-        <%= link_to profile_path(offer.user_id) do  %>
-          <p><%= offer.user.first_name %> <%= offer.user.last_name %></p>
-        <% end %>
-
       </div>
-      <% end %>
-    <%#<% end %>
+  </div>
 
--->
-<% console %>
+<!--<% end %>-->
 </div>
