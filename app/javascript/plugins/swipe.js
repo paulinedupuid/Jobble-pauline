@@ -35,6 +35,15 @@ function swipe(e) {
     } else {
       // swiped right
       console.log("swiped right");
+      const id = e.target.dataset.id
+      const url = `/offers/${id}/matches`
+      fetch(url, {
+        method: "POST",
+        headers: { "Accept": "text/html" },
+        body: ""
+      })
+      .then(window.location.href="/offers")
+
     }
   }
 

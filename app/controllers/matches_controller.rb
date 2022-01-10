@@ -1,4 +1,5 @@
 class MatchesController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
   def create # like
     @offer = Offer.find(params[:offer_id])
