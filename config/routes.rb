@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   patch 'description_maj', to: 'users#description_maj'
   get 'matches', to: "offers#matches"
   get 'dashboard', to: 'users#dashboard', as: :user_root
-
+  get 'message_index', to: 'users#message_index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :users, only: %i[show]
