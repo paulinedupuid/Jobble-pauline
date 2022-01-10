@@ -5,9 +5,9 @@ class OffersController < ApplicationController
     @selected_offers = []
     @offers.each do |offer| # iterate through offers
       if offer.matches.count.positive? # check if offer.matches exist
-        offer.matches.each do |match| # if offer.matches exist, iterate through offer.matches
-          if match.user_id == @user.id && match.candidate_status.nil? # check if user_id equals current_user and if candidate_status is nil
-            unless match.recrutor_status == false
+        offer.matches.each do |match| # if offer.matches exists, iterate through offer.matches
+          if match.user_id == @user.id && match.candidate_status.nil? # for each match, check if user_id equals current_user and if candidate_status is nil
+            unless match.recrutor_status == false # additional condition
               @selected_offers << offer
             end
           end
