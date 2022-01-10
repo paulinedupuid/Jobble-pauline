@@ -82,7 +82,7 @@ puts "creation des offres"
 first_offer = Offer.new(title: "Developpeur front-end", description: "Vous connaissez les langages de programation
                         frontend tel que HTML, CSS, Javascript, vous êtes a même de maquetter vos projets, vous savez
                         gérer le design et la codification d'une page, vous êtes célibataire, nous avons un emploi qui
-                        pourrait vous convenir !", location: "Paris", salary: 40_000, number_hour: 36,
+                        pourrait vous convenir !", location: "Paris", salary: 3_250, number_hour: 36,
                         employement_type: "cadre", contract_type: "CDD")
 first_offer.job = front_developper
 first_offer.user = niel_xavier
@@ -92,14 +92,14 @@ second_offer = Offer.new(title: "developpeur PHP/symfony", description: "Nous re
                          developpeur web qui maitrise le langage back-end afin d'améliorer les services de la ville.
                          Votre mission consistera a concevoir et mettre en place une base de donnée avec son interface
                          qui permettent de dématérialiser les archives de notre ville.", location: "Nice",
-                         salary: 32_000, number_hour: 40, employement_type: "chef de projet", contract_type: "CDD")
+                         salary: 2_600, number_hour: 40, employement_type: "chef de projet", contract_type: "CDD")
 second_offer.job = back_developper
 second_offer.user = estrosi_christian
 second_offer.save!
 
 third_offer = Offer.new(title: "barista", description: "dans une brasserie traditionnelle vous serez amené a préparer
                         les boissons chaudes pour nos clients, nous privilégions l'experience et le savoir-faire.",
-                        salary: 20_000, number_hour: 40, employement_type: "service", contract_type: "CDD",
+                        salary: 1_600, number_hour: 40, employement_type: "service", contract_type: "CDD",
                         location: "Nice")
 third_offer.job = barista
 third_offer.user = restaurant
@@ -109,7 +109,7 @@ fourth_offer = Offer.new(title: "developpeur ruby", description: "Notre entrepri
                          recherche ses futurs collaborateurs, nous sommes a la recherche de developpeur web maitrisant
                          le langage ruby et le framework rails, vous devez être autonome et a même de travailler en
                          équipe. Des connaissances en Javascript sont un plus, le poste est ouvert a tout les profils.",
-                         salary: 28_000, number_hour: 34, employement_type: "developpeur", contract_type: "CDI",
+                         salary: 2_300, number_hour: 34, employement_type: "developpeur", contract_type: "CDI",
                          location: "Paris")
 fourth_offer.job = back_developper
 fourth_offer.user = lagardere_arnaud
@@ -118,7 +118,7 @@ fourth_offer.save!
 fifth_offer = Offer.new(title: "developpeur fullstack", description: "Notre groupe recherche un développeur fullstack
                        pour la création de son site de vente en ligne. Vous aurez pour tâche de concevoir, créer et
                        mettre en ligne le site de vente pour notre marque et promouvoir l'image de celle-ci, nous
-                       recherchons quelqu'un avec un minimum d'experience.", salary: 60_000, number_hour: 38,
+                       recherchons quelqu'un avec un minimum d'experience.", salary: 5_000, number_hour: 38,
                         employement_type: "salarié", contract_type: "CDI", location: "Nice")
 fifth_offer.job = fullstack_developper
 fifth_offer.user = lagardere_arnaud
@@ -127,7 +127,7 @@ fifth_offer.save!
 sixth_offer = Offer.new(title: "graphiste web", description: "Nous recherchons actuellement un graphiste avec des
                         compétences de web-designer, capable de créer l'interface graphique et de dessiner les visuels.
                         Vous intégrerez une équipe où vous aiderez a la conception du design et a son intégration",
-                        salary: 28_500, number_hour: 38, employement_type: "salarié", contract_type: "mission",
+                        salary: 2_375, number_hour: 38, employement_type: "salarié", contract_type: "mission",
                         location: "Nice")
 sixth_offer.job = designer
 sixth_offer.user = estrosi_christian
