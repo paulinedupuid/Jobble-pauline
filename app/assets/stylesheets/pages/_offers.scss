@@ -1,0 +1,61 @@
+.offers{
+background-color: $violet;
+}
+
+.offer-image{
+position: sticky;
+top: 0px;
+height: 650px;
+width: calc($iWidth - 20px);
+margin: 0 10px;
+border-radius: 40px 40px 0 0;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+background-position: center;
+background-size: cover;
+}
+
+.offer-global-content{
+position: relative;
+z-index: 1 !important;
+margin-top: -118px;
+}
+
+.offer-name{
+padding: 0 0 10px 35px;
+z-index: 2 ;
+h1,p{
+line-height: 5px !important;
+}
+}
+
+.offer-content{
+  background-color: $violet;
+  border-radius: 40px 40px 0 0;
+  padding: 35px;
+  box-shadow: 0 -20px 100px black;
+  h1,h2,h3{
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  -webkit-hyphens: manual;
+  -ms-hyphens: manual;
+  hyphens: manual;
+  /////// !!!!!!!  \\\\\\\
+  padding-right: 30px;
+}
+}
+
+.offer-buttons-content{
+  display: flex;
+  justify-content: space-between;
+}
+
+.offer-info-content{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5px;
+  margin-bottom: 20px;
+}
+
+.button-space{
+  width: 10px;
+}
