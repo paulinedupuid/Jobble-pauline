@@ -6,9 +6,34 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# ********************************************
+# *********************************************************************************************************************
+# ************************************************ GUIDE TO USE THE SEED **********************************************
+# *********************************************************************************************************************
+
+# use the user jon.lemon@hotmail.com (password: 123456) to navigate, he had two jobs :
+# backend developper / fullstack developper
+# If you wanna add a job to add more offers, add frontend developper, it add you the first offer of the list.
+
+# You can validate the following offer to had a match:
+# "developpeur PHP/symfony" by christian estrosi
+# "developpeur ruby" by arnaud lagardere
+# "Développeur web freelance" by tim cook
+# "developpeur Ruby/stimulus" by xavier niel
+
+# and if you have added the frontend developper job to the jon lemon list the:
+#  "Developpeur Javascript Frontend" offer by dominique patty
+
+# To test the non display (or recrutor_status false in a match)
+# "developpeur fullstack" by arnaud lagardere
+# "Backend Developers" by tim cook
+
+# ******************************************************************************
 # Nettoyage de la DB
 
+# Nettoyage des messages
+Message.destroy_all
+# Nettoyage des chatrooms
+Chatroom.destroy_all
 # Nettoyage des matches
 Match.destroy_all
 # Nettoyage des userjobs
@@ -40,10 +65,20 @@ lagardere_arnaud = User.create(email: "arnaudlagardere@rich.org", password: "123
                                last_name: "Lagardère", city: "Paris", recrutor: true, gender: "homme",
                                birthdate: Date.new(1961, 3, 18), description: "chef d'entreprise,
                                dirigeant du groupe Lagardère, éditeur, homme d'affaires")
+cook_tim = User.create(email: "timcooking@apple.com", password: "123456", first_name: "Tim", last_name: "cook", city:
+                       "Los Angeles", recrutor: true, gender: "homme", birthdate: Date.new(1960, 11, 1), description:
+                       "chef d'entreprise, actuel directeur général (CEO) d'Apple. Robertsdale High School,
+                       Université d'Auburn, Université Duke, Fuqua School of Business. Homme d'affaires, informaticien,
+                       ingénieur.")
 restaurant = User.create(email: "chezRobert@yahoo.com", password: "123456", first_name: "Robert", last_name: "Machin",
                          city: "Nice", recrutor: true, gender: "homme", birthdate: Date.new(1978, 9, 15), description:
                         "Restaurant de quartier, situé sous les arcades dans le vieux Nice, cuisinte traditionnelle et
                         familliale.")
+dominique_paty = User.create(email: "Patydomi@gmail.fr", password: "123456", first_name: "dominique", last_name:
+                            "du Paty de Clam", city: "Paris", recrutor: true, gender: "femme", birthdate:
+                            Date.new(1960, 12, 22), description: "fondatrice du cabinet conseil et accompagnements
+                            réseau H, entrepreneure et consultante formatrice en responsabilité sociétale des
+                            entreprises (RSE). Chevalier de la Légion d'honneur.")
 
 puts "recruteurs créés"
 # Candidat creation
@@ -133,6 +168,91 @@ sixth_offer.job = designer
 sixth_offer.user = estrosi_christian
 sixth_offer.save!
 
+seventh_offer = Offer.new(title: "developpeur Ruby/stimulus", description: "Rejoignez notre équipe de développeur !
+                          Vous maitriser les languages Ruby et stimulus ? Vous souhaitez améliorer vos connaissances
+                          de ces languages au sein d'une équipe innovante et créative ? Nous avons peut-être une place
+                          pour vous ! Au sein de nos équipes, développer vos talents et venez créer l'avenir. ",
+                          salary: 1_900, number_hour: 35, employement_type: "salarié", contract_type: "CDI",
+                          location: "Marseille")
+seventh_offer.job = back_developper
+seventh_offer.user = niel_xavier
+seventh_offer.save!
+
+eigth_offer = Offer.new(title: "Sauvez la princesse Leïa", description: "Nous avons besoin d'un Obi-Wan Kenobi, un
+                        MAITRE (désolé Anakin) Jedi qui puisse être a même de nous aider a sauver l'empire galactique.
+                        Vous devrez combattre les droïdes qui menacent l'empire et protéger la vie d'une jeune princesse
+                        qui essaye de trouver une issue pacifique a la crise.",
+                        salary: 0, number_hour: 168, employement_type: "style de vie", contract_type: "CDI",
+                        location: "Coruscant")
+eigth_offer.job = jedi
+eigth_offer.user = cook_tim
+eigth_offer.save!
+
+nine_offer = Offer.new(title: "ingénieur système d'information", description: "Placé(e) sous l'autorité hiérarchique de
+                       la Direction Générale, le ou la chargée de mission SI est membre de l'équipe du siège de
+                       l'Association.Ses missions seront axées autour du déploiement de la démarche qualité associative
+                       et des démarches projets qui émanent des établissements et services, mais aussi de l'Association.
+                       Il assurera en particulier le pilotage des projets issus de la stratégie du Système d'Information
+                       en lien avec l'amélioration de la qualité du service rendu par les établissements et services.
+                       Missions liées à l'optimisation des processus métier et à la mise en oeuvre du logiciel dossier
+                       unique de l'usager.", salary: 3_250, number_hour: 40, employement_type: "salarié", contract_type:
+                       "CDI", location: "Dijon")
+nine_offer.job = system_engineer
+nine_offer.user = cook_tim
+nine_offer.save!
+
+ten_offer = Offer.new(title: "Développeur web freelance", description: "OFFRE D'EMPLOI POUR PERSONNES INDÉPENDANTES
+                      EXPERT(E) EN WEB MARKETING + copyrighting.
+                      Pour développement d'un projet à long terme, si tu es une personne investi qui a du temps et
+                      de l'expérience / résultat dans le domaine. J'attends TON e-mails ET j'espère que TU sauras mettre
+                      en avant tes talents de copyrighteurs ", salary: 1_700, number_hour: 32,
+                      employement_type: "salarié", contract_type: "CDD", location: "Nice")
+ten_offer.job = fullstack_developper
+ten_offer.user = cook_tim
+ten_offer.save!
+
+eleven_offer = Offer.new(title: "Backend Developers", description: "Backend Developers for long-term
+                        contract roles (remote roles for EU residents)Enjoy the full flexibility and freedom of working
+                        remotely as a Backend developer focusing on your favourite languages with ambitious tech
+                        companies around the world. About our positions:Teamway is the new community-led network for
+                        tech professionals. We find incredible opportunities for talented professionals like you, who
+                        prefer to work remotely in the tech industry.", salary: 2_400, number_hour: 40,
+                         employement_type: "cadre", contract_type: "CDD", location: "France")
+eleven_offer.job = back_developper
+eleven_offer.user = cook_tim
+eleven_offer.save!
+
+twelve_offer = Offer.new(title: "Developpeur Javascript Frontend", description: "Réseau H est un groupe de sociétés
+                         innovantes qui exploitent les nouvelles technologies en plaçant le client au centre de toutes
+                         ses démarches. Nous élaborons et proposons des solutions qui contribuent à l’éducation
+                         financière de nos clients. Créée en 2011, d’une envie d’entreprendre et d’une volonté
+                         d’améliorer le quotidien de chacun, nous comptons aujourd’hui 12 marques et sociétés regroupées
+                         autour de 4 industries : le E-learning, l’Assurance, la Finance et l’Immobilier. Nous cherchons
+                         donc un(e) Developpeur(se) Front End (H/F) de compétition, qui n’a pas peur de s’attaquer à
+                         des défis variés et qui saura les relever avec brio.", salary: 1_900, number_hour: 35,
+                         employement_type: "salarié", contract_type: "CDI", location: "Nice")
+twelve_offer.job = front_developper
+twelve_offer.user = dominique_paty
+twelve_offer.save!
+
+thirtenn_offer = Offer.new(title: "dévellopeur fullstack javascript", description: "Afin de promouvoir notre image,
+                          notre restaurant recherche actuellement un developpeur web fullstack connaissant les
+                          technologies javascript et php afin de concevoir le design et l'intégralité de l'architecture
+                          de notre future plate-forme de livraison en ligne.", salary: 1_800, number_hour: 40,
+                           employement_type: "salarié", contract_type: "CDD", location: "Nice")
+thirtenn_offer.job = fullstack_developper
+thirtenn_offer.user = restaurant
+thirtenn_offer.save!
+
+fourteen_offer = Offer.new(title: "UX designer", description: "Dans le cadre du développement de notre entreprise nous
+                           recrutons actuellement deux web-designer avec de l'expèrience en user experience afin de
+                           dinamyser nos équipes et de créer une identité graphique nouvelle propre a notre marque pour
+                           le secteur de la France.", salary: 2_300, number_hour: 38, employement_type: "salarié",
+                           contract_type: "CDI", location: "Marseille")
+fourteen_offer.job = designer
+fourteen_offer.user = cook_tim
+fourteen_offer.save!
+
 puts "Offres créés"
 
 # **************************************************
@@ -188,7 +308,7 @@ first_match.offer = second_offer
 first_match.user = lemon_jon
 first_match.save!
 
-second_match = Match.new(recrutor_status: true)
+second_match = Match.new(recrutor_status: false)
 second_match.offer = fifth_offer
 second_match.user = lemon_jon
 second_match.save!
@@ -197,6 +317,37 @@ third_match = Match.new(recrutor_status: true)
 third_match.offer = sixth_offer
 third_match.user = catarina
 third_match.save!
+
+
+fourth_match = Match.new(recrutor_status: true)
+fourth_match.offer = fourth_offer
+fourth_match.user = lemon_jon
+fourth_match.save!
+
+five_match = Match.new(recrutor_status: true)
+five_match.offer = ten_offer
+five_match.user = lemon_jon
+five_match.save!
+
+six_match = Match.new(recrutor_status: true)
+six_match.offer = seventh_offer
+six_match.user = lemon_jon
+six_match.save!
+
+seven_match = Match.new(recrutor_status: false)
+seven_match.offer = eleven_offer
+seven_match.user = lemon_jon
+seven_match.save!
+
+eight_match = Match.new(recrutor_status: false)
+eight_match.offer = eigth_offer
+eight_match.user = catarina
+eight_match.save!
+
+nine_match = Match.new(recrutor_status: true)
+nine_match.offer = twelve_offer
+nine_match.user = lemon_jon
+nine_match.save!
 
 puts 'matches créés'
 
