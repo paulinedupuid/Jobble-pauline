@@ -198,6 +198,11 @@ third_match.offer = sixth_offer
 third_match.user = catarina
 third_match.save!
 
+fourth_match = Match.new(recrutor_status: false)
+fourth_match.offer = fourth_offer
+fourth_match.user = lemon_jon
+fourth_match.save!
+
 puts 'matches créés'
 
 # ********************************************
