@@ -9,6 +9,9 @@ class MatchesController < ApplicationController
       @match = @user.matches.find_by_offer_id(@offer.id)
       @match.candidate_status = true
       if @match.save
+         unless Chatroom.where(user_id: current_user, recrutor: @offer.user_id).count.positive?
+          Chatroom.create(name: @offer.title, user_id: @user.id, recrutor: @offer.user_id)
+         end
         redirect_to offers_path
       else
         redirect_to root_path
@@ -25,6 +28,7 @@ class MatchesController < ApplicationController
       end
     end
   end
+
 
   def reject
     @offer = Offer.find(params[:offer_id])
