@@ -25,6 +25,7 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 
 import { jobDisplay } from 'controllers/display_jobs';
+import { userInfoDisplay } from "../controllers/display_user_info";
 import { initChatroomCable } from '../channels/chatroom_channel';
 
 
@@ -33,6 +34,7 @@ document.addEventListener('turbolinks:load', () => {
 
   // Call your functions here, e.g:
 
+  userInfoDisplay()
   jobDisplay()
   initChatroomCable()
 
