@@ -8,7 +8,6 @@
         <div class="photo offer-image"></div>
 
         <div class="offer-global-content">
-
           <div class="offer-name">
             <%= link_to profile_path(offer.user.id) do  %>
             <h2><%= offer.user.first_name.capitalize %> <%= offer.user.last_name %>.</h2>
@@ -20,7 +19,7 @@
 
             <div class="offer-info-content">
               <p class="info-pill">📍 <%= offer.location %></p>
-              <p class="info-pill">💰 <%= (offer.salary) / 12 %>€</p>
+              <p class="info-pill">💰 <%= (offer.salary) %>€</p>
               <p class="info-pill">🕦 <%= offer.number_hour %>h</p>
               <p class="info-pill"><%= offer.contract_type %></p>
             </div>
@@ -38,7 +37,7 @@
 
 
             <div class="b-margin-20"></div>
-            <h2><%= offer.title %></h2>
+            <h2><%= offer.title.capitalize %></h2>
             <div class="b-margin-30"></div>
             <p><%= offer.description.first(150) %>...</p>
             <div class="b-margin-30"></div>

@@ -1,37 +1,71 @@
-<div class="container">
 <%# Condition to verify if the user is on is own profile and can access to the change %>
-  <% if @user == @profile_user %>
-    <h2>Mes informations</h2>
-    <%# !!!! Attention, don't modify the existing class for JS !!!!! %>
-    <%# This div is here to display the user infos %>
+<% if @user == @profile_user %>
+
+<%= render '/shared/navigationbar', pathname: 'Mes informations'%>
+
+<div class="content-dashboard dashboard">
+
+    <!-- !!!! Attention, don't modify the existing class for JS !!!!!
+    This div is here to display the user infos-->
+
     <div class="user-info">
-    <p><%= @user.last_name %></p>
-    <p><%= @user.first_name %></p>
-    <p><%= @user.gender %></p>
-    <p><%= @user.birthdate.strftime('%e %B %Y') %></p>
-    <p><%= @user.city %></p>
+      <p class="dashboard-info-pill dash-grey"><b>👤 Nom : </b><%= @user.last_name %></p>
+        <div class="b-margin-20"></div>
+      <p class="dashboard-info-pill dash-grey"><b>👤 Prenom  : </b><%= @user.first_name %></p>
+        <div class="b-margin-20"></div>
+      <p class="dashboard-info-pill dash-grey"><b>🚻 Genre  : </b><%= @user.gender %></p>
+        <div class="b-margin-20"></div>
+      <p class="dashboard-info-pill dash-grey"><b>🐣 Age  : </b><%= Time.now.year - @user.birthdate.year %> ans</p>
+        <div class="b-margin-20"></div>
+      <p class="dashboard-info-pill dash-grey"><b>📍 Ville  : </b><%= @user.city %></p>
     </div>
-    <%# This div contains the form to modify the user info (and send the new entry to the DB)%>
-    <div class="user-form d-none">
-    <%= simple_form_for @user, url: update_users_path do |f| %>
-      <%= f.input :last_name, label: 'Nom' %>
-      <%= f.input :first_name, label: 'Prénom' %>
-      <%= f.input :gender, label: 'Genre' %>
-      <%= f.input :birthdate, label: 'Date de naissance' %>
-      <%= f.input :city, label: 'Ville' %>
-      <%= f.submit "Modifier" %>
+
+    <!-- This div contains the form to modify the user info (and send the new entry to the DB)-->
+
+    <div class="user-form d-none ">
+      <div class="content-center">
+        <%= simple_form_for @user, url: update_users_path do |f| %>
+          <%= f.input :last_name, label: 'Nom' %>
+          <%= f.input :first_name, label: 'Prénom' %>
+          <%= f.input :gender, label: 'Genre' %>
+          <%= f.input :birthdate, label: 'Date de naissance' %>
+          <%= f.input :city, label: 'Ville' %>
+          <%= f.submit "Modifier", class:'pill-obsydian'%>
+      </div>
     </div>
-    <%# This div is the button to display the form and hidde the user info (and can be use to toggle) %>
-    <div class= "user-info-btn", remote="true" >Modifier mes informations</div>
+
+    <!-- This div is the button to display the form and hidde the user info (and can be use to toggle)-->
+
+    <div class="b-margin-40"></div>
+    <div class= "user-info-btn dashboard-info-pill pill-jaune", remote="true">Modifier mes informations</div>
     <% end %>
-      <%= link_to "Mon dashboard", "#" %>
-      <%# link_to destroy ?%>
-    <%# If the user just visit another profile, display some information.%>
-    <% else %>
-      <h2>Recruteur</h2>
-      <p><%= @profile_user.first_name %></p>
-      <p><%= @profile_user.last_name %></p>
-      <p><%= @profile_user.description %></p>
-  <% end %>
-  <%# <%= link_to "Modifier mon mot de passe", edit_user_password_path %>
+    <!-- link_to destroy ? -->
+
 </div>
+
+<!------------------------------------------------------------------------>
+<!--  If the user just visit another profile, display some information. -->
+<!------------------------------------------------------------------------>
+
+<% else %>
+  <div class="content">
+    <div class="offer-content">
+
+        <%= render "shared/recrutorcard"%>
+        <div class="b-margin-20"></div>
+        <p class="xlarge-info-pill"><%= @profile_user.description %></p>
+        <div class="b-margin-20"></div>
+
+        <a href="mailto:moderation@jobble.fun ?subject=🤬 Signalement à propos de l'utilisateur <%=@profile_user.first_name%> <%=@profile_user.last_name%> &body=Bonjour j'aimerai signaler l'utilisateur <%=@profile_user.first_name%> <%=@profile_user.last_name%> ( UserID-<%=@profile_user.id%> ) pour les raisons ci-dessous: ">
+        <h6 class="button-pill-large pill-orange"><b>🤬 Signaler</b></h6>
+        </a>
+
+        <%= link_to offers_path do %>
+        <h6 class="button-pill-large pill-jaune"><b>↩️ retour</b></h6>
+        <% end %>
+
+    </div>
+  </div>
+<% end %>
+
+<%# <%= link_to "Modifier mon mot de passe", edit_user_password_path %>
