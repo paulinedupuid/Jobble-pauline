@@ -9,8 +9,12 @@ class MatchesController < ApplicationController
       @match = @user.matches.find_by_offer_id(@offer.id)
       @match.candidate_status = true
       if @match.save
+        # render 'shared/animation'
          unless Chatroom.where(user_id: current_user, recrutor: @offer.user_id).count.positive?
-          Chatroom.create(name: @offer.title, user_id: @user.id, recrutor: @offer.user_id)
+          @chatroom = Chatroom.new(name: @offer.title, user_id: @user.id, recrutor: @offer.user_id)
+          if @chatroom.save
+            Message.create(content: 'ceci es le début de votre conversation', user_id: 13, chatroom_id: @chatroom.id )
+          end
          end
         redirect_to offers_path
       else
