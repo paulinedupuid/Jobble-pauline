@@ -10,6 +10,7 @@ $status-bar: 47px;
 // ℹ️ shadow of titles H1, H2
 $hadow-title:  0 0 40px #00000099;
 $hadow-sm:  0 0 40px #00000099;
+$hadow-pill:  0 0 20px #00000030;
 
 // Graphical variables
 @import "config/fonts";
@@ -33,7 +34,7 @@ $hadow-sm:  0 0 40px #00000099;
 @import "pages/index";
 @import "pages/home";
 @import "pages/dashboard";
-@import "pages/matchs";
+@import "pages/offers";
 
 
 // ℹ️ -- 🔠 -- Fonts Comportment -- 🔠 -- ℹ️ \\
