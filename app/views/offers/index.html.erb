@@ -15,37 +15,37 @@
         <p>Recruteur</p>
         <% end %> </div>
 
-        <div class="offer-content">
+            <div class="offers-content">
 
-        <div class="offer-info-content">
-          <p class="info-pill">📍 <%= offer.location %></p>
-          <p class="info-pill">💰 <%= (offer.salary) / 12 %>€</p>
-          <p class="info-pill">🕦 <%= offer.number_hour %>h</p>
-          <p class="info-pill"><%= offer.contract_type %></p>
-        </div>
+                <div class="offer-info-content">
+                  <p class="info-pill">📍 <%= offer.location %></p>
+                  <p class="info-pill">💰 <%= offer.salary %>€</p>
+                  <p class="info-pill">🕦 <%= offer.number_hour %>h</p>
+                  <p class="info-pill"><%= offer.contract_type %></p>
+                </div>
 
-        <div class="offer-buttons-content">
-        <%# <% if offer rejected, offer transferred filtered out of index %>
-        <%= link_to offer_reject_path(offer), method: "post" do %>
-        <h6 class="button-pill-narrow pill-indigo"><b>❌ Non.</b></h6>
-        <% end %>
-        <%# <% if match saved, offer filtered out of index and transferred to matches view avec index (link) %>
-        <%= link_to offer_matches_path(offer), method: "post" do %>
-        <h6 class="button-pill-narrow pill-jaune"><b>Like</b></h6>
-        <% end %>
-        </div>
+                <div class="offer-buttons-content">
+                <%# <% if offer rejected, offer transferred filtered out of index %>
+                <%= link_to offer_reject_path(offer), method: "post" do %>
+                <h6 class="button-pill-narrow pill-indigo"><b>❌ Non.</b></h6>
+                <% end %>
+                <%# <% if match saved, offer filtered out of index and transferred to matches view avec index (link) %>
+                <%= link_to offer_matches_path(offer), method: "post" do %>
+                <h6 class="button-pill-narrow pill-jaune"><b>Like</b></h6>
+                <% end %>
+                </div>
 
 
-        <div class="b-margin-20"></div>
-        <h2><%= offer.title %></h2>
-        <div class="b-margin-30"></div>
-        <p><%= offer.description.first(150) %>...</p>
-        <div class="b-margin-30"></div>
-        <%= link_to offer_path(offer) do %>
-        <h6 class="button-pill-large pill-indigo"><b>🧐 Decouvrir</b></h6>
-        <% end %>
+                <div class="b-margin-20"></div>
+                <h2><%= offer.title.capitalize %></h2>
+                <div class="b-margin-30"></div>
+                <p><%= offer.description.first(150) %>...</p>
+                <div class="b-margin-30"></div>
+                <%= link_to offer_path(offer) do %>
+                <h6 class="button-pill-large pill-indigo"><b>🧐 Decouvrir</b></h6>
+                <% end %>
 
-        </div>
+            </div>
         </div>
 
 
