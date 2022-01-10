@@ -10,7 +10,7 @@
 # ************************************************ GUIDE TO USE THE SEED **********************************************
 # *********************************************************************************************************************
 
-# user the user jon.lemon@hotmail.com (password: 123456) to navigate, he had two jobs :
+# use the user jon.lemon@hotmail.com (password: 123456) to navigate, he had two jobs :
 # backend developper / fullstack developper
 # If you wanna add a job to add more offers, add frontend developper, it add you the first offer of the list.
 
@@ -317,6 +317,7 @@ third_match = Match.new(recrutor_status: true)
 third_match.offer = sixth_offer
 third_match.user = catarina
 third_match.save!
+
 
 fourth_match = Match.new(recrutor_status: true)
 fourth_match.offer = fourth_offer

@@ -1,0 +1,7 @@
+<% @chatrooms.each do |chatroom| %>
+<% if chatroom.messages.count > 0 %>
+<%= link_to "#{chatroom.name}", chatroom_path(chatroom), class: 'test'%>
+<% else %>
+<%= link_to "#{chatroom.name}", chatroom_path(chatroom), class: 'test2'%>
+<% end %>
+<% end %>
