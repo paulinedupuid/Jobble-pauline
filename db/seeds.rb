@@ -6,9 +6,34 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# ********************************************
+# *********************************************************************************************************************
+# ************************************************ GUIDE TO USE THE SEED **********************************************
+# *********************************************************************************************************************
+
+# user the user jon.lemon@hotmail.com (password: 123456) to navigate, he had two jobs :
+# backend developper / fullstack developper
+# If you wanna add a job to add more offers, add frontend developper, it add you the first offer of the list.
+
+# You can validate the following offer to had a match:
+# "developpeur PHP/symfony" by christian estrosi
+# "developpeur ruby" by arnaud lagardere
+# "Développeur web freelance" by tim cook
+# "developpeur Ruby/stimulus" by xavier niel
+
+# and if you have added the frontend developper job to the jon lemon list the:
+#  "Developpeur Javascript Frontend" offer by dominique patty
+
+# To test the non display (or recrutor_status false in a match)
+# "developpeur fullstack" by arnaud lagardere
+# "Backend Developers" by tim cook
+
+# ******************************************************************************
 # Nettoyage de la DB
 
+# Nettoyage des messages
+Message.destroy_all
+# Nettoyage des chatrooms
+Chatroom.destroy_all
 # Nettoyage des matches
 Match.destroy_all
 # Nettoyage des userjobs
@@ -197,6 +222,37 @@ eleven_offer.job = back_developper
 eleven_offer.user = cook_tim
 eleven_offer.save!
 
+twelve_offer = Offer.new(title: "Developpeur Javascript Frontend", description: "Réseau H est un groupe de sociétés
+                         innovantes qui exploitent les nouvelles technologies en plaçant le client au centre de toutes
+                         ses démarches. Nous élaborons et proposons des solutions qui contribuent à l’éducation
+                         financière de nos clients. Créée en 2011, d’une envie d’entreprendre et d’une volonté
+                         d’améliorer le quotidien de chacun, nous comptons aujourd’hui 12 marques et sociétés regroupées
+                         autour de 4 industries : le E-learning, l’Assurance, la Finance et l’Immobilier. Nous cherchons
+                         donc un(e) Developpeur(se) Front End (H/F) de compétition, qui n’a pas peur de s’attaquer à
+                         des défis variés et qui saura les relever avec brio.", salary: 1_900, number_hour: 35,
+                         employement_type: "salarié", contract_type: "CDI", location: "Nice")
+twelve_offer.job = front_developper
+twelve_offer.user = dominique_paty
+twelve_offer.save!
+
+thirtenn_offer = Offer.new(title: "dévellopeur fullstack javascript", description: "Afin de promouvoir notre image,
+                          notre restaurant recherche actuellement un developpeur web fullstack connaissant les
+                          technologies javascript et php afin de concevoir le design et l'intégralité de l'architecture
+                          de notre future plate-forme de livraison en ligne.", salary: 1_800, number_hour: 40,
+                           employement_type: "salarié", contract_type: "CDD", location: "Nice")
+thirtenn_offer.job = fullstack_developper
+thirtenn_offer.user = restaurant
+thirtenn_offer.save!
+
+fourteen_offer = Offer.new(title: "UX designer", description: "Dans le cadre du développement de notre entreprise nous
+                           recrutons actuellement deux web-designer avec de l'expèrience en user experience afin de
+                           dinamyser nos équipes et de créer une identité graphique nouvelle propre a notre marque pour
+                           le secteur de la France.", salary: 2_300, number_hour: 38, employement_type: "salarié",
+                           contract_type: "CDI", location: "Marseille")
+fourteen_offer.job = designer
+fourteen_offer.user = cook_tim
+fourteen_offer.save!
+
 puts "Offres créés"
 
 # **************************************************
@@ -252,7 +308,7 @@ first_match.offer = second_offer
 first_match.user = lemon_jon
 first_match.save!
 
-second_match = Match.new(recrutor_status: true)
+second_match = Match.new(recrutor_status: false)
 second_match.offer = fifth_offer
 second_match.user = lemon_jon
 second_match.save!
@@ -262,15 +318,35 @@ third_match.offer = sixth_offer
 third_match.user = catarina
 third_match.save!
 
-fourth_match = Match.new(recrutor_status: false)
+fourth_match = Match.new(recrutor_status: true)
 fourth_match.offer = fourth_offer
 fourth_match.user = lemon_jon
 fourth_match.save!
 
 five_match = Match.new(recrutor_status: true)
-five_match.offer = eleven_offer
+five_match.offer = ten_offer
 five_match.user = lemon_jon
 five_match.save!
+
+six_match = Match.new(recrutor_status: true)
+six_match.offer = seventh_offer
+six_match.user = lemon_jon
+six_match.save!
+
+seven_match = Match.new(recrutor_status: false)
+seven_match.offer = eleven_offer
+seven_match.user = lemon_jon
+seven_match.save!
+
+eight_match = Match.new(recrutor_status: false)
+eight_match.offer = eigth_offer
+eight_match.user = catarina
+eight_match.save!
+
+nine_match = Match.new(recrutor_status: true)
+nine_match.offer = twelve_offer
+nine_match.user = lemon_jon
+nine_match.save!
 
 puts 'matches créés'
 
