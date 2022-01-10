@@ -5,53 +5,6 @@
   <%= f.error_notification %>
 <%# :last_name, :city, :recrutor, :description, :gender, :birthdate %>
   <div class="form-inputs">
-
-      <%= f.input :first_name,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "prénom" }
-    %>
-
-    <%= f.input :last_name,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "nom" }
-    %>
-
-    <p>genre</p>
-
-    <%= f.input :gender, collection: User::GENDER,
-                required: true,
-                autofocus: true
-    %>
-
-    <%= f.input :city,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "ville" }
-    %>
-
-    <p>Etes vous recruteur ou postuleur </p>
-
-    <%= f.input :recrutor, collection: User::RECRUTOR,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }
-     %>
-
-     <p> description </p>
-      <%= f.text_area :description, :cols => 40, :rows => 6,
-                autofocus: true,
-                input_html: { autocomplete: "description" }
-      %>
-
-      <p>Date de naissance</p>
-
-      <%= f.input :birthdate, as: :date, html5: true,
-          required: true,
-          autofocus: true
-      %>
-
     <%= f.input :email, required: true, autofocus: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
