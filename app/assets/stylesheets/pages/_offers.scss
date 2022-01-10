@@ -28,7 +28,7 @@ line-height: 5px !important;
 }
 }
 
-.offer-content{
+.offers-content{
   background-color: $violet;
   border-radius: 40px 40px 0 0;
   padding: 35px;
@@ -41,6 +41,18 @@ line-height: 5px !important;
   hyphens: manual;
   /////// !!!!!!!  \\\\\\\
   padding-right: 30px;
+}
+}
+
+.offer-content{
+  background-color: $violet;
+  padding: 35px;
+  h1,h2,h3{
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  -webkit-hyphens: manual;
+  -ms-hyphens: manual;
+  hyphens: manual;
 }
 }
 

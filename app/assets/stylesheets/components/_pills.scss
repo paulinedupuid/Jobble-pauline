@@ -36,6 +36,33 @@ p{
   box-shadow: $hadow-pill;
 }
 
+.large-info-pill{
+  background-color: $indigo;
+  padding: 10px;
+  border-radius: 30px;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  box-shadow: $hadow-pill;
+}
+
+.xlarge-info-pill{
+  background-color: $indigo;
+  padding: 20px;
+  border-radius: 30px;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  box-shadow: $hadow-pill;
+}
+
+.dashboard-info-pill{
+  padding: 20px;
+  border-radius: 30px;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  width: 324px;
+  text-align: center;
+}
+
 
 .button-pill-md{
   display: flex;
@@ -101,5 +128,10 @@ color: $blanc !important;
 
 .pill-lavande{
 background-color: $lavande;
+color: $blanc !important;
+}
+
+.pill-obsydian{
+background-color: $obsydian;
 color: $blanc !important;
 }

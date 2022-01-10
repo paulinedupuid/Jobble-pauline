@@ -76,6 +76,42 @@
   align-items: center !important;
 }
 
+.content-long-dashboard{
+  // iPhone Height - ( status-bar height + tab-bar height ) = usable space
+  // ✅ height: calc( #{$iHeight} - ( #{$status-bar} + #{$tab-bar} ) );
+  height: calc( 100vh - #{$tab-bar} - 60px);
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 40px;
+  margin: 0 10px;
+  -ms-overflow-style: none;  /* hide scrollbar IE and Edge */
+  scrollbar-width: none;  /* hide scrollbar Firefox */
+}
+
+.content-long-dashboard::-webkit-scrollbar {
+  display: none; /*Hide scrollbar for Chrome, Safari and Opera */
+}
+
+.content-dashboard{
+  // iPhone Height - ( status-bar height + tab-bar height ) = usable space
+  // ✅ height: calc( #{$iHeight} - ( #{$status-bar} + #{$tab-bar} ) );
+  height: calc( 100vh - #{$tab-bar} - 60px);
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px;
+  margin: 0 10px;
+  -ms-overflow-style: none;  /* hide scrollbar IE and Edge */
+  scrollbar-width: none;  /* hide scrollbar Firefox */
+}
+
+.content-dashboard::-webkit-scrollbar {
+  display: none; /*Hide scrollbar for Chrome, Safari and Opera */
+}
 
 // // ℹ️ -- Conteneur basique AVEC scroll (pas de limite de height)-- ℹ️ \\
 // .long-content{
