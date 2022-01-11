@@ -1,7 +1,7 @@
 <div class="content-offers offers">
 
   <div>
-    <% @selected_offers.each do |offer| %>
+    <% offer = @selected_offers.first %>
       <div>
 
         <style>.photo{background-image:url(https://thiscatdoesnotexist.com/);}</style>
@@ -15,7 +15,7 @@
             <% end %>
           </div>
 
-          <div class="offer-content">
+          <div class="offers-content">
 
             <div class="offer-info-content">
               <p class="info-pill">📍 <%= offer.location %></p>
@@ -42,11 +42,10 @@
             <p><%= offer.description.first(150) %>...</p>
             <div class="b-margin-30"></div>
             <%= link_to offer_path(offer) do %>
-              <h6 class="button-pill-large pill-indigo"><b>🧐 Decouvrir</b></h6>
+              <h6 class="button-pill-xlarge pill-indigo"><b>🧐 Decouvrir</b></h6>
             <% end %>
           </div>
         </div>
       </div>
   </div>
-<!--<% end %>-->
 </div>
