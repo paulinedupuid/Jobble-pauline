@@ -1,15 +1,4 @@
-<nav class="tabbar">
-
-  <%= link_to dashboard_path(@user), class: "tabbar-icons" do %>
-  <%# ❗️ ajout de ligne pour editer la home à remplacer par la nouvelle %>
-  <%= render '/shared/svg/dashboard.svg' %>
-  <p>Mon Profil</p>
-  <% end %>
-
-  <%= link_to offers_path, class: "tabbar-icons" do%>
-  <%= render '/shared/svg/matchs.svg' %>
-  <p>Swipez!</p>
-  <% end %>
+  <!-- Fonction Loic -->
   <% message_count = 0 %>
     <%chatrooms = Chatroom.where(user_id: current_user.id)%>
      <% chatrooms.each do |chatroom| %>
@@ -24,14 +13,26 @@
         <% end %>  <%# end du each message%>
       <%end%>  <%# end de la condi %>
    <%end%>
+  <!------------------>
 
-  <%# aqaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa %>
-  <%# a finir le insert du data set %>
-<div id='message-notif' data-message="<%= message_count %>">
-</div>
-  <a href="/message_index" class="tabbar-icons">
-  <%= render '/shared/svg/messages.svg' %>
+<nav class="tabbar">
+
+  <%= link_to dashboard_path(@user), class: "tabbar-icons" do %>
+  <%= render '/shared/svg/dashboard.svg' %>
+  <p>Mon Profil</p>
+  <% end %>
+
+  <%= link_to offers_path, class: "tabbar-icons" do%>
+  <%= render '/shared/svg/matchs.svg' %>
+  <p>Swipez!</p>
+  <% end %>
+
+  <%= link_to message_index_path, class: "tabbar-icons", id: "relative-notif" do %>
+      <%if message_count != 0%>
+        <div id='message-notif' data-message="<%= message_count %>"></div>
+      <% end %>
+    <%= render '/shared/svg/messages.svg' %>
     <p>Messages</p>
-  </a>
+  <% end %>
+
 </nav>
-<%# <%= raise %>
