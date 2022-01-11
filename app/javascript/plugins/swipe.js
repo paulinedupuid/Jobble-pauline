@@ -71,7 +71,18 @@ const result = (id, status) => {
     headers: { "Accept": "text/html" },
     body: ""
   })
-  .then(window.location.href = "/offers")
+    .then((data) => {
+      console.log(data)
+      const url = data.url
+      if (url.includes("offers"))  {
+        window.location.href = "/offers"
+      } else {
+        const id = url.split("/matches/")[1]
+        window.location.href = `/matches/${id}`
+      }
+    })
 }
 
 export { swipeOffer }
+
+// window.location.href = "/offers"
