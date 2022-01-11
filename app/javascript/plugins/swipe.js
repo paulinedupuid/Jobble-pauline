@@ -51,10 +51,6 @@ function swipeOffer() {
     const acceptBtn = document.querySelector("#accept-btn");
     const rejectBtn = document.querySelector("#reject-btn");
 
-    console.log(acceptBtn);
-    console.log(rejectBtn);
-    console.log(image.dataset.id);
-
     acceptBtn.addEventListener("click", (e) => {
       const id = image.dataset.id
       result(id, "matches")
