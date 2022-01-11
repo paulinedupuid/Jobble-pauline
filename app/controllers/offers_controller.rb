@@ -5,12 +5,12 @@ class OffersController < ApplicationController
     @selected_offers = []
     @offers.each do |offer| # iterate through offers
       if offer.matches.count.positive? # check if offer.matches exist
-        offer.matches.each do |match| # if offer.matches exists, iterate through offer.matches
-          if match.user_id == @user.id && match.candidate_status.nil? # for each match, check if user_id equals current_user and if candidate_status is nil
-            unless match.recrutor_status == false # additional condition
-              @selected_offers << offer
-            end
+        if offer.matches.find_by_user_id(@user.id).present? # if match belongs to the current user
+          if offer.matches.find_by_user_id(@user.id).candidate_status.nil? # if candidate.status exist and is nil
+            @selected_offers << offer
           end
+        else
+          @selected_offers << offer
         end
       else
         @selected_offers << offer

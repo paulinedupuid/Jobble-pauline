@@ -1,10 +1,10 @@
 <div class="content-offers offers">
 
   <div>
-    <% @selected_offers.each do |offer| %>
+    <% if @selected_offers.count.positive? %>
+    <% offer = @selected_offers.first %>
       <div>
-
-        <style>.photo{background-image:url(https://thiscatdoesnotexist.com/);}</style>
+        <style>.photo{background-image:url('<%= cl_image_path offer.photo.key, width: 408, height: 650 %>');}</style>
         <div class="photo offer-image"></div>
 
         <div class="offer-global-content">
@@ -15,7 +15,7 @@
             <% end %>
           </div>
 
-          <div class="offer-content">
+          <div class="offers-content">
 
             <div class="offer-info-content">
               <p class="info-pill">📍 <%= offer.location %></p>
@@ -47,6 +47,6 @@
           </div>
         </div>
       </div>
+      <% end %>
   </div>
-<!--<% end %>-->
 </div>
