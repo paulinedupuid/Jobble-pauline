@@ -11,8 +11,31 @@
   <p>Swipez!</p>
   <% end %>
 
+<%# pour le nombre de message non vu %>
+  <% message_count = 0 %>
+  <% chatrooms = Chatroom.all %>
+  <% chatrooms.each do |chatroom| %>
+      <% if chatroom.messages %>
+        <%  chatroom.messages.each do |message| %>
+
+              <%# dans boucle message %>
+              <% unless message.user_id == current_user.id %>
+                  <% if message.status == false %>
+                  <% message_count += 1 %>
+                  <% end %>
+              <% end %>
+
+        <% end %> <%# end du each message%>
+      <% end %> <%# end de la condi  %>
+  <% end %> <%# end du each chatroom %>
+
+  <%# aqaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa %>
+  <%# a finir le insert du data set %>
+<div id='message-notif' data-message= <%= message_count %>>
+</div>
   <a href="/message_index" class="tabbar-icons">
   <%= render '/shared/svg/messages.svg' %>
     <p>Messages</p>
   </a>
 </nav>
+<%# <%= raise %>
