@@ -11,7 +11,7 @@ const userInfoDisplay = () => {
       userFormInfo.classList.toggle('d-none')
       if (userInfo.className.includes('d-none')){
         // Change the text of the button for more sense
-        button.innerText = "annuler modifications"
+        button.innerText = "Annuler modifications"
       }else{
         // Don't forget to reinitialise the text of the button.
         button.innerText = "Modifier mes informations"

@@ -1,11 +1,5 @@
-.dashboard-pill{
-display: flex;
-align-items: center;
-justify-content: space-between;
-width: 324px;
-min-height: 60px;
-padding: 0 25px;
-border-radius: 60px;
+.base{
+  border-radius: 30px;
 p,h1,h2,h3,h4{
   line-height: 0em;
   margin-block-start: 0em;
@@ -13,56 +7,48 @@ p,h1,h2,h3,h4{
 }
 }
 
-.logout-pill{
-display: flex;
-align-items: center;
-justify-content: space-between;
-padding: 14px;
-border-radius: 60px;
-box-shadow: $hadow-pill;
-p{
-  line-height: 0em;
-  margin-block-start: 0em;
-  margin-block-end: 0em;
+.dashboard-pill{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 324px;
+  min-height: 60px;
+  padding: 0 25px;
+  @extend .base;
 }
+
+.logout-pill{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px;
+  box-shadow: $hadow-pill;
+  @extend .base;
 }
 
 .info-pill{
   background-color: $indigo;
   padding: 5px 10px;
-  border-radius: 30px;
-  margin-block-start: 0em;
-  margin-block-end: 0em;
   box-shadow: $hadow-pill;
+  @extend .base;
 }
 
 .large-info-pill{
-  background-color: $indigo;
+  @extend .info-pill;
   padding: 10px;
-  border-radius: 30px;
-  margin-block-start: 0em;
-  margin-block-end: 0em;
-  box-shadow: $hadow-pill;
 }
 
 .xlarge-info-pill{
-  background-color: $indigo;
+  @extend .info-pill;
   padding: 20px;
-  border-radius: 30px;
-  margin-block-start: 0em;
-  margin-block-end: 0em;
-  box-shadow: $hadow-pill;
 }
 
 .dashboard-info-pill{
   padding: 20px;
-  border-radius: 30px;
-  margin-block-start: 0em;
-  margin-block-end: 0em;
   width: 324px;
   text-align: center;
+  @extend .base;
 }
-
 
 .button-pill-md{
   display: flex;
@@ -70,39 +56,23 @@ p{
   align-items: center;
   height: 60px;
   width: 200px;
-  border-radius: 60px;
   box-shadow: $hadow-pill;
-  p,h1,h2,h3,h4,h5,h6{
-  margin-block-start: 0em;
-  margin-block-end: 0em;
-  }
+  @extend .base;
 }
 
 .button-pill-narrow{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60px;
+  @extend .button-pill-md;
   width: 170px;
-  border-radius: 60px;
-  box-shadow: $hadow-pill;
-  p,h1,h2,h3,h4,h5,h6{
-  margin-block-start: 0em;
-  margin-block-end: 0em;
-  }
 }
 
 .button-pill-large{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60px;
-  border-radius: 60px;
-  box-shadow: $hadow-pill;
-  p,h1,h2,h3,h4,h5,h6{
-  margin-block-start: 0em;
-  margin-block-end: 0em;
-  }
+  @extend .button-pill-md;
+  width: 324px;
+}
+
+.button-pill-xlarge{
+  @extend .button-pill-large;
+  width: unset;
 }
 
 

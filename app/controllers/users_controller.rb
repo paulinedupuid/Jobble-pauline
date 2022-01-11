@@ -116,7 +116,7 @@ class UsersController < ApplicationController
 ########################################################################################
   def dashboard
     @user = current_user
-  end
+  end # end du dashboard
 
   def message_index
    @chatrooms = Chatroom.where(user_id: current_user) + Chatroom.where(recrutor: current_user)

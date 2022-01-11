@@ -27,8 +27,8 @@ import "bootstrap";
 import { jobDisplay } from 'controllers/display_jobs';
 import { userInfoDisplay } from "../controllers/display_user_info";
 import { initChatroomCable } from '../channels/chatroom_channel';
-// import { notification } from '../controllers/notif';
-// import { testAnim } from '../channels/test_anim';
+import { swipeOffer } from '../plugins/swipe';
+import { notificationTest } from '../controllers/notif';
 
 document.addEventListener('turbolinks:load', () => {
 
@@ -38,7 +38,8 @@ document.addEventListener('turbolinks:load', () => {
   userInfoDisplay()
   jobDisplay()
   initChatroomCable()
-  // notification()
+  swipeOffer()
+  notificationTest();
 
 
   // disable pinch-zoom on smartphone -------------------------
