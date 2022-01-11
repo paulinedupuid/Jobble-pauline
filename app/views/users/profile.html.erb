@@ -3,12 +3,13 @@
 
 <%= render '/shared/navigationbar', pathname: 'Mes informations'%>
 
-<div class="content-dashboard dashboard">
+<div class="content-long-dashboard dashboard">
 
     <!-- !!!! Attention, don't modify the existing class for JS !!!!!
     This div is here to display the user infos-->
 
     <div class="user-info">
+        <div class="b-margin-110"></div>
       <p class="dashboard-info-pill dash-grey"><b>👤 Nom : </b><%= @user.last_name %></p>
         <div class="b-margin-20"></div>
       <p class="dashboard-info-pill dash-grey"><b>👤 Prenom  : </b><%= @user.first_name %></p>
@@ -23,6 +24,7 @@
     <!-- This div contains the form to modify the user info (and send the new entry to the DB)-->
 
     <div class="user-form d-none ">
+      <div class="b-margin-40"></div>
       <div class="content-center">
         <%= simple_form_for @user, url: update_users_path do |f| %>
           <%= f.input :last_name, label: 'Nom' %>
@@ -30,17 +32,16 @@
           <%= f.input :gender, label: 'Genre' %>
           <%= f.input :birthdate, label: 'Date de naissance' %>
           <%= f.input :city, label: 'Ville' %>
-          <%= f.submit "Modifier", class:'pill-obsydian'%>
+          <%= f.submit "Modifier"%>
       </div>
     </div>
 
     <!-- This div is the button to display the form and hidde the user info (and can be use to toggle)-->
-
-    <div class="b-margin-40"></div>
+    <div class="b-margin-20"></div>
     <div class= "user-info-btn dashboard-info-pill pill-jaune", remote="true">Modifier mes informations</div>
     <% end %>
     <!-- link_to destroy ? -->
-
+    <div class="b-margin-40"></div>
 </div>
 
 <!------------------------------------------------------------------------>
