@@ -13,7 +13,7 @@ class ChatroomsController < ApplicationController
     message_all = @chatroom.messages.all
     if message_all.size > 200
       message_all.each do |me|
-        me.first(50).delete
+        me.first(1).delete
       end
     end
   end
