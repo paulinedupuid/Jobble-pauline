@@ -34,23 +34,11 @@ function swipeOffer() {
         if (diffX > 0) {
           // swiped left
           const id = e.target.dataset.id
-          const url = `/offers/${id}/reject`
-          fetch(url, {
-            method: "POST",
-            headers: { "Accept": "text/html" },
-            body: ""
-          })
-          .then(window.location.href = "/offers")
+          result(id, "reject")
         } else {
           // swiped right
           const id = e.target.dataset.id
-          const url = `/offers/${id}/matches`
-          fetch(url, {
-            method: "POST",
-            headers: { "Accept": "text/html" },
-            body: ""
-          })
-          .then(window.location.href="/offers")
+          result(id, "matches")
         }
       }
 
@@ -59,7 +47,35 @@ function swipeOffer() {
 
       e.preventDefault();
     };
+
+    const acceptBtn = document.querySelector("#accept-btn");
+    const rejectBtn = document.querySelector("#reject-btn");
+
+    console.log(acceptBtn);
+    console.log(rejectBtn);
+    console.log(image.dataset.id);
+
+    acceptBtn.addEventListener("click", (e) => {
+      const id = image.dataset.id
+      result(id, "matches")
+    })
+
+    rejectBtn.addEventListener("click", (e) => {
+      const id = image.dataset.id
+      result(id, "reject")
+    })
+
   }
+}
+
+const result = (id, status) => {
+  const url = `/offers/${id}/${status}`
+  fetch(url, {
+    method: "POST",
+    headers: { "Accept": "text/html" },
+    body: ""
+  })
+  .then(window.location.href = "/offers")
 }
 
 export { swipeOffer }
