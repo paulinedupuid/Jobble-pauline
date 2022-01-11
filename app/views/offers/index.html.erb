@@ -1,11 +1,11 @@
 <div class="content-offers offers">
 
   <div>
+    <% if @selected_offers.count.positive? %>
     <% offer = @selected_offers.first %>
       <div>
-
-        <style>.photo{background-image:url(https://thiscatdoesnotexist.com/);}</style>
-        <div class="photo offer-image" data-id=<%= offer.id %>></div>
+        <style>.photo{background-image:url('<%= cl_image_path offer.photo.key, width: 408, height: 650 %>');}</style>
+        <div class="photo offer-image"></div>
 
         <div class="offer-global-content">
           <div class="offer-name">
@@ -47,5 +47,6 @@
           </div>
         </div>
       </div>
+      <% end %>
   </div>
 </div>
