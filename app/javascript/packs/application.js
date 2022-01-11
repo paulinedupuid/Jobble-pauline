@@ -27,16 +27,18 @@ import "bootstrap";
 import { jobDisplay } from 'controllers/display_jobs';
 import { userInfoDisplay } from "../controllers/display_user_info";
 import { initChatroomCable } from '../channels/chatroom_channel';
-
+// import { notification } from '../controllers/notif';
+// import { testAnim } from '../channels/test_anim';
 
 document.addEventListener('turbolinks:load', () => {
 
 
   // Call your functions here, e.g:
-
+  // testAnim()
   userInfoDisplay()
   jobDisplay()
   initChatroomCable()
+  // notification()
 
 
   // disable pinch-zoom on smartphone -------------------------
