@@ -1,4 +1,8 @@
-<h1>#<%= @chatroom.name %></h1>
+<!--  conteneur -->
+<%= render '/shared/messagenavigationbar', pathname: "#{@chatroom.name.first(16).downcase}.." %>
+<div class="content-long-dashboard dashboard">
+<!--  conteneur -->
+
 <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
   <% @chatroom.messages.each do |message| %>
     <div class="message-container" id="message-<%= message.id %>">
@@ -10,8 +14,19 @@
 </div>
   <% end %>
 </div>
-<%= link_to 'deconnexion', destroy_user_session_path, method: :delete %>
-<%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-  <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
-<% end %>
 <%# <%= raise %>
+
+
+<!-- Input Formulaire -->
+<span class="input-chatroom-div">
+<%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+  <%= f.input_field :content, label: false, placeholder: "Aa" %>
+  <%= f.submit "envoyer " %>
+<% end %>
+</span>
+<!-- Input Formulaire -->
+
+
+<!--  conteneur -->
+</div>
+<!--  conteneur -->

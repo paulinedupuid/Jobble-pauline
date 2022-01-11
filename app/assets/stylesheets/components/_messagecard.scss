@@ -5,13 +5,17 @@
   width: calc( #{$iWidth} - 60px);
   padding: 10px 40px;
   border-radius: 40px;
-  margin-top: 20px;
+  margin-top: 25px;
   h4,p{
     margin-block-start: 0em;
     margin-block-end: 0em;
   }
   h4{
     line-height: 28px;
+  }
+  p{
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 20px;
   }
   .avatar {
   width: 100px;
