@@ -4,14 +4,12 @@ function swipeOffer() {
   if (image) {
     image.addEventListener("touchstart", startTouch, false);
     image.addEventListener("touchmove", swipe, false);
-    console.log("connect")
 
     // Swipe Left / Right
     let initialX = null;
     let initialY = null;
 
     function startTouch(e) {
-      console.log("start")
       initialX = e.touches[0].clientX;
       initialY = e.touches[0].clientY;
     };
@@ -32,11 +30,9 @@ function swipeOffer() {
       let diffY = initialY - currentY;
 
       if (Math.abs(diffX) > Math.abs(diffY)) {
-        console.log("hello")
         // sliding horizontally
         if (diffX > 0) {
           // swiped left
-          console.log("swiped left");
           const id = e.target.dataset.id
           const url = `/offers/${id}/reject`
           fetch(url, {
@@ -44,10 +40,9 @@ function swipeOffer() {
             headers: { "Accept": "text/html" },
             body: ""
           })
-            .then(window.location.href = "/offers")
+          .then(window.location.href = "/offers")
         } else {
           // swiped right
-          console.log("swiped right");
           const id = e.target.dataset.id
           const url = `/offers/${id}/matches`
           fetch(url, {

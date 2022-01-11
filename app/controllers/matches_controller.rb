@@ -57,4 +57,6 @@ class MatchesController < ApplicationController
     end
   end
 
+  # add a private method (refacto)
+
 end
