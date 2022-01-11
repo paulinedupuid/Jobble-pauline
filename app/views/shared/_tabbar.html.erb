@@ -10,10 +10,11 @@
   <%= render '/shared/svg/matchs.svg' %>
   <p>Swipez!</p>
   <% end %>
+
+<%# pour le nombre de message non vu %>
   <% message_count = 0 %>
   <% chatrooms = Chatroom.all %>
   <% chatrooms.each do |chatroom| %>
-  <%# aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa %>
       <% if chatroom.messages %>
         <%  chatroom.messages.each do |message| %>
 
@@ -30,12 +31,7 @@
 
   <%# aqaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa %>
   <%# a finir le insert du data set %>
-<div id='message-notif' data-message= "<%= message_count %>">
-
-<div class='test'>
-
-</div>
-</div>
+<div id='message-notif' data-message= <%= message_count %>>
 </div>
   <a href="/message_index" class="tabbar-icons">
   <%= render '/shared/svg/messages.svg' %>
