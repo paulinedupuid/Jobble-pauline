@@ -22,15 +22,18 @@
   <p>Mon Profil</p>
   <% end %>
 
+<%# #################################################### %>
+  <div id='test-anim'>
   <%= link_to offers_path, class: "tabbar-icons" do%>
   <%= render '/shared/svg/matchs.svg' %>
   <p>Swipez!</p>
   <% end %>
+  </div>
+<%# #################################################### %>
+
 
   <%= link_to message_index_path, class: "tabbar-icons", id: "relative-notif" do %>
-      <%if message_count != 0%>
         <div id='message-notif' data-message="<%= message_count %>"></div>
-      <% end %>
     <%= render '/shared/svg/messages.svg' %>
     <p>Messages</p>
   <% end %>

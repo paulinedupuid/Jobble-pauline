@@ -29,6 +29,7 @@ import "bootstrap";
 import { initChatroomCable } from '../channels/chatroom_channel';
 import { swipeOffer } from '../plugins/swipe';
 import { notificationTest } from '../controllers/notif';
+import { myMove } from '../controllers/anim';
 
 document.addEventListener('turbolinks:load', () => {
 
@@ -39,6 +40,7 @@ document.addEventListener('turbolinks:load', () => {
   initChatroomCable()
   swipeOffer()
   notificationTest();
+  myMove()
 
 
   // disable pinch-zoom on smartphone -------------------------
