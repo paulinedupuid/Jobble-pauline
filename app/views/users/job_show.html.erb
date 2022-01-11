@@ -1,0 +1,23 @@
+<div data-controller="hello">
+  <%= form_with url: job_show_path, method: :get, html: {
+   data: { hello_target: 'formulaire' } } do |f| %>
+    <%= f.text_field :query,
+                     class: "form-control",
+                     placeholder: 'taper un job',
+                     value: params[:query],
+                     data: { hello_target: 'button', action: 'keyup->hello#update' } %>
+
+         <% end %>
+<%= render "list_jobs", jobs: @jobs %>
+</div>
+<%# action: "keyup->search_jobs#update", %>
+<%#
+ <% @jobs.each do |job| %>
+      <%# simple_form_for @job, url: job_update_test_path, method: :post do |f| %>
+      <%# f.label job.name %>
+      <%# f.input :experience %>
+      <%# hidden_field_tag :job_id, value: job.id %>
+      <%# f.submit %>
+
+<%# end %>
+<%# end %>
