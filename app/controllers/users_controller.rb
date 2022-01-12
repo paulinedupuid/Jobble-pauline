@@ -60,6 +60,7 @@ class UsersController < ApplicationController
       @user_job.user = @user
       @user_job.save!
     end
+        redirect_to job_show_path
   end
 
   def skill_show
@@ -87,6 +88,7 @@ class UsersController < ApplicationController
       @user_skill.user = @user
       @user_skill.save!
     end
+    redirect_to skill_show_path
   end
 
   private
