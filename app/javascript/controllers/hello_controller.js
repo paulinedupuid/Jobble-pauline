@@ -12,10 +12,6 @@ import { Controller } from "stimulus"
 export default class extends Controller {
   static targets = ["formulaire", "button", "liste"];
   connect() {
-    console.log("hehe");
-    console.log(this.formulaireTarget);
-    console.log(this.listeTarget);
-    console.log(this.buttonTarget);
   }
 
   update() {
