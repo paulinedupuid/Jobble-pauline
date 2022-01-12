@@ -122,6 +122,61 @@ class UsersController < ApplicationController
    @chatrooms = Chatroom.where(user_id: current_user) + Chatroom.where(recrutor: current_user)
   end
 
+
+
+
+
+
+
+
+
+
+
+
+
+  def job_show
+    @job = UserJob.new
+    @jobs = Job.order(name: :desc)
+    if params[:query].present?
+      @jobs = @jobs.where('name ILIKE ?', "%#{params[:query]}%")
+    end
+
+  respond_to do |format|
+    format.html # Follow regular flow of Rails
+    format.text { render partial: 'users/list_jobs', locals: { jobs: @jobs }, formats: [:html] }
+  end
+  end
+
+
+
+  def job_update_test
+
+  end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   private
 
 ####################### PARAMS_USER_SKILLS #########################################
