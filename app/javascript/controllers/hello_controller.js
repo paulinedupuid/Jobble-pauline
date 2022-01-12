@@ -8,19 +8,29 @@
 // </div>
 
 import { Controller } from "stimulus"
+import { jobClick } from "./seehideform"
+import { myMove } from "./anim";
 
 export default class extends Controller {
   static targets = ["formulaire", "button", "liste"];
   connect() {
+    // myMove()
   }
 
   update() {
     const url = `${this.formulaireTarget.action}?query=${this.buttonTarget.value}`
     fetch(url, { headers: { 'Accept': 'text/plain' } })
-      .then(response => response.text())
-      .then((data) => {
-        console.log(data);
-        this.listTarget.outerHTML = data;
+    .then(response => response.text())
+    .then((data) => {
+      console.log(data);
+      this.listeTarget.outerHTML = data;
+
+      jobClick()
+
       })
+  }
+
+  name() {
+
   }
 }
