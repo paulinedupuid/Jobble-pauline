@@ -10,6 +10,7 @@
 import { Controller } from "stimulus"
 import { jobClick } from "./seehideform"
 import { myMove } from "./anim";
+import { jobClickSkill } from "./seehide";
 
 export default class extends Controller {
   static targets = ["formulaire", "button", "liste"];
@@ -22,15 +23,12 @@ export default class extends Controller {
     fetch(url, { headers: { 'Accept': 'text/plain' } })
     .then(response => response.text())
     .then((data) => {
-      console.log(data);
       this.listeTarget.outerHTML = data;
 
       jobClick()
+      jobClickSkill()
 
       })
   }
 
-  name() {
-
-  }
 }

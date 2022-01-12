@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'users#dashboard'
   get 'job_show', to: 'users#job_show'
   post 'job_update_test', to: 'users#job_update_test'
+  get 'skill_show', to: 'users#skill_show'
   # get 'professional_update', to: 'users#professional_update'
   #  post 'job_update', to: 'users#job_update' fais la nouvelle ne sert plus
   post 'skill_update', to: 'users#skill_update'
