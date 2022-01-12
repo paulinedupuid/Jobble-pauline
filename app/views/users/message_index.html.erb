@@ -2,7 +2,7 @@
 <div class="content-long dashboard">
 <!--  conteneur -->
 
-
+<% if @chatrooms.count.positive? %>
   <!--  boucle principale-->
   <% @chatrooms.each do |chatroom| %>
   <!--  boucle principale -->
@@ -45,7 +45,9 @@
   <% end %>
   <!--  boucle principale-->
 
-
+  <% else %>
+    <p class="dashboard-info-pill dash-grey mt-3">Vous n'avez aucune discussion pour le moment...</p>
+  <% end %>
 <!--  conteneur -->
 </div>
 <!--  conteneur -->
