@@ -26,3 +26,29 @@ border-radius: 40px 0 0 40px;
 padding: 0 50px;
   }
 }
+
+.recrutor-message{
+  border-radius: 0 40px 40px 40px;
+  word-wrap: break-word;
+  flex-wrap: wrap;
+  background-color: $jaune;
+  position: relative;
+  right: 40px;
+  min-width: 50px;
+  max-width: 300px;
+  overflow: auto;
+  padding: 15px;
+}
+
+.user-message{
+  border-radius: 40px 40px 0 40px;
+  word-wrap: break-word;
+  flex-wrap: wrap;
+  background-color: $violet;
+  position: relative;
+  left: 40px;
+  min-width: 50px;
+  max-width: 300px;
+  overflow: auto;
+  padding: 15px;
+}
