@@ -1,9 +1,9 @@
 <div class="match-show text-center m-3">
-  <h2>It's a Match!</h2>
-  <p><%= @match.offer.user.first_name %> est interessé(e) par votre profil</p>
+
+  <h3><%= @match.offer.user.first_name.capitalize %> est interessé(e) par votre profil !</h3>
 
       <div>
-        <h3><%= @match.offer.title.capitalize %></h3>
+        <h4><%= @match.offer.title.capitalize %></h4>
 
         <div class="b-margin-20"></div>
 
@@ -29,11 +29,12 @@
         <p class="large-info-pill">👔 Statut juridique : <b><%=@match.offer.employement_type.capitalize %></b></p>
       </div>
 
-  <%= link_to "#" do %>
-    <p>Message</p>
-  <% end %>
-  <%= link_to "#" do %>
-    <p>Swiper</p>
-  <% end %>
-
+  <div class="d-flex justify-content-between">
+    <%= link_to chatroom_path(@chatroom) do %>
+      <p class="button-pill-narrow pill-jaune">Message</p>
+    <% end %>
+    <%= link_to offers_path do %>
+      <p class="button-pill-narrow pill-indigo">Swiper</p>
+    <% end %>
+  </div>
 </div>

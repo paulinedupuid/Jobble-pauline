@@ -81,10 +81,11 @@ const result = (id, status) => {
         modal.classList.remove("modal-hidden")
         const modalContent = document.querySelector(".match-modal")
         modalContent.innerHTML = `
-        <div id="close-modal">X</div>
+        <a href="/offers" id="close-modal">X</a>
         <h2>It's a Match!</h2>
-        <a href="/offers">Continuer</a>
-        <a href="/matches/${id}">Voir mon match</a>
+        <p>😍</p>
+        <a href="/matches/${id}" class="info-pill pill-jaune">Mon match</a>
+        <a href="/offers" class="info-pill pill-indigo">Continuer</a>
         `
       }
     })

@@ -3,6 +3,7 @@ class MatchesController < ApplicationController
 
   def show
     @match = Match.find(params[:id])
+    @chatroom = Chatroom.where(user_id: @match.user.id).find_by_recrutor(@match.offer.user.id)
   end
 
   def create # like
