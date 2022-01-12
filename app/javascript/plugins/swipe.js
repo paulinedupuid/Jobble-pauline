@@ -72,7 +72,6 @@ const result = (id, status) => {
     body: ""
   })
     .then((data) => {
-      console.log(data)
       const url = data.url
       if (url.includes("offers"))  {
         window.location.href = "/offers"
