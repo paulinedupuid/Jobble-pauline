@@ -1,12 +1,14 @@
 <div data-hello-target="liste">
+
  <% @jobs.each do |job| %>
       <%= simple_form_for @job, url: job_update_test_path, method: :post do |f| %>
-      <%= f.label job.name %>
-      <%= f.input :experience %>
-      <%= hidden_field_tag :job_id, value: job.id %>
-      <%= f.submit %>
-
+      <%= f.label job.name, class: "job-name", data: {job: job.id} %>
+      <div class="job-form-<%= job.id %> d-none">
+          <%= f.input :experience %>
+          <%= hidden_field_tag :job_id, value: job.id %>
+          <%= f.submit %>
+      </div>
 <% end %>
 <% end %>
-
+</div>
 </div>

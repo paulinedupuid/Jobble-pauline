@@ -3,7 +3,7 @@
 function myMove() {
   let id = 0;
   const elem = document.getElementById("test-anim");
-  console.log(elem);
+  if (elem) {
   let pos = 0;
   clearInterval(id);
   id = setInterval(frame, 1000);
@@ -28,6 +28,7 @@ function myMove() {
        setInterval(change, 200);
      }
   }
+}
 }
 
 export { myMove }

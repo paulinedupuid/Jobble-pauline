@@ -60,28 +60,11 @@ class UsersController < ApplicationController
 # ****************************************************************************
   # Instanciation of the models to use in the form.
 
-  def professional_update
-    @user = current_user
-    @job = UserJob.new
-    @skill = UserSkill.new
-  end
+
 
   # Update of the job if it curently exist for the current_user and creation if it doesn't exist
+  # refaite
 
-  def job_update
-    @user = current_user
-    @experience = params[:user_job][:experience].to_i
-    @idjob = params[:job_id].split[1].to_i
-    if @user.jobs.ids.include?(@idjob)
-      @user_job = UserJob.where(job_id: @idjob)
-      @user_job.update(experience: @experience)
-    else
-      @user_job = UserJob.new(experience: @experience, job_id: @idjob)
-      @user_job.user = @user
-      @user_job.save!
-    end
-    redirect_to professional_update_path
-  end
 
   # Update of the skill if it curently exist for the current_user and creation if it doesn't exist
 
@@ -150,7 +133,17 @@ class UsersController < ApplicationController
 
 
   def job_update_test
-
+        @user = current_user
+    @experience = params[:user_job][:experience].to_i
+    @idjob = params[:job_id].split[1].to_i
+    if @user.jobs.ids.include?(@idjob)
+      @user_job = UserJob.where(job_id: @idjob)
+      @user_job.update(experience: @experience)
+    else
+      @user_job = UserJob.new(experience: @experience, job_id: @idjob)
+      @user_job.user = @user
+      @user_job.save!
+    end
   end
 
 

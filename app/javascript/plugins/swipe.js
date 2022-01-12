@@ -71,9 +71,23 @@ const result = (id, status) => {
     headers: { "Accept": "text/html" },
     body: ""
   })
-  .then((response) => {
-    window.location.href = "/offers"
-  })
+    .then((data) => {
+      const url = data.url
+      if (url.includes("offers"))  {
+        window.location.href = "/offers"
+      } else {
+        const id = url.split("/matches/")[1]
+        const modal = document.querySelector(".modal-shadow")
+        modal.classList.remove("modal-hidden")
+        const modalContent = document.querySelector(".match-modal")
+        modalContent.innerHTML = `
+        <div id="close-modal">X</div>
+        <h2>It's a Match!</h2>
+        <a href="/offers">Continuer</a>
+        <a href="/matches/${id}">Voir mon match</a>
+        `
+      }
+    })
 }
 
 export { swipeOffer }
