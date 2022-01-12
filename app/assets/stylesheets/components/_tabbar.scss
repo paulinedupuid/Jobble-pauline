@@ -52,6 +52,15 @@ $tab-bar-icons-y-position: 18px;
   }
 }
 
+.tabbar-active {
+  p{
+  color: $jaune;
+  }
+  svg {
+  fill: $jaune;
+  }
+}
+
 #message-notif{
 position: absolute;
 top:13px;
