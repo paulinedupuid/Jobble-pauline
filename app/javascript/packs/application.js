@@ -25,22 +25,24 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 
 // import { jobDisplay } from 'controllers/display_jobs';
-// import { userInfoDisplay } from "../controllers/display_user_info";
+import { userInfoDisplay } from "../controllers/display_user_info";
 import { initChatroomCable } from '../channels/chatroom_channel';
 import { swipeOffer } from '../plugins/swipe';
 import { notificationTest } from '../controllers/notif';
-import { myMove } from '../controllers/anim';
+// import { myMove } from '../controllers/anim';
+// import { jobClick } from '../controllers/seehideform';
 
 document.addEventListener('turbolinks:load', () => {
 
 
   // Call your functions here, e.g:
   // testAnim()
-  // userInfoDisplay()
-  initChatroomCable()
+  userInfoDisplay()
   swipeOffer()
+
+  // loic
+  initChatroomCable()
   notificationTest();
-  myMove()
 
 
   // disable pinch-zoom on smartphone -------------------------
