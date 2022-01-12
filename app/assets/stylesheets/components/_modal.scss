@@ -14,9 +14,11 @@
 }
 
 .match-modal {
-  background-color: red;
+  background-color: $obsydian;
   padding-top: 16px;
   position: relative;
+  padding: 32px;
+  border-radius: 30px
 }
 
 #close-modal {
