@@ -71,7 +71,9 @@ const result = (id, status) => {
     headers: { "Accept": "text/html" },
     body: ""
   })
-  .then(window.location.href = "/offers")
+  .then((response) => {
+    window.location.href = "/offers"
+  })
 }
 
 export { swipeOffer }
