@@ -1,7 +1,51 @@
-<% @chatrooms.each do |chatroom| %>
-<% if chatroom.messages.count > 0 %>
-<%= link_to "#{chatroom.name}", chatroom_path(chatroom), class: 'test'%>
-<% else %>
-<%= link_to "#{chatroom.name}", chatroom_path(chatroom), class: 'test2'%>
-<% end %>
-<% end %>
+<!--  conteneur -->
+<div class="content-long dashboard">
+<!--  conteneur -->
+
+
+  <!--  boucle principale-->
+  <% @chatrooms.each do |chatroom| %>
+  <!--  boucle principale -->
+
+
+    <!--  fonction nom utilisateur et recruteur -->
+    <% if chatroom.user_id == current_user.id %>
+      <% prenom = User.find(chatroom.recrutor).first_name %>
+      <% nom = User.find(chatroom.recrutor).last_name %>
+      <% patronyme = "#{prenom} #{nom}"%>
+    <% else %>
+      <% prenom = User.find(chatroom.user_id).first_name %>
+      <% nom = User.find(chatroom.user_id).last_name %>
+      <% patronyme = "#{prenom} #{nom}"%>
+    <% end %>
+    <!--  fonction nom utilisateur et recruteur -->
+
+
+
+    <!--  condition de style en fonction de qui à envoyer le dernier message  -->
+    <% if  chatroom.messages.last && chatroom.messages.last.user_id == current_user.id %>
+    <% css_class = 'pill-obsydian'%> <% else %> <% css_class = 'pill-lavande'%> <% end %>
+    <!--  condition de style en fonction de qui à envoyer le dernier message  -->
+
+
+      <!-- message repondu par l'utilisateur--->
+      <%= link_to chatroom_path(chatroom) do%>
+      <div class="message-card <%=css_class%>">
+      <%= render 'shared/avatar', imageurl: "cl_image_path chatroom.offer.photo.key, width: 50, height: 50" %>
+      <div class="max-lenght">
+      <h4><%=patronyme.titleize%></h4>
+      <p><%=chatroom.name%></p>
+      </div>
+      </div>
+      <% end %>
+      <!-- message repondu par l'utilisateur--->
+
+
+  <!--  boucle principale-->
+  <% end %>
+  <!--  boucle principale-->
+
+
+<!--  conteneur -->
+</div>
+<!--  conteneur -->

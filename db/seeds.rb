@@ -195,14 +195,14 @@ sixth_offer.save!
 
 puts "6"
 
-file7 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1641898434/development/Logo-Iliad-groupe-Iliad-2018_hpbfq3.png')
+file7 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1641980319/development/xavier-niel_uhakxh.jpg')
 seventh_offer = Offer.new(title: "developpeur Ruby/stimulus", description: "Rejoignez notre équipe de développeur !
                           Vous maitriser les languages Ruby et stimulus ? Vous souhaitez améliorer vos connaissances
                           de ces languages au sein d'une équipe innovante et créative ? Nous avons peut-être une place
                           pour vous ! Au sein de nos équipes, développer vos talents et venez créer l'avenir. ",
                           salary: 1_900, number_hour: 35, employement_type: "salarié", contract_type: "CDI",
                           location: "Marseille")
-seventh_offer.photo.attach(io: file7, filename: 'Iliad.png', content_type: 'image/png')
+seventh_offer.photo.attach(io: file7, filename: 'Nielpresident.png', content_type: 'image/png')
 seventh_offer.job = back_developper
 seventh_offer.user = niel_xavier
 seventh_offer.save!

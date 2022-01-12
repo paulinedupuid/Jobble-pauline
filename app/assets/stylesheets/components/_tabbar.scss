@@ -6,10 +6,8 @@ $tab-bar-icons: 23px;
 $tab-bar-icons-margin: 45px;
 // ℹ️ the vertial padding of the icons
 $tab-bar-icons-y-position: 18px;
-// ℹ️ icons color
-$tab-bar-icons-color: rgba(255, 255, 255, 0.6);
-// ℹ️ icons color:hover
-$tab-bar-icons-color-hover: $blanc;
+
+
 
 .tabbar {
   // size
@@ -35,7 +33,7 @@ $tab-bar-icons-color-hover: $blanc;
 	flex-grow: 1;
   text-decoration: none;
   p{
-  color: $tab-bar-icons-color;
+  color: rgba(255, 255, 255, 0.5);
   font-size: 12px;
   font-weight: 500;
   padding-top: 2px;
@@ -43,13 +41,33 @@ $tab-bar-icons-color-hover: $blanc;
   }
   svg {
   height: $tab-bar-icons;
-  fill: $tab-bar-icons-color;
+  fill: rgba(255, 255, 255, 0.5);
   // filter: drop-shadow(10px 0 5px red);
   }
   transition: 0.2s ease;
-  &:hover, .active{
+  &:hover,.active{
   transition: 0.5s ease;
-  svg { fill:$tab-bar-icons-color-hover; }
-  p { color: $tab-bar-icons-color-hover; }
+  svg { fill: white; }
+  p { color: white; }
   }
+}
+
+#message-notif{
+position: absolute;
+top:13px;
+right: 40px;
+height: 15px;
+width: 15px;
+border-radius: 100%;
+background-color: $orange;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 10px;
+}
+
+
+#relative-notif
+{
+  position: relative;
 }

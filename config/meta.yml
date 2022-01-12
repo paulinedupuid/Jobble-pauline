@@ -1,0 +1,6 @@
+
+meta_product_name: "Jobble"
+meta_title: "Jobble - The app to find your dream job"
+meta_description: "Jobble est une app qui vous permet de trouver l'emploi qui vous correspond de manière fun et détendue."
+meta_image: "1-Jobble.jpg" # should exist in `app/assets/images/`
+#twitter_account: "@product_twitter_account"   required for Twitter Cards

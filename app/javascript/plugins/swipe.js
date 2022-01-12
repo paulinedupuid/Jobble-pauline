@@ -71,6 +71,7 @@ const result = (id, status) => {
     headers: { "Accept": "text/html" },
     body: ""
   })
+    .then((response) => {response.json()})
     .then((data) => {
       const url = data.url
       if (url.includes("offers"))  {
@@ -91,5 +92,3 @@ const result = (id, status) => {
 }
 
 export { swipeOffer }
-
-// window.location.href = "/offers"

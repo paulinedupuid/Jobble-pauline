@@ -2,9 +2,8 @@
 const notificationTest = () => {
 // const test = document.querySelector('.test');
  const nonVu = document.getElementById('message-notif');
- console.log(nonVu.dataset.message);
- const aa = nonVu.dataset.message
- nonVu.innerHTML = aa;
+ const nombre = nonVu.dataset.message
+ nonVu.innerHTML = nombre;
 
   // fetch("")
 

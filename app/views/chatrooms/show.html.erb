@@ -1,17 +1,78 @@
-<h1>#<%= @chatroom.name %></h1>
-<div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-  <% @chatroom.messages.each do |message| %>
-    <div class="message-container" id="message-<%= message.id %>">
-  <i class="author">
-    <span><%= message.user.first_name %></span>
-    <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-  </i>
-  <p><%= message.content %></p>
-</div>
+<!--  conteneur -->
+<%= render '/shared/messagenavigationbar', pathname: "#{@chatroom.name.first(16).downcase}.." %>
+<div class="content-long-dashboard dashboard">
+<!--  conteneur -->
+
+  <!-- div data set -->
+  <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+  <!-- div data set -->
+
+  <!-- margin pour afficher les messages par dessus l'input -->
+   <div class="b-margin-20"></div>
+   <!-- margin pour afficher les messages par dessus l'input -->
+
+    <!--  boucle principale  -->
+    <% @chatroom.messages.each do |message| %>
+    <!--  boucle principale -->
+
+      <!--  condition -->
+      <% if message.user_id == current_user.id %>
+      <!--  condition -->
+
+        <!--  user message -->
+        <div class="flex-test">
+        <div class="message-container user-message" id="message-<%= message.id %>">
+            <p><%= message.content %></p>
+        </div>
+        <i class="author">
+          <span><%= message.user.first_name %></span>
+          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+        </i>
+        </div>
+        <!--  user message -->
+
+      <% else %>
+
+        <!--  recrutor message -->
+                <div>
+        <div class="message-container recrutor-message" id="message-<%= message.id %>">
+            <p><%= message.content %></p>
+        </div>
+        <i class="author">
+          <span><%= message.user.first_name %></span>
+          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+        </i>
+                </div>
+        <!--  recrutor message -->
+
+      <!--  condition -->
+      <% end %>
+      <!--  condition -->
+
+    <!--  boucle principale -->
+    <% end %>
+    <!--  boucle principale -->
+
+
+   <!-- margin pour afficher les messages par dessus l'input -->
+   <div class="b-margin-100"></div>
+   <!-- margin pour afficher les messages par dessus l'input -->
+
+  <!-- div data set -->
+  </div>
+  <!-- div data set -->
+
+
+  <!-- Input Formulaire -->
+  <span class="input-chatroom-div">
+  <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+    <%= f.input_field :content, label: false, placeholder: "Aa" %>
+    <%= f.submit "envoyer " %>
   <% end %>
+  </span>
+  <!-- Input Formulaire -->
+
+
+<!--  conteneur -->
 </div>
-<%= link_to 'deconnexion', destroy_user_session_path, method: :delete %>
-<%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-  <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
-<% end %>
-<%# <%= raise %>
+<!--  conteneur -->
