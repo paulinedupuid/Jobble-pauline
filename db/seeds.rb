@@ -91,6 +91,8 @@ lemon_jon = User.create(email: "jon.lemon@hotmail.com", password: "123456", firs
 catarina = User.create(email: "catarina@gmail.fr", password: "123456", first_name: "Catarina", last_name:
                        "Bellatchixtchix", city: "Nice", gender: "femme", birthdate: Date.new(1986, 10, 15),
                        description: "developpeuse d'application web et web mobile")
+bot_test = User.create(email: "jobble@heroku.com", password: "123456", first_name: "bot", last_name: "test",
+                       city: "computer", gender: "homme", description: "Bot de test pour envoyer le premier message")
 
 puts "candidats créés"
 
