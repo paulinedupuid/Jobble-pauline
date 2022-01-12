@@ -1,11 +1,11 @@
 .modal-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100vh;
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.37);
   backdrop-filter: blur(10px);
-  position: absolute;
-  top: 0;
-  left: 0;
   z-index: 9999;
   display: flex;
   justify-content: center;
@@ -15,10 +15,9 @@
 
 .match-modal {
   background-color: $obsydian;
-  padding-top: 16px;
   position: relative;
   padding: 32px;
-  border-radius: 30px
+  border-radius: 30px;
 }
 
 #close-modal {
