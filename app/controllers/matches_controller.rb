@@ -1,6 +1,10 @@
 class MatchesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
+  def show
+    @match = Match.find(params[:id])
+  end
+
   def create # like
     @offer = Offer.find(params[:offer_id])
     @user = current_user
@@ -17,7 +21,11 @@ class MatchesController < ApplicationController
             Message.create(content: 'ceci es le début de votre conversation', user_id: 13, chatroom_id: @chatroom.id )
           end
          end
-        redirect_to offers_path
+        if @match.recrutor_status == true
+          redirect_to match_path(@match)
+        else
+          redirect_to offers_path
+        end
       else
         redirect_to root_path
       end
