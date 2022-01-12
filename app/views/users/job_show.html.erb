@@ -3,7 +3,7 @@
    data: { hello_target: 'formulaire' } } do |f| %>
     <%= f.text_field :query,
                      class: "form-control",
-                     placeholder: 'taper un job',
+                     placeholder: 'chercher un métier',
                      value: params[:query],
                      data: { hello_target: 'button', action: 'keyup->hello#update' } %>
 

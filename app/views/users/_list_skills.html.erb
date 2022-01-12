@@ -1,0 +1,19 @@
+<div data-hello-target="liste">
+  <% if params[:query].blank? %>
+    <h1><%= pluralize @skills.count, 'competence' %></h1>
+  <% else %>
+    <h1><%= pluralize @skills.count, 'resultats' %> pour <code><%= params[:query] %> </code></h1>
+  <% end %>
+
+ <% @skills.each do |skill| %>
+    <%= simple_form_for @skill, url: skill_update_path, method: :post do |f| %>
+    <%= f.label skill.name, class: "skill-name", data: {skill: skill.id} %>
+    <div class="skill-form-<%= skill.id %> d-none">
+    <%= f.input :level, collection: UserSkill::LEVEL %>
+    <%= hidden_field_tag :skill_id, value: skill.id %>
+    <%= f.submit %>
+    </div>
+  <% end %>
+<% end %>
+</div>
+</div>

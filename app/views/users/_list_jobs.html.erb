@@ -1,4 +1,9 @@
 <div data-hello-target="liste">
+  <% if params[:query].blank? %>
+    <h1><%= pluralize @jobs.count, 'metier' %> </h1>
+  <% else %>
+    <h1><%= pluralize @jobs.count, 'resultats' %> pour <code><%= params[:query] %> </code></h1>
+  <% end %>
 
  <% @jobs.each do |job| %>
       <%= simple_form_for @job, url: job_update_test_path, method: :post do |f| %>
