@@ -78,7 +78,15 @@ const result = (id, status) => {
         window.location.href = "/offers"
       } else {
         const id = url.split("/matches/")[1]
-        window.location.href = `/matches/${id}`
+        const modal = document.querySelector(".modal-shadow")
+        modal.classList.remove("modal-hidden")
+        const modalContent = document.querySelector(".match-modal")
+        modalContent.innerHTML = `
+        <div id="close-modal">X</div>
+        <h2>It's a Match!</h2>
+        <a href="/offers">Continuer</a>
+        <a href="/matches/${id}">Voir mon match</a>
+        `
       }
     })
 }

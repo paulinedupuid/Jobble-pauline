@@ -1,0 +1,39 @@
+<div class="match-show text-center">
+  <h2>It's a Match!</h2>
+  <p><%= @match.offer.user.first_name %> est interessé(e) par votre profil</p>
+
+      <div>
+        <h3><%= @match.offer.title.capitalize %></h3>
+
+        <div class="b-margin-20"></div>
+
+        <p><%= @match.offer.description %></p>
+
+      </div>
+
+      <div class="b-margin-30"></div>
+
+      <div>
+        <p class="large-info-pill">📍 Lieu d'exécution : <b><%= @match.offer.location %></b></p>
+        <div class="b-margin-10"></div>
+
+        <p class="large-info-pill">💰 Salaire mensuel net : <b><%=@match.offer.salary%>€</b></p>
+        <div class="b-margin-10"></div>
+
+        <p class="large-info-pill">🕦 Temps de travail : <b><%= @match.offer.number_hour %> heures</b></p>
+        <div class="b-margin-10"></div>
+
+        <p class="large-info-pill">📝 Type de contrat : <b><%=@match.offer.contract_type %></b></p>
+        <div class="b-margin-10"></div>
+
+        <p class="large-info-pill">👔 Statut juridique : <b><%=@match.offer.employement_type.capitalize %></b></p>
+      </div>
+
+  <%= link_to "#" do %>
+    <p>Message</p>
+  <% end %>
+  <%= link_to "#" do %>
+    <p>Swiper</p>
+  <% end %>
+
+</div>

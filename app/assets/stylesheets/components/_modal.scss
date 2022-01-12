@@ -1,0 +1,31 @@
+.modal-shadow {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(10px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.match-modal {
+  background-color: red;
+  padding-top: 16px;
+  position: relative;
+}
+
+#close-modal {
+  position: absolute;
+  top: -8px;
+  right: 8px;
+  padding: 12px;
+}
+
+.modal-hidden {
+  display: none;
+}
