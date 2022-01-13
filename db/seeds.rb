@@ -56,9 +56,10 @@ User.destroy_all
 # Users :
 # Recrutor creation
 puts "creation des recruteurs"
-niel_xavier = User.create(email: "xavier.neil@free.fr", password: "123456", first_name: "xavier", last_name: "Neil",
-                          city: "Paris", recrutor: true, gender: "homme", birthdate: Date.new(1967, 8, 25),
-                          description: "Homme d'affaires, entrepreneur, business angel, fondateur du groupe Iliad")
+saunier_sebastien = User.create(email: "sebastienSaunier@free.fr", password: "123456", first_name: "Sebastien",
+                                last_name: "Saunier", city: "Paris", recrutor: true, gender: "homme",
+                                birthdate: Date.new(1967, 8, 25), description: "Homme d'affaires, entrepreneur, business
+                                angel, fondateur du groupe le wagon")
 estrosi_christian = User.create(email: "christian.estrosi@nice.fr", password: "123456", first_name: "Christian",
                                 last_name: "Estrosi", city: "Nice", recrutor: true, gender: "homme",
                                 birthdate: Date.new(1955, 7, 1), description: "sportif motocycliste,
@@ -115,19 +116,19 @@ optician = Job.create(name: "opticien")
 
 puts "jobs créés"
 
-# ********************************************************
+# ******************************************************** , company_name:
 # Offers creation
 puts "creation des offres:"
 
-file = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1641897978/development/800px-Xavier_Niel004_owiekz.jpg')
+file = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1642063029/development/sebastien_saunier_wbibow.jpg')
 first_offer = Offer.new(title: "Developpeur front-end", description: "Vous connaissez les langages de programation
                         frontend tel que HTML, CSS, Javascript, vous êtes a même de maquetter vos projets, vous savez
                         gérer le design et la codification d'une page, vous êtes célibataire, nous avons un emploi qui
                         pourrait vous convenir !", location: "Paris", salary: 3_250, number_hour: 36,
                         employement_type: "cadre", contract_type: "CDD")
-first_offer.photo.attach(io: file, filename: 'Niel.jpg', content_type: 'image/png')
+first_offer.photo.attach(io: file, filename: 'Saunier.jpg', content_type: 'image/png')
 first_offer.job = front_developper
-first_offer.user = niel_xavier
+first_offer.user = saunier_sebastien
 first_offer.save!
 
 puts "1"
@@ -197,7 +198,7 @@ sixth_offer.save!
 
 puts "6"
 
-file7 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1641980319/development/xavier-niel_uhakxh.jpg')
+file7 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1642063175/development/Romain-Paillard-Boris-Paillard-Sebastien-Saunier-Le-Wagon_mz0kpl.jpg')
 seventh_offer = Offer.new(title: "developpeur Ruby/stimulus", description: "Rejoignez notre équipe de développeur !
                           Vous maitriser les languages Ruby et stimulus ? Vous souhaitez améliorer vos connaissances
                           de ces languages au sein d'une équipe innovante et créative ? Nous avons peut-être une place
@@ -206,7 +207,7 @@ seventh_offer = Offer.new(title: "developpeur Ruby/stimulus", description: "Rejo
                           location: "Marseille")
 seventh_offer.photo.attach(io: file7, filename: 'Nielpresident.png', content_type: 'image/png')
 seventh_offer.job = back_developper
-seventh_offer.user = niel_xavier
+seventh_offer.user = saunier_sebastien
 seventh_offer.save!
 
 puts "7"
