@@ -37,9 +37,25 @@
 
 .refus-anim {
 position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 200px;
+  height: 200px;
+  z-index: 10000;
+  top: 180px;
+  left: 620px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  animation-duration: 1s;
+  // animation: fame left 1s, transform 1s;
+   i {
+    font-size: 120px;
+    color: $jaune;
+  }
 }
+
+
+
 /// DEMO styling
 // html, body {
 //   height: 100%;

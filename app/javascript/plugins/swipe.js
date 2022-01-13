@@ -69,10 +69,28 @@ function swipeOffer() {
         if (diffX > 0) {
           // swiped left
           const id = e.target.dataset.id
+          const carte = document.querySelector('.content-offers');
+          carte.style.animation = 'translate(-300px)';
+          carte.style.transition = 'all 1s ease-out'
+
+          //////////////////////
+          // const dislike = document.querySelector(".refus-anim");
+          // const buttonDislike = document.querySelector('.refus-annim-button');
+          //   buttonDislike.addEventListener('click', (e) => {
+          //       e.preventDefault();
+          //      e.currentTarget.classList.remove("d-none");
+          //   });
+
+          // dislike.style.transform = 'translate(-20px, -20px)rotate(25deg)';
           result(id, "reject")
+
+
         } else {
           // swiped right
           const id = e.target.dataset.id
+          const carte = document.querySelector('.content-offers');
+          carte.style.transform = 'translate(+300px)';
+          carte.style.transition = 'all 1s ease-out'
           result(id, "matches")
         }
       }
@@ -116,6 +134,8 @@ const result = (id, status) => {
       if (url.includes("offers"))  {
         window.location.href = "/offers"
       } else {
+        const carte = document.querySelector('.content-offers');
+        carte.style.transition = 'initial';
         const id = url.split("/matches/")[1]
         const modal = document.querySelector(".modal-shadow")
         modal.classList.remove("modal-hidden")
