@@ -8,9 +8,9 @@
         <div class="photo offer-image" data-id=<%= offer.id %>></div>
 
         <div class="offer-global-content">
-          <div class="offer-name">
+          <div class="offer-name mr-3">
             <h2><%= offer.title.capitalize %></h2>
-            <h5><%= offer.company_name %></h5>
+            <h5><%= offer.company_name.capitalize %></h5>
           </div>
 
           <div class="offers-content">
@@ -25,7 +25,7 @@
             <div class="offer-buttons-content">
             <%# <% if offer rejected, offer transferred filtered out of index %>
               <%= link_to "#", remote: true, id: "reject-btn" do %>
-                <h6 class="button-pill-narrow pill-indigo"><b>❌ Non.</b></h6>
+                <h6 class="button-pill-narrow pill-indigo"><b>❌ Non</b></h6>
               <% end %>
             <%# <% if match saved, offer filtered out of index and transferred to matches view avec index (link) %>
               <%= link_to "#", remote: true, id: "accept-btn" do %>

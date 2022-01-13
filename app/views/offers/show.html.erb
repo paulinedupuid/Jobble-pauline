@@ -1,12 +1,14 @@
-<div class="content">
+<div class="content-long">
 
     <div class="offer-content">
 
       <div>
 
-      <h1>💼<h1>        <div class="b-margin-20"></div>
-        <h2><%= @offer.title.capitalize %></h2>
-        <h3><%= @offer.company_name.capitalize %></h3>
+        <div class="b-margin-20"></div>
+        <h3><%= @offer.title.capitalize %></h3>
+        <h3>💼</h3>
+        <h5><%= @offer.company_name.capitalize %></h5>
+        <p><%= @offer.user.first_name.capitalize %></p>
         <div class="b-margin-20"></div>
 
         <p><%= @offer.description %></p>
