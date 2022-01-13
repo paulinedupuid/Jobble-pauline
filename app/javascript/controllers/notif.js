@@ -2,8 +2,9 @@
 const notificationTest = () => {
 // const test = document.querySelector('.test');
  const nonVu = document.getElementById('message-notif');
+ if (nonVu){
  const nombre = nonVu.dataset.message
- if (nonVu) {
+ if (nombre != 0) {
  nonVu.innerHTML = nombre;
  nonVu.classList.remove("d-none");
  }
@@ -13,7 +14,7 @@ const notificationTest = () => {
   //   .then((data) => {
   //     console.log(data);
   //   });
-
+}
 };
 
 export { notificationTest }
