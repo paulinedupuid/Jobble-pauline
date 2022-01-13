@@ -7,10 +7,12 @@
   // particle styling
   .particle {
     position: absolute; // required
-    width: 11px;
-    height: 10px;
+    width: 13px;
+    height: 13px;
     border-radius: 50%;
-    animation: pop 0.9s reverse forwards; // required
+    animation: pop 1s reverse forwards; // required
+    // animation-duration: 3s;
+    animation-iteration-count: infinite;
   }
 }
 
@@ -26,7 +28,7 @@
     top: 44%;
     left: 76;
     top: 11%;
-    left: 35%
+    left: 35%;
   }
 }
 

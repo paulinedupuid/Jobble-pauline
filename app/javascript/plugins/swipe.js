@@ -41,9 +41,8 @@ function swipeOffer() {
           result(id, "matches")
       /////////////////////////////////////////////////////////////////////////////
        $(image).on("touchmove", function (e) {
-      //       console.log(currentX);
-      //       console.log(currentY);
-      setInterval(explode(currentX, currentY), 200)
+         const aa = document.querySelector('.offer-image');
+         setInterval(explode(260, 450), 1200)
       //       setInterval(explode(currentX, currentY), 100)
            })
 
@@ -52,12 +51,12 @@ function swipeOffer() {
 
           // explosion construction
           function explode(x, y) {
-            const particles = 240,
+            const particles = 300,
               // explosion container and its reference to be able to delete it on animation end
               explosion = $('<div class="explosion"></div>');
 
             // put the explosion container into the body to be able to get it's size
-            $('body').append(explosion);
+            $(image).append(explosion);
 
             // position the container to be centered on click
             explosion.css('left', x - explosion.width() / 2);
@@ -113,7 +112,9 @@ function swipeOffer() {
 
     acceptBtn.addEventListener("click", (e) => {
       const id = image.dataset.id
+      // setInterval(explode(260, 450), 1000)
       result(id, "matches")
+
     })
 
     rejectBtn.addEventListener("click", (e) => {
@@ -123,6 +124,7 @@ function swipeOffer() {
 
   }
 }
+
 
 const result = (id, status) => {
   const url = `/offers/${id}/${status}`
@@ -142,14 +144,14 @@ const result = (id, status) => {
         const modalContent = document.querySelector(".match-modal")
         modalContent.innerHTML = `
         <a href="/offers" id="close-modal">X</a>
-        <h2>It's a Match!</h2>
+        <h2 id='h2-modal'>It's a Match!</h2>
         <p>😍</p>
         <a href="/matches/${id}" class="info-pill pill-jaune">Mon match</a>
         <a href="/offers" class="info-pill pill-indigo">Continuer</a>
         `
       }
     })
-
+  // $("h2-modal").append(explode(260, 450));
 }
 
 export { swipeOffer }
