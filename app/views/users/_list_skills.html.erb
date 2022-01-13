@@ -2,9 +2,9 @@
 
 
   <% if params[:query].blank? %>
-    <h2><%= pluralize @skills.count, 'competence' %></h2>
+    <h4>Choisir mes compétences</h4>
   <% else %>
-    <h2><%= pluralize @skills.count, 'resultats' %> pour <code><%= params[:query] %> </code></h2>
+    <h5><%= pluralize @skills.count, 'resultats' %> pour <code><%= params[:query] %> </code></h5>
   <% end %>
 
  <% @skills.each do |skill| %>
