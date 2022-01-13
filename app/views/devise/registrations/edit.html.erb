@@ -1,5 +1,6 @@
-<div class="content-long">
-<h2>Editer mon profile <%= resource_name.to_s.humanize %></h2>
+<%= render '/shared/dashboardnavigationbar', pathname: 'Mes informations'%>
+<div class="content-long-dashboard dashboard">
+<h2 class="mt-3 text-center">Editer mon profile <%= resource_name.to_s.humanize %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
