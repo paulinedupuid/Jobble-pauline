@@ -17,8 +17,6 @@ require "open-uri"
 # If you wanna add a job to add more offers, add frontend developper, it add you the first offer of the list.
 
 # You can validate the following offer to had a match:
-# "developpeur PHP/symfony" by christian estrosi
-# "developpeur ruby" by arnaud lagardere
 # "Développeur web freelance" by tim cook
 # "developpeur Ruby/stimulus" by xavier niel
 
@@ -151,35 +149,6 @@ non_valid_offer.save!
 
 puts "1.1"
 
-invalid_file2 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1642066099/development/job-connect-new-logo-1024x1024_pau5jc.png')
-non_valid_offer2 = Offer.new(title: "Développeur Java Backend", description: " Développeur Java Back End - Mission en
-                            régie chez le client. Dans le cadre d'un renforcement de son équipe, notre client startup
-                            internationale de l'eco sharing basée à Nice recherche un Développeur backend Java Spring
-                            senior. Nous recherchons un Developpeur Java backend qui travaillera avec notre équipe afin
-                            de fournir les meilleures solutions logicielles à nos produits innovants et leaders du
-                            secteur..", location: "Nice", salary: 1_200, number_hour: 44, employement_type: "cadre",
-                             contract_type: "CDI", company_name: "Job connect")
-non_valid_offer2.photo.attach(io: invalid_file2, filename: 'jobConnect.jpg', content_type: 'image/png')
-non_valid_offer2.job = back_developper
-non_valid_offer2.user = jobconnect
-non_valid_offer2.save!
-
-puts "1.2"
-
-invalid_file3 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1642066099/development/job-connect-new-logo-1024x1024_pau5jc.png')
-non_valid_offer3 = Offer.new(title: "Développeur backend node.js", description: "Directement rattaché au service IT,
-                             vous serez en équipe avec le développeur en poste, par ailleurs CTO, et serez amené à le
-                             remplacer en charge de la maintenance et du développement du back-end au sein d'une équipe
-                             technique en pleine expansion. Diplômé d'un bac+5, ouvert aux autodidactes avec des projets
-                             et un portfolio conséquent.", location: "Nice", salary: 1_600, number_hour: 35,
-                             employement_type: "cadre", contract_type: "CDI", company_name: "Job connect")
-non_valid_offer3.photo.attach(io: invalid_file3, filename: 'jobConnect.jpg', content_type: 'image/png')
-non_valid_offer3.job = back_developper
-non_valid_offer3.user = jobconnect
-non_valid_offer3.save!
-
-puts "1.3"
-
 invalid_file4 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1642067586/development/Fachada_xqgljl.jpg')
 non_valid_offer4 = Offer.new(title: "Développeur Back-end API", description: "Smood, acteur incontournable Suisse dans
                             le domaine de la FoodTech et du LastMileDelivery souhaite renforcer les équipes de son
@@ -192,20 +161,7 @@ non_valid_offer4.job = back_developper
 non_valid_offer4.user = jobconnect
 non_valid_offer4.save!
 
-puts "1.4"
-
-invalid_file5 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1642067586/development/Fachada_xqgljl.jpg')
-non_valid_offer5 = Offer.new(title: "Lead Technique Back End C#", description: "TALENTS RH recherche … TALENTS RH,
-                            société de recrutement spécialisée Profils Rares & Hautes Compétences, cherche, pour l'un de
-                            ses partenaires, des Leaders Techniques Back end C#.NET H/F.", location: "Nice",
-                             salary: 1_500, number_hour: 38, employement_type: "cadre", contract_type: "CDI",
-                             company_name: "Job connect")
-non_valid_offer5.photo.attach(io: invalid_file5, filename: 'jobConnect.jpg', content_type: 'image/png')
-non_valid_offer5.job = back_developper
-non_valid_offer5.user = jobconnect
-non_valid_offer5.save!
-
-puts "1.5"
+puts "1.2"
 
 file2 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1641897767/development/800px-Christian_Estrosi_-_2017__2824778920307_29__28cropped_29_sxp3fo.jpg')
 second_offer = Offer.new(title: "developpeur PHP/symfony", description: "Nous recherchons pour notre municipalité un
@@ -241,7 +197,7 @@ fourth_offer = Offer.new(title: "developpeur ruby", description: "Notre entrepri
                          salary: 2_300, number_hour: 34, employement_type: "developpeur", contract_type: "CDI",
                          location: "Paris", company_name: "groupe Lagardère")
 fourth_offer.photo.attach(io: file4, filename: 'Lagardere.jpg', content_type: 'image/png')
-fourth_offer.job = back_developper
+fourth_offer.job = affair_analyst
 fourth_offer.user = lagardere_arnaud
 fourth_offer.save!
 
@@ -255,7 +211,7 @@ fifth_offer = Offer.new(title: "developpeur fullstack", description: "Notre grou
                         employement_type: "salarié", contract_type: "CDI", location: "Nice", company_name: "groupe
                         Lagardère")
 fifth_offer.photo.attach(io: file5, filename: 'Lagardere2.jpg', content_type: 'image/png')
-fifth_offer.job = fullstack_developper
+fifth_offer.job = affair_analyst
 fifth_offer.user = lagardere_arnaud
 fifth_offer.save!
 
@@ -422,12 +378,12 @@ puts "compétences créés"
 # user_jobs creation
 puts "création des user_jobs"
 
-first_job = UserJob.new(experience: 34)
+first_job = UserJob.new(experience: 3)
 first_job.user = lemon_jon
 first_job.job = back_developper
 first_job.save!
 
-second_job = UserJob.new(experience: 20)
+second_job = UserJob.new(experience: 2)
 second_job.user = lemon_jon
 second_job.job = fullstack_developper
 second_job.save!
@@ -443,11 +399,6 @@ puts "user_jobs créés"
 # matches creation
 puts "création des matches"
 
-first_match = Match.new(recrutor_status: true)
-first_match.offer = second_offer
-first_match.user = lemon_jon
-first_match.save!
-
 second_match = Match.new(recrutor_status: false)
 second_match.offer = fifth_offer
 second_match.user = lemon_jon
@@ -457,12 +408,6 @@ third_match = Match.new(recrutor_status: true)
 third_match.offer = sixth_offer
 third_match.user = catarina
 third_match.save!
-
-
-fourth_match = Match.new(recrutor_status: true)
-fourth_match.offer = fourth_offer
-fourth_match.user = lemon_jon
-fourth_match.save!
 
 five_match = Match.new(recrutor_status: true)
 five_match.offer = ten_offer
