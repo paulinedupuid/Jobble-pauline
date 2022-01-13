@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  min-height: 150px;
   width: calc( #{$iWidth} - 60px);
   padding: 10px 40px;
   border-radius: 40px;
