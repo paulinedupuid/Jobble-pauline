@@ -6,6 +6,7 @@
 
     <h4><%= @profile_user.first_name.first(12).capitalize %></h4>
     <h4 style="font-weight:normal;"><%= @profile_user.last_name.first(11).capitalize %></h4>
+    <p><%= @profile_user.offers.first.company_name %></p>
 
   </div>
 
