@@ -17,14 +17,14 @@
 
 <nav class="tabbar">
 
-  <%= link_to dashboard_path(@user), class: "tabbar-icons" do %>
+  <%= link_to dashboard_path(@user), class: controller_name == "users" && action_name == "dashboard"? "tabbar-active tabbar-icons" : "tabbar-icons" do %>
   <%= render '/shared/svg/dashboard.svg' %>
   <p>Mon Profil</p>
   <% end %>
 
 
 
-  <%= link_to offers_path, class: "tabbar-icons" do%>
+  <%= link_to offers_path, class: controller_name == "offers" && action_name == "index"? "tabbar-active tabbar-icons" : "tabbar-icons" do %>
   <%= render '/shared/svg/matchs.svg' %>
   <p>Swipez!</p>
   <% end %>
@@ -32,7 +32,7 @@
 
 
 
-  <%= link_to message_index_path, class: "tabbar-icons", id: "relative-notif" do %>
+  <%= link_to message_index_path, class: (controller_name == "messages" && action_name == "create" || controller_name == "users" && action_name == "message_index") || (controller_name == "chatrooms" && action_name == "show") ? "tabbar-active tabbar-icons" : "tabbar-icons", id: "relative-notif" do %>
         <div id='message-notif' data-message="<%= message_count %>"></div>
     <%= render '/shared/svg/messages.svg' %>
     <p>Messages</p>
