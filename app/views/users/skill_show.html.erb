@@ -2,9 +2,10 @@
 
 <div class="content-long-dashboard dashboard text-center">
 <div class="b-margin-20"></div>
-<% if @job_skill %>
+<% if @job_skill.count.positive? %>
+  <h4>Mes compétences</h4>
   <% @job_skill.each do |skill| %>
-  <p class="button-pill-large pill-lavande"><%= Skill.find(skill.skill_id).name %> : <%= UserSkill.find_by_skill_id(skill.skill_id).level %>/5</p>
+  <p class="dashboard-pill pill-lavande text-center"><%= Skill.find(skill.skill_id).name %> : <%= UserSkill.find_by_skill_id(skill.skill_id).level %>/5</p>
   <% end %>
 <% end %>
 

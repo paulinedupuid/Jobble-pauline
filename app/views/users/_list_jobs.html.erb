@@ -1,9 +1,9 @@
 <div data-hello-target="liste">
 
   <% if params[:query].blank? %>
-    <h2><%= pluralize @jobs.count, 'metier' %> </h2>
+    <h4>Choisir un métier</h4>
   <% else %>
-    <h2><%= pluralize @jobs.count, 'resultats' %> pour <code><%= params[:query] %> </code></h2>
+    <h5><%= pluralize @jobs.count, 'resultats' %> pour <code><%= params[:query] %> </code></h5>
   <% end %>
 
  <% @jobs.each do |job| %>
