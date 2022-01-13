@@ -142,7 +142,7 @@ invalid_file = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408
 non_valid_offer = Offer.new(title: "Développeur React Front-end", description: "Tu rejoindras un collectif composé de 25
                             personnes dont 13 Développeurs. 1 à 4 développeurs sont dédiés à chaque projet remporté. Les
                             projets peuvent se construire en parallèle (moyenne de 4 à 6 projets/an). Evidemment, tu ne
-                            seras jamais seul au début.", location: "Nice", salary: 3_900, number_hour: 40,
+                            seras jamais seul au début.", location: "Nice", salary: 1_800, number_hour: 40,
                             employement_type: "cadre", contract_type: "CDI", company_name: "Job connect")
 non_valid_offer.photo.attach(io: invalid_file, filename: 'jobConnect.jpg', content_type: 'image/png')
 non_valid_offer.job = back_developper
@@ -157,7 +157,7 @@ non_valid_offer2 = Offer.new(title: "Développeur Java Backend", description: " 
                             internationale de l'eco sharing basée à Nice recherche un Développeur backend Java Spring
                             senior. Nous recherchons un Developpeur Java backend qui travaillera avec notre équipe afin
                             de fournir les meilleures solutions logicielles à nos produits innovants et leaders du
-                            secteur..", location: "Nice", salary: 4_200, number_hour: 44, employement_type: "cadre",
+                            secteur..", location: "Nice", salary: 1_200, number_hour: 44, employement_type: "cadre",
                              contract_type: "CDI", company_name: "Job connect")
 non_valid_offer2.photo.attach(io: invalid_file2, filename: 'jobConnect.jpg', content_type: 'image/png')
 non_valid_offer2.job = back_developper
@@ -171,7 +171,7 @@ non_valid_offer3 = Offer.new(title: "Développeur backend node.js", description:
                              vous serez en équipe avec le développeur en poste, par ailleurs CTO, et serez amené à le
                              remplacer en charge de la maintenance et du développement du back-end au sein d'une équipe
                              technique en pleine expansion. Diplômé d'un bac+5, ouvert aux autodidactes avec des projets
-                             et un portfolio conséquent.", location: "Nice", salary: 5_000, number_hour: 35,
+                             et un portfolio conséquent.", location: "Nice", salary: 1_600, number_hour: 35,
                              employement_type: "cadre", contract_type: "CDI", company_name: "Job connect")
 non_valid_offer3.photo.attach(io: invalid_file3, filename: 'jobConnect.jpg', content_type: 'image/png')
 non_valid_offer3.job = back_developper
@@ -185,7 +185,7 @@ non_valid_offer4 = Offer.new(title: "Développeur Back-end API", description: "S
                             le domaine de la FoodTech et du LastMileDelivery souhaite renforcer les équipes de son
                             centre IT via sa société JAMTECH. Smood offre un lien entre les restaurateurs et les clients
                             en organisant les livraisons des plats à domicile ou au bureau grâce à notre plateforme web
-                            et nos applications mobiles.", location: "Nice", salary: 3_500, number_hour: 38,
+                            et nos applications mobiles.", location: "Nice", salary: 1_500, number_hour: 38,
                              employement_type: "cadre", contract_type: "CDI", company_name: "Job connect")
 non_valid_offer4.photo.attach(io: invalid_file4, filename: 'jobConnect.jpg', content_type: 'image/png')
 non_valid_offer4.job = back_developper
@@ -198,7 +198,7 @@ invalid_file5 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_40
 non_valid_offer5 = Offer.new(title: "Lead Technique Back End C#", description: "TALENTS RH recherche … TALENTS RH,
                             société de recrutement spécialisée Profils Rares & Hautes Compétences, cherche, pour l'un de
                             ses partenaires, des Leaders Techniques Back end C#.NET H/F.", location: "Nice",
-                             salary: 3_500, number_hour: 38, employement_type: "cadre", contract_type: "CDI",
+                             salary: 1_500, number_hour: 38, employement_type: "cadre", contract_type: "CDI",
                              company_name: "Job connect")
 non_valid_offer5.photo.attach(io: invalid_file5, filename: 'jobConnect.jpg', content_type: 'image/png')
 non_valid_offer5.job = back_developper
@@ -279,8 +279,8 @@ seventh_offer = Offer.new(title: "developpeur Ruby/stimulus", description: "Rejo
                           Vous maitriser les languages Ruby et stimulus ? Vous souhaitez améliorer vos connaissances
                           de ces languages au sein d'une équipe innovante et créative ? Nous avons peut-être une place
                           pour vous ! Au sein de nos équipes, développer vos talents et venez créer l'avenir. ",
-                          salary: 1_900, number_hour: 35, employement_type: "salarié", contract_type: "CDI",
-                          location: "Marseille", company_name: "Le Wagon")
+                          salary: 2_900, number_hour: 35, employement_type: "salarié", contract_type: "CDI",
+                          location: "Nice", company_name: "Le Wagon")
 seventh_offer.photo.attach(io: file7, filename: 'wagonteam.png', content_type: 'image/png')
 seventh_offer.job = back_developper
 seventh_offer.user = saunier_sebastien
@@ -325,7 +325,7 @@ ten_offer = Offer.new(title: "Développeur web freelance", description: "OFFRE D
                       Pour développement d'un projet à long terme, si tu es une personne investi qui a du temps et
                       de l'expérience / résultat dans le domaine. J'attends TON e-mails ET j'espère que TU sauras mettre
                       en avant tes talents de copyrighteurs ", salary: 1_700, number_hour: 32,
-                      employement_type: "salarié", contract_type: "CDD", location: "Nice", company_name: "Apple")
+                      employement_type: "salarié", contract_type: "CDD", location: "Californie", company_name: "Apple")
 ten_offer.photo.attach(io: file10, filename: 'Cook$.jpg', content_type: 'image/png')
 ten_offer.job = fullstack_developper
 ten_offer.user = cook_tim
