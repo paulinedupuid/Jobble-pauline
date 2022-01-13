@@ -5,6 +5,7 @@
       <%= link_to offer_path(offer), class: "message-card pill-lavande" do %>
         <div class="max-length text-center">
           <h4><%= offer.title.capitalize %></h4>
+          <p><%= offer.company_name.capitalize %></p>
           <p><%= offer.user.first_name.capitalize %> <%= offer.user.last_name.capitalize %></p>
         </div>
         <% end %>
