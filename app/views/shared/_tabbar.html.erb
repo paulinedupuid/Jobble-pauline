@@ -33,7 +33,7 @@
 
 
   <%= link_to message_index_path, class: (controller_name == "messages" && action_name == "create" || controller_name == "users" && action_name == "message_index") || (controller_name == "chatrooms" && action_name == "show") ? "tabbar-active tabbar-icons" : "tabbar-icons", id: "relative-notif" do %>
-        <div id='message-notif' data-message="<%= message_count %>"></div>
+        <div id='message-notif' class="d-none" data-message="<%= message_count %>"></div>
     <%= render '/shared/svg/messages.svg' %>
     <p>Messages</p>
   <% end %>

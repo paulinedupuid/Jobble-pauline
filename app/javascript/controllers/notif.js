@@ -5,6 +5,7 @@ const notificationTest = () => {
  const nombre = nonVu.dataset.message
  if (nonVu) {
  nonVu.innerHTML = nombre;
+ nonVu.classList.remove("d-none");
  }
 
   // fetch("")
