@@ -1,6 +1,6 @@
 <%= render '/shared/dashboardnavigationbar', pathname: 'Mes informations'%>
 <div class="content-long-dashboard dashboard">
-<h2 class="mt-3 text-center">Editer mon profile <%= resource_name.to_s.humanize %></h2>
+<h2 class="mt-3 text-center">Editer mon profil <%= resource_name.to_s.humanize %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
@@ -25,14 +25,14 @@
                 input_html: { autocomplete: "current-password" } %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "mettre a jour" %>
+  <div class="form-actions pill-jaune button-pill-large">
+    <%= f.button :submit, "Mettre a jour" %>
   </div>
 <% end %>
 
 <br>
 
-<%= link_to "supprimer", registration_path(resource_name), data: { confirm: "etes vous sure!" }, method: :delete %>
+<p class="info-pill pill-obsydian"><%= link_to "Supprimer", registration_path(resource_name), data: { confirm: "Etes-vous sur ?" }, method: :delete %></p>
 
-<%= link_to "retour", :back %>
+<p class="info-pill pill-obsydian"><%= link_to "Retour", :back %></p>
 </div>
