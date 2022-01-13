@@ -18,7 +18,7 @@ require "open-uri"
 
 # You can validate the following offer to had a match:
 # "Développeur web freelance" by tim cook
-# "developpeur Ruby/stimulus" by xavier niel
+# "developpeur Ruby/stimulus" by sebastien saunier
 
 # and if you have added the frontend developper job to the jon lemon list the:
 #  "Developpeur Javascript Frontend" offer by dominique patty

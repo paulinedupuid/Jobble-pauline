@@ -31,7 +31,7 @@
       <!-- message repondu par l'utilisateur--->
       <%= link_to chatroom_path(chatroom) do%>
       <div class="message-card <%=css_class%>">
-      <%= render 'shared/avatar', imageurl: "cl_image_path chatroom.offer.photo.key, width: 50, height: 50" %>
+      <%= render 'shared/avatar_recrutor', chatroom: chatroom, imageurl: "cl_image_path chatroom.offer.photo.key, width: 50, height: 50" %>
       <div class="max-lenght">
       <h4><%=patronyme.titleize%></h4>
       <h6><%= Offer.where(user_id: chatroom.recrutor).first.company_name %></h6>
