@@ -9,9 +9,9 @@
 
         <div class="offer-global-content">
           <div class="offer-name">
+            <h2><%= offer.user.first_name.capitalize %> <%= offer.user.last_name %></h2>
             <%= link_to profile_path(offer.user.id) do  %>
-            <h2><%= offer.user.first_name.capitalize %> <%= offer.user.last_name %>.</h2>
-            <p>Recruteur</p>
+            <p><%= offer.user.first_name.capitalize %> <%= offer.user.last_name %></p>
             <% end %>
           </div>
 
