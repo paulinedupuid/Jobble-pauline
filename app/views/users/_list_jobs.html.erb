@@ -3,9 +3,9 @@
 <div class="content-long-dashboard dashboard text-center">
 
   <% if params[:query].blank? %>
-    <h1><%= pluralize @jobs.count, 'metier' %> </h1>
+    <h2><%= pluralize @jobs.count, 'metier' %> </h2>
   <% else %>
-    <h1><%= pluralize @jobs.count, 'resultats' %> pour <code><%= params[:query] %> </code></h1>
+    <h2><%= pluralize @jobs.count, 'resultats' %> pour <code><%= params[:query] %> </code></h2>
   <% end %>
 
  <% @jobs.each do |job| %>
