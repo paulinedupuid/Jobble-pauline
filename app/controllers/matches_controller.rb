@@ -16,13 +16,13 @@ class MatchesController < ApplicationController
       @match.candidate_status = true
       if @match.save
         # render 'shared/animation'
-         unless Chatroom.where(user_id: current_user, recrutor: @offer.user_id).count.positive?
+        unless Chatroom.where(user_id: current_user, recrutor: @offer.user_id).count.positive?
           @chatroom = Chatroom.new(name: @offer.title, user_id: @user.id, recrutor: @offer.user_id)
           if @chatroom.save
-            teste = User.find(first_name: 'bot')
-            Message.create(content: 'ceci es le début de votre conversation', user_id: teste, chatroom_id: @chatroom.id )
+            teste = User.find_by_first_name('bot')
+            Message.create(content: 'Ceci est le début de votre conversation', user_id: teste.id, chatroom_id: @chatroom.id )
           end
-         end
+        end
         if @match.recrutor_status == true
           redirect_to match_path(@match)
         else
