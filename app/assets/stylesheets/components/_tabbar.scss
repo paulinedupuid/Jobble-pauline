@@ -44,12 +44,6 @@ $tab-bar-icons-y-position: 18px;
   fill: rgba(255, 255, 255, 0.5);
   // filter: drop-shadow(10px 0 5px red);
   }
-  transition: 0.2s ease;
-  &:hover,.active{
-  transition: 0.5s ease;
-  svg { fill: white; }
-  p { color: white; }
-  }
 }
 
 .tabbar-active {
