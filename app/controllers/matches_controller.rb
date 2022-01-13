@@ -19,8 +19,8 @@ class MatchesController < ApplicationController
          unless Chatroom.where(user_id: current_user, recrutor: @offer.user_id).count.positive?
           @chatroom = Chatroom.new(name: @offer.title, user_id: @user.id, recrutor: @offer.user_id)
           if @chatroom.save
-            teste = User.find(first_name: 'bot')
-            Message.create(content: 'ceci es le début de votre conversation', user_id: teste, chatroom_id: @chatroom.id )
+            # teste = User.find(first_name: 'bot')
+            Message.create(content: 'ceci es le début de votre conversation', user_id: 53, chatroom_id: @chatroom.id )
           end
          end
         if @match.recrutor_status == true

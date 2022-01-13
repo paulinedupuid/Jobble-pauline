@@ -15,7 +15,6 @@ import { jobClickSkill } from "./seehide";
 export default class extends Controller {
   static targets = ["formulaire", "button", "liste"];
   connect() {
-    // myMove()
   }
 
   update() {

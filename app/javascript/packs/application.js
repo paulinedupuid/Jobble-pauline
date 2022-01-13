@@ -29,7 +29,7 @@ import { userInfoDisplay } from "../controllers/display_user_info";
 import { initChatroomCable } from '../channels/chatroom_channel';
 import { swipeOffer } from '../plugins/swipe';
 import { notificationTest } from '../controllers/notif';
-// import { myMove } from '../controllers/anim';
+import { myMove } from '../controllers/anim';
  import { jobClick } from '../controllers/seehideform';
  import {jobClickSkill} from '../controllers/seehide';
 
@@ -46,6 +46,7 @@ document.addEventListener('turbolinks:load', () => {
   notificationTest()
   jobClick()
   jobClickSkill()
+  // myMove()
 
 
   // disable pinch-zoom on smartphone -------------------------

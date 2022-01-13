@@ -1,7 +1,5 @@
 <div data-hello-target="liste">
 
-<%= render '/shared/dashboardnavigationbar', pathname: 'Mes informations'%>
-
 <div class="content-long-dashboard dashboard">
   <% if params[:query].blank? %>
     <h1><%= pluralize @jobs.count, 'metier' %> </h1>
