@@ -1,7 +1,7 @@
 <%= render "/shared/dashboardnavigationbar", pathname: "Mes compétences" %>
 
 <div class="content-long-dashboard dashboard text-center">
-
+<div class="b-margin-20"></div>
 <% if @job_skill %>
   <% @job_skill.each do |skill| %>
   <p class="button-pill-large pill-lavande"><%= Skill.find(skill.skill_id).name %> : <%= UserSkill.find_by_skill_id(skill.skill_id).level %>/5</p>
@@ -11,6 +11,7 @@
 <div data-controller="hello">
   <%= form_with url: skill_show_path, method: :get, html: {
    data: { hello_target: 'formulaire' } } do |f| %>
+    <span class="input-search-div">
     <%= f.text_field :query,
                      class: "form-control",
                      placeholder: 'chercher une compétence',
@@ -18,6 +19,8 @@
                      data: { hello_target: 'button', action: 'keyup->hello#update' } %>
 
          <% end %>
+  </span>
 <%= render "list_skills", skills: @skills %>
+<div class="b-margin-40"></div>
 </div>
 </div>

@@ -1,7 +1,7 @@
 <%= render "/shared/dashboardnavigationbar", pathname: "Profil professionnel "%>
 
 <div class="content-long-dashboard dashboard text-center">
-
+<div class="b-margin-20"></div>
 
 <% @job_user.each do |job| %>
 <p class="button-pill-large pill-lavande"><%= Job.find(job.job_id).name %> : <%= UserJob.find_by_job_id(job.job_id).experience %> mois</p>
@@ -11,6 +11,7 @@
 <div data-controller="hello">
   <%= form_with url: job_show_path, method: :get, html: {
    data: { hello_target: 'formulaire' } } do |f| %>
+    <span class="input-search-div">
     <%= f.text_field :query,
                      class: "form-control",
                      placeholder: 'chercher un métier',
@@ -18,7 +19,9 @@
                      data: { hello_target: 'button', action: 'keyup->hello#update' } %>
 
          <% end %>
+    </span>
 <%= render "list_jobs", jobs: @jobs %>
+<div class="b-margin-40"></div>
 </div>
 <%# action: "keyup->search_jobs#update", %>
 <%#
