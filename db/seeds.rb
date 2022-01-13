@@ -422,17 +422,17 @@ puts "compétences créés"
 # user_jobs creation
 puts "création des user_jobs"
 
-first_job = UserJob.new(experience: 4)
+first_job = UserJob.new(experience: 34)
 first_job.user = lemon_jon
 first_job.job = back_developper
 first_job.save!
 
-second_job = UserJob.new(experience: 1)
+second_job = UserJob.new(experience: 20)
 second_job.user = lemon_jon
 second_job.job = fullstack_developper
 second_job.save!
 
-third_job = UserJob.new(experience: 6)
+third_job = UserJob.new(experience: 46)
 third_job.user = catarina
 third_job.job = designer
 third_job.save!
