@@ -1,6 +1,8 @@
-<% if @skill_user %>
-  <% @skill_user.each do |skill| %>
-  <%= Skill.find(skill.skill_id).name %>
+<div class="content-long-dashboard dashboard text-center">
+
+<% if @job_skill %>
+  <% @job_skill.each do |skill| %>
+  <p class="button-pill-large pill-lavande"><%= Skill.find(skill.skill_id).name %> : <%= UserSkill.find_by_skill_id(skill.skill_id).level %>/5</p>
   <% end %>
 <% end %>
 
@@ -15,4 +17,5 @@
 
          <% end %>
 <%= render "list_skills", skills: @skills %>
+</div>
 </div>

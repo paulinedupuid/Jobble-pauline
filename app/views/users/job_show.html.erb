@@ -1,6 +1,8 @@
+<div class="content-long-dashboard dashboard text-center">
+
 
 <% @job_user.each do |job| %>
-<%= Job.find(job.job_id).name %>
+<p class="button-pill-large pill-lavande"><%= Job.find(job.job_id).name %> : <%= UserJob.find_by_job_id(job.job_id).experience %> mois</p>
 <% end %>
 
 
@@ -27,3 +29,4 @@
 
 <%# end %>
 <%# end %>
+</div>
