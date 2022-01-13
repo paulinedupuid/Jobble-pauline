@@ -34,6 +34,7 @@ class UsersController < ApplicationController
   end
 
   def job_show
+    @job_user = UserJob.where(user_id: current_user.id)
     @job = UserJob.new
     @jobs = Job.order(name: :desc)
     if params[:query].present?
@@ -64,6 +65,7 @@ class UsersController < ApplicationController
   end
 
   def skill_show
+    @job_skill = UserSkill.where(user_id: current_user.id)
     @skill = UserSkill.new
     @skills = Skill.order(name: :desc)
     if params[:query].present?

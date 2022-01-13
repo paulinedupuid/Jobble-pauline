@@ -1,5 +1,5 @@
 <div class="navigation-bar">
-<%= link_to dashboard_path(@user) do %>
+<%= link_to dashboard_path(current_user) do %>
 <div><span class="fas fa-chevron-left"></span><span>dashboard</span></div>
 <% end %>
 <h6><%=pathname%></h6>

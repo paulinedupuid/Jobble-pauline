@@ -1,3 +1,9 @@
+
+<% @job_user.each do |job| %>
+<%= Job.find(job.job_id).name %>
+<% end %>
+
+
 <div data-controller="hello">
   <%= form_with url: job_show_path, method: :get, html: {
    data: { hello_target: 'formulaire' } } do |f| %>

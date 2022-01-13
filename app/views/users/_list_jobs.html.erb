@@ -1,6 +1,7 @@
 <div data-hello-target="liste">
 
 <div class="content-long-dashboard dashboard text-center">
+
   <% if params[:query].blank? %>
     <h1><%= pluralize @jobs.count, 'metier' %> </h1>
   <% else %>

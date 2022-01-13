@@ -39,8 +39,68 @@ function swipeOffer() {
           // swiped right
           const id = e.target.dataset.id
           result(id, "matches")
+      /////////////////////////////////////////////////////////////////////////////
+       $(image).on("touchmove", function (e) {
+      //       console.log(currentX);
+      //       console.log(currentY);
+      setInterval(explode(currentX, currentY), 200)
+      //       setInterval(explode(currentX, currentY), 100)
+           })
+
+
+          // target can be any Element or other EventTarget.
+
+          // explosion construction
+          function explode(x, y) {
+            const particles = 240,
+              // explosion container and its reference to be able to delete it on animation end
+              explosion = $('<div class="explosion"></div>');
+
+            // put the explosion container into the body to be able to get it's size
+            $('body').append(explosion);
+
+            // position the container to be centered on click
+            explosion.css('left', x - explosion.width() / 2);
+            explosion.css('top', y - explosion.height() / 2);
+
+            for (let i = 0; i < particles; i++) {
+              // positioning x,y of the particle on the circle (little randomized radius)
+              let x = (explosion.width() / 2) + rand(200, 400) * Math.cos(2 * Math.PI * i / rand(particles - 10, particles + 10)),
+                y = (explosion.height() / 2) + rand(200, 400) * Math.sin(2 * Math.PI * i / rand(particles - 10, particles + 10)),
+                color = rand(0, 255) + ', ' + rand(0, 255) + ', ' + rand(0, 255), // couleur aleatoirr
+                // particle element creation (could be anything other than div)
+                elm = $('<div class="particle" style="' +
+                  'background-color: rgb(' + color + ') ;' +
+                  'top: ' + y + 'px; ' +
+                  'left: ' + x + 'px"></div>');
+
+              if (i == 0) { // no need to add the listener on all generated elements
+                elm.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function (e) {
+                  explosion.remove(); // remove this explosion container when animation ended
+                });
+              }
+              explosion.append(elm);
+            }
+          }
+
+          // get random number between min and max value
+          function rand(min, max) {
+            return Math.floor(Math.random() * (max + 1)) + min;
+          }
+
+
+
+
+
+
+
+
+
+
         }
       }
+//////////////////////////////////////////////////////////////////////////////////
+
 
       initialX = null;
       initialY = null;
@@ -89,6 +149,10 @@ const result = (id, status) => {
         `
       }
     })
+
 }
 
 export { swipeOffer }
+
+
+// 148

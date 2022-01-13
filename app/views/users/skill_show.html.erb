@@ -1,3 +1,8 @@
+
+<% @skill_user.each do |skill| %>
+<%= Skill.find(skill.skill_id).name %>
+<% end %>
+
 <div data-controller="hello">
   <%= form_with url: skill_show_path, method: :get, html: {
    data: { hello_target: 'formulaire' } } do |f| %>
