@@ -88,9 +88,15 @@ class UsersController < ApplicationController
     else
       @user_skill = UserSkill.new(level: @level, skill_id: @idskill)
       @user_skill.user = @user
-      @user_skill.save!
+      # a voir pour la validate
+     if @user_skill.save
+      redirect_to skill_show_path
+     else
+      redirect_to skill_show_path
+     end
     end
-    redirect_to skill_show_path
+
+    # redirect_to skill_show_path
   end
 
   private

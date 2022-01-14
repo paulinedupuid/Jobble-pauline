@@ -15,7 +15,7 @@
    <%end%>
   <!------------------>
 
-<nav class="tabbar">
+<nav class="tabbar anim-js-div">
 
   <%= link_to dashboard_path(@user), class: controller_name == "users" && action_name == "dashboard"? "tabbar-active tabbar-icons" : "tabbar-icons" do %>
   <%= render '/shared/svg/dashboard.svg' %>
