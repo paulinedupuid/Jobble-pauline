@@ -1,11 +1,15 @@
 function explode(x, y) {
-  const particles = 300,
+  const particles = 100,
     // explosion container and its reference to be able to delete it on animation end
     explosion = $('<div class="explosion"></div>');
-const image = document.querySelector('.offer-image');
-  // put the explosion container into the body to be able to get it's size
-  $(image).append(explosion);
 
+    // mes cibles pour a recup si je veux append l'explosion dedans
+const image = document.querySelector('.offer-image');
+  const offre = document.querySelector('.offre-js');
+  // put the explosion container into the body to be able to get it's size
+  // ligne 8 choix de ou l'on veut injecter l'anim
+  $(offre).append(explosion);
+// image
   // position the container to be centered on click
   explosion.css('left', x - explosion.width() / 2);
   explosion.css('top', y - explosion.height() / 2);
@@ -66,31 +70,20 @@ function swipeOffer() {
 
       if (Math.abs(diffX) > Math.abs(diffY)) {
         // sliding horizontally
+        const carte = document.querySelector('.content-offers');
         if (diffX > 0) {
           // swiped left
           const id = e.target.dataset.id
-          const carte = document.querySelector('.content-offers');
-          carte.style.animation = 'translate(-300px)';
-          carte.style.transition = 'all 1s ease-out'
+          carte.style.animationName = 'swipeleft'
+          //  carte.style.transition = 'all 1s ease-out';
 
-          //////////////////////
-          // const dislike = document.querySelector(".refus-anim");
-          // const buttonDislike = document.querySelector('.refus-annim-button');
-          //   buttonDislike.addEventListener('click', (e) => {
-          //       e.preventDefault();
-          //      e.currentTarget.classList.remove("d-none");
-          //   });
-
-          // dislike.style.transform = 'translate(-20px, -20px)rotate(25deg)';
           result(id, "reject")
 
 
         } else {
+          carte.style.animationName = 'swiperight'
           // swiped right
           const id = e.target.dataset.id
-          const carte = document.querySelector('.content-offers');
-          carte.style.transform = 'translate(+300px)';
-          carte.style.transition = 'all 1s ease-out'
           result(id, "matches")
         }
       }
@@ -108,7 +101,6 @@ function swipeOffer() {
 
     acceptBtn.addEventListener("click", (e) => {
       const id = image.dataset.id
-      // setInterval(explode(260, 450), 1000)
       result(id, "matches")
 
     })
@@ -134,13 +126,19 @@ const result = (id, status) => {
       if (url.includes("offers"))  {
         window.location.href = "/offers"
       } else {
-        const carte = document.querySelector('.content-offers');
-        carte.style.transition = 'initial';
         const id = url.split("/matches/")[1]
         const modal = document.querySelector(".modal-shadow")
         modal.classList.remove("modal-hidden")
         const modalContent = document.querySelector(".match-modal")
-        setInterval(explode(260, 450), 1100)
+        // loic
+        const carte = document.querySelector('.content-offers');
+        const tabbar = document.querySelector('.anim-js-div');
+        // carte.classList.add('d-none');
+        // tabbar.classList.add('d-none');
+       // setInterval(
+           explode(240, 720);
+          explode(150, 300);//, 1100)
+        // fin loic dans result
         modalContent.innerHTML = `
         <a href="/offers" id="close-modal">X</a>
         <h2 id='h2-modal'>It's a Match!</h2>
