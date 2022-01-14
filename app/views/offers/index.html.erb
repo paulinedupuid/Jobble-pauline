@@ -1,6 +1,6 @@
-
 <div class="offre-js">
 <%# ma classee pour cacher l'offre %>
+<% if @selected_offers.count.positive? %>
 
 <div class="content-offers offers">
 <div class="refus-anim d-none" >
@@ -8,7 +8,6 @@
 </div>
 
   <div>
-    <% if @selected_offers.count.positive? %>
     <% offer = @selected_offers.first %>
       <div>
         <style>.photo{background-image:url('<%= cl_image_path offer.photo.key, width: 408, height: 650 %>');}</style>
@@ -56,10 +55,11 @@
         </div>
       </div>
       <% else %>
-        <div style="height: 23vh;" ></div>
-        <div class="xlarge-info-pill p-5">
+        <div class="content-long dashboard">
+        <div class="nothingfound">
         <span class="d-flex justify-content-center" style="font-size: 100px;">😥</span>
-        <h5 style="text-align: center;">Il n'y a plus d'offres<br>correspondant à<br>votre profil.</h5>
+        <h5 style="text-align: center;">Aucune nouvelle offre<br>ne correspond à<br>votre profil.</h5>
+        </div>
         </div>
       <% end %>
   </div>

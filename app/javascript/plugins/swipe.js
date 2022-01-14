@@ -141,10 +141,14 @@ const result = (id, status) => {
         // fin loic dans result
         modalContent.innerHTML = `
         <a href="/offers" id="close-modal">X</a>
-        <h2 id='h2-modal'>It's a Match!</h2>
-        <p>😍</p>
-        <a href="/matches/${id}" class="info-pill pill-jaune">Mon match</a>
-        <a href="/offers" class="info-pill pill-indigo">Continuer</a>
+        <h2 id='h2-modal'>It's a</h2>
+        <h1>Match !<h1>
+        <div class="b-margin-60"></div>
+        <h1 style="font-size:100px;">😍</h1>
+        <div class="b-margin-60"></div>
+        <a href="/matches/${id}" class="button-pill-xlarge pill-jaune">Mon match</a>
+        <div class="b-margin-20"></div>
+        <a href="/offers" class="button-pill-xlarge pill-lavande">Continuer</a>
         `
       }
     })
