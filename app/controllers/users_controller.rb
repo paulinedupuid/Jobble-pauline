@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   def job_show
     @job_user = UserJob.where(user_id: current_user.id)
     @job = UserJob.new
-    @jobs = Job.order(name: :desc)
+    @jobs = Job.order(name: :asc)
     if params[:query].present?
       @jobs = @jobs.where('name ILIKE ?', "%#{params[:query]}%")
     end
@@ -67,7 +67,7 @@ class UsersController < ApplicationController
   def skill_show
     @job_skill = UserSkill.where(user_id: current_user.id)
     @skill = UserSkill.new
-    @skills = Skill.order(name: :desc)
+    @skills = Skill.order(name: :asc)
     if params[:query].present?
       @skills = @skills.where('name ILIKE ?', "%#{params[:query]}%")
     end
