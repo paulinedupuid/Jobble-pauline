@@ -90,7 +90,8 @@ class UsersController < ApplicationController
       @user_skill.user = @user
       @user_skill.save
     end
-    redirect_to skill_show_path
+
+    # redirect_to skill_show_path
   end
 
   private

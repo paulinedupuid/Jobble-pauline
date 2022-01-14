@@ -7,11 +7,11 @@
   // particle styling
   .particle {
     position: absolute; // required
-    width: 11px;
-    height: 11px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
-    animation: pop 1s reverse forwards; // required
-    // animation-duration: 3s;
+    animation: pop 0.2s reverse forwards; // required
+    animation-duration: 1s;
     animation-iteration-count: infinite;
   }
 }
@@ -26,9 +26,10 @@
     left: 15%;
     opacity: 1;
     top: 44%;
-    left: 76;
+    left: 76%;
     top: 11%;
     left: 35%;
+
   }
 }
 
@@ -47,15 +48,42 @@ position: absolute;
   align-items: center;
   justify-content: center;
   animation-duration: 1s;
-  // animation: fame left 1s, transform 1s;
    i {
     font-size: 120px;
     color: $jaune;
   }
 }
 
+.offre-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
 
 
+.content-offers {
+animation-duration: 0.5s;
+}
+
+@keyframes swipeleft {
+  from {
+  transform: translateX(0);
+  }
+  to {
+    transform: translateX(-200px);
+  }
+
+}
+
+@keyframes swiperight {
+  from {
+  transform: translateX(0);
+  }
+  to {
+    transform: translateX(+200px);
+  }
+
+}
 /// DEMO styling
 // html, body {
 //   height: 100%;
