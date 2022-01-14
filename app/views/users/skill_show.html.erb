@@ -1,11 +1,14 @@
 <%= render "/shared/dashboardnavigationbar", pathname: "Mes compétences" %>
 
 <div class="content-long-dashboard dashboard text-center">
-<div class="b-margin-20"></div>
+<div class="b-margin-30"></div>
 <% if @job_skill.count.positive? %>
   <h4>Mes compétences</h4>
+  <div class="b-margin-20"></div>
   <% @job_skill.each do |skill| %>
-  <p class="dashboard-pill pill-lavande text-center"><%= Skill.find(skill.skill_id).name %> : <%= UserSkill.find_by_skill_id(skill.skill_id).level %>/5</p>
+  <% nbtimes = UserSkill.find_by_skill_id(skill.skill_id).level%>
+  <% stars = "⭐️"%>
+  <p class="dashboard-pill pill-lavande d-flex justify-content-center"><b><%= Skill.find(skill.skill_id).name %><br><%= stars * nbtimes.to_i %></p></b>
   <% end %>
 <% end %>
 

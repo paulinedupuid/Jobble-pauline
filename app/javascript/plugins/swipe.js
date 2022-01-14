@@ -1,5 +1,5 @@
 function explode(x, y) {
-  const particles = 100,
+  const particles = 50,
     // explosion container and its reference to be able to delete it on animation end
     explosion = $('<div class="explosion"></div>');
 
@@ -8,7 +8,7 @@ const image = document.querySelector('.offer-image');
   const offre = document.querySelector('.offre-js');
   // put the explosion container into the body to be able to get it's size
   // ligne 8 choix de ou l'on veut injecter l'anim
-  $(offre).append(explosion);
+  $('body').append(explosion);
 // image
   // position the container to be centered on click
   explosion.css('left', x - explosion.width() / 2);
@@ -136,8 +136,8 @@ const result = (id, status) => {
         // carte.classList.add('d-none');
         // tabbar.classList.add('d-none');
        // setInterval(
-           explode(240, 720);
-          explode(150, 300);//, 1100)
+          explode(260, 700);
+          explode(260, 400);
         // fin loic dans result
         modalContent.innerHTML = `
         <a href="/offers" id="close-modal">X</a>
@@ -146,9 +146,9 @@ const result = (id, status) => {
         <div class="b-margin-60"></div>
         <h1 style="font-size:100px;">😍</h1>
         <div class="b-margin-60"></div>
-        <a href="/matches/${id}" class="button-pill-xlarge pill-jaune">Mon match</a>
+        <h6><a href="/matches/${id}" class="button-pill-xlarge pill-jaune">Mon match</a></h6>
         <div class="b-margin-20"></div>
-        <a href="/offers" class="button-pill-xlarge pill-lavande">Continuer</a>
+        <h6><a href="/offers" class="button-pill-xlarge pill-lavande">Continuer</a></h6>
         `
       }
     })
