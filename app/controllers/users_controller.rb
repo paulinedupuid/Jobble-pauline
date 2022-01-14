@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   def job_show
     @job_user = UserJob.where(user_id: current_user.id)
     @job = UserJob.new
-    @jobs = Job.order(name: :desc)
+    @jobs = Job.order(name: :asc)
     if params[:query].present?
       @jobs = @jobs.where('name ILIKE ?', "%#{params[:query]}%")
     end
@@ -59,7 +59,7 @@ class UsersController < ApplicationController
     else
       @user_job = UserJob.new(experience: @experience, job_id: @idjob)
       @user_job.user = @user
-      @user_job.save!
+      @user_job.save
     end
         redirect_to job_show_path
   end
@@ -67,7 +67,7 @@ class UsersController < ApplicationController
   def skill_show
     @job_skill = UserSkill.where(user_id: current_user.id)
     @skill = UserSkill.new
-    @skills = Skill.order(name: :desc)
+    @skills = Skill.order(name: :asc)
     if params[:query].present?
       @skills = @skills.where('name ILIKE ?', "%#{params[:query]}%")
     end
@@ -88,15 +88,9 @@ class UsersController < ApplicationController
     else
       @user_skill = UserSkill.new(level: @level, skill_id: @idskill)
       @user_skill.user = @user
-      # a voir pour la validate
-     if @user_skill.save
-      redirect_to skill_show_path
-     else
-      redirect_to skill_show_path
-     end
+      @user_skill.save
     end
-
-    # redirect_to skill_show_path
+    redirect_to skill_show_path
   end
 
   private

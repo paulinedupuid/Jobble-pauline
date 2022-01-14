@@ -115,6 +115,10 @@ affair_analyst = Job.create(name: "analyste d'affaire")
 system_engineer = Job.create(name: "ingénieur système")
 accounting = Job.create(name: "comptable")
 jedi = Job.create(name: "maitre Jedi")
+data_scientist = Job.create(name: "spécialiste des données")
+data_engineer = Job.create(name: "ingénieur des données")
+data_analyst = Job.create(name: "analyste de données")
+human_ressources = Job.create(name: "ressources humaines")
 optician = Job.create(name: "opticien")
 
 puts "jobs créés"
@@ -123,13 +127,13 @@ puts "jobs créés"
 # Offers creation
 puts "creation des offres:"
 
-file = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1642063029/development/sebastien_saunier_wbibow.jpg')
+file = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1642063175/development/Romain-Paillard-Boris-Paillard-Sebastien-Saunier-Le-Wagon_mz0kpl.jpg')
 first_offer = Offer.new(title: "Developpeur front-end", description: "Vous connaissez les langages de programation
                         frontend tel que HTML, CSS, Javascript, vous êtes a même de maquetter vos projets, vous savez
                         gérer le design et la codification d'une page, vous êtes célibataire, nous avons un emploi qui
                         pourrait vous convenir !", location: "Paris", salary: 3_250, number_hour: 36,
                         employement_type: "cadre", contract_type: "CDD", company_name: "Le Wagon")
-first_offer.photo.attach(io: file, filename: 'Saunier.jpg', content_type: 'image/png')
+first_offer.photo.attach(io: file, filename: 'wagonteam.png', content_type: 'image/png')
 first_offer.job = front_developper
 first_offer.user = saunier_sebastien
 first_offer.save!
@@ -230,14 +234,14 @@ sixth_offer.save!
 
 puts "6"
 
-file7 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1642063175/development/Romain-Paillard-Boris-Paillard-Sebastien-Saunier-Le-Wagon_mz0kpl.jpg')
+file7 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1642063029/development/sebastien_saunier_wbibow.jpg')
 seventh_offer = Offer.new(title: "developpeur Ruby/stimulus", description: "Rejoignez notre équipe de développeur !
                           Vous maitriser les languages Ruby et stimulus ? Vous souhaitez améliorer vos connaissances
                           de ces languages au sein d'une équipe innovante et créative ? Nous avons peut-être une place
                           pour vous ! Au sein de nos équipes, développer vos talents et venez créer l'avenir. ",
                           salary: 2_900, number_hour: 35, employement_type: "salarié", contract_type: "CDI",
                           location: "Nice", company_name: "Le Wagon")
-seventh_offer.photo.attach(io: file7, filename: 'wagonteam.png', content_type: 'image/png')
+seventh_offer.photo.attach(io: file7, filename: 'Saunier.jpg', content_type: 'image/png')
 seventh_offer.job = back_developper
 seventh_offer.user = saunier_sebastien
 seventh_offer.save!
@@ -363,14 +367,21 @@ skill_php = Skill.create(name: "PHP7")
 skill_sql = Skill.create(name: "sql")
 skill_python = Skill.create(name: "Python")
 skill_cafe = Skill.create(name: "Preparation de café")
-skill_the = Skill.create(name: "Preparation de boissons chaudes")
 skill_wireframe = Skill.create(name: "création de wireframe")
 skill_english = Skill.create(name: "langue: Anglais")
 skill_french = Skill.create(name: "langue: Français")
 skill_spanish = Skill.create(name: "langue: Espagnol")
 skill_italian = Skill.create(name: "langue: Italien")
 skill_toshop = Skill.create(name: "Photoshop")
-skill_figma = Skill.create(name: "utilisation Figma")
+skill_figma = Skill.create(name: "Figma")
+skill_office = Skill.create(name: "suite office")
+skill_github = Skill.create(name: "Github")
+skill_vente = Skill.create(name: "vente")
+skill_communication = Skill.create(name: "contact client")
+skill_gestion = Skill.create(name: "Gestion de stocks")
+skill_ponctualite = Skill.create(name: "Ponctuel")
+skill_jardin = Skill.create(name: "Entretien jardins")
+skill_poney = Skill.create(name: "water-poney")
 
 puts "compétences créés"
 
