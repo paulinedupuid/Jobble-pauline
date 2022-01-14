@@ -2,7 +2,7 @@
 
 <div class="content-long-dashboard dashboard text-center">
 <div class="b-margin-30"></div>
-<% if @job_user %>
+<% if @job_user.count.positive? %>
   <h4>Mes métiers</h4>
   <div class="b-margin-20"></div>
   <% @job_user.each do |job| %>
