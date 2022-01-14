@@ -1,11 +1,12 @@
 <%= render "/shared/dashboardnavigationbar", pathname: "Profil professionnel "%>
 
 <div class="content-long-dashboard dashboard text-center">
-<div class="b-margin-20"></div>
+<div class="b-margin-30"></div>
 <% if @job_user %>
   <h4>Mes métiers</h4>
+  <div class="b-margin-20"></div>
   <% @job_user.each do |job| %>
-    <p class="dashboard-pill pill-lavande text-center"><%= Job.find(job.job_id).name %> : <%= UserJob.find_by_job_id(job.job_id).experience %> mois</p>
+    <p class="dashboard-pill pill-lavande d-flex justify-content-center"><%= Job.find(job.job_id).name %> : <%= UserJob.find_by_job_id(job.job_id).experience %> mois</p>
   <% end %>
 <% end %>
 
