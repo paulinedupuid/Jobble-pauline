@@ -59,7 +59,7 @@ class UsersController < ApplicationController
     else
       @user_job = UserJob.new(experience: @experience, job_id: @idjob)
       @user_job.user = @user
-      @user_job.save!
+      @user_job.save
     end
         redirect_to job_show_path
   end
@@ -88,12 +88,7 @@ class UsersController < ApplicationController
     else
       @user_skill = UserSkill.new(level: @level, skill_id: @idskill)
       @user_skill.user = @user
-      # a voir pour la validate
-     if @user_skill.save
-      redirect_to skill_show_path
-     else
-      redirect_to skill_show_path
-     end
+      @user_skill.save
     end
 
     # redirect_to skill_show_path
