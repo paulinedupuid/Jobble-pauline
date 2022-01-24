@@ -127,142 +127,142 @@ puts "jobs créés"
 # Offers creation
 puts "creation des offres:"
 
-file = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1642063175/development/Romain-Paillard-Boris-Paillard-Sebastien-Saunier-Le-Wagon_mz0kpl.jpg')
+file = URI.open('https://images.pexels.com/photos/7129197/pexels-photo-7129197.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 first_offer = Offer.new(title: "Developpeur front-end", description: "Vous connaissez les langages de programation
                         frontend tel que HTML, CSS, Javascript, vous êtes a même de maquetter vos projets, vous savez
                         gérer le design et la codification d'une page, vous êtes célibataire, nous avons un emploi qui
                         pourrait vous convenir !", location: "Paris", salary: 3_250, number_hour: 36,
                         employement_type: "cadre", contract_type: "CDD", company_name: "Le Wagon")
-first_offer.photo.attach(io: file, filename: 'wagonteam.png', content_type: 'image/png')
+first_offer.photo.attach(io: file, filename: 'wagonteam.png', content_type: 'image/png', width: 428)
 first_offer.job = front_developper
 first_offer.user = saunier_sebastien
 first_offer.save!
 
 puts "1"
 
-invalid_file = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1642066099/development/job-connect-new-logo-1024x1024_pau5jc.png')
+invalid_file = URI.open('https://images.pexels.com/photos/9821879/pexels-photo-9821879.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 non_valid_offer = Offer.new(title: "Développeur React Front-end", description: "Tu rejoindras un collectif composé de 25
                             personnes dont 13 Développeurs. 1 à 4 développeurs sont dédiés à chaque projet remporté. Les
                             projets peuvent se construire en parallèle (moyenne de 4 à 6 projets/an). Evidemment, tu ne
                             seras jamais seul au début.", location: "Nice", salary: 1_800, number_hour: 40,
                             employement_type: "cadre", contract_type: "CDI", company_name: "Job connect")
-non_valid_offer.photo.attach(io: invalid_file, filename: 'jobConnect.jpg', content_type: 'image/png')
+non_valid_offer.photo.attach(io: invalid_file, filename: 'jobConnect.jpg', content_type: 'image/png', width: 428)
 non_valid_offer.job = back_developper
 non_valid_offer.user = jobconnect
 non_valid_offer.save!
 
 puts "1.1"
 
-invalid_file4 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1642067586/development/Fachada_xqgljl.jpg')
+invalid_file4 = URI.open('https://images.pexels.com/photos/4332516/pexels-photo-4332516.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 non_valid_offer4 = Offer.new(title: "Développeur Back-end API", description: "Smood, acteur incontournable Suisse dans
                             le domaine de la FoodTech et du LastMileDelivery souhaite renforcer les équipes de son
                             centre IT via sa société JAMTECH. Smood offre un lien entre les restaurateurs et les clients
                             en organisant les livraisons des plats à domicile ou au bureau grâce à notre plateforme web
                             et nos applications mobiles.", location: "Nice", salary: 1_500, number_hour: 38,
                              employement_type: "cadre", contract_type: "CDI", company_name: "Job connect")
-non_valid_offer4.photo.attach(io: invalid_file4, filename: 'jobConnect.jpg', content_type: 'image/png')
+non_valid_offer4.photo.attach(io: invalid_file4, filename: 'jobConnect.jpg', content_type: 'image/png', width: 428)
 non_valid_offer4.job = back_developper
 non_valid_offer4.user = jobconnect
 non_valid_offer4.save!
 
 puts "1.2"
 
-file2 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1641897767/development/800px-Christian_Estrosi_-_2017__2824778920307_29__28cropped_29_sxp3fo.jpg')
+file2 = URI.open('https://images.pexels.com/photos/10821734/pexels-photo-10821734.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 second_offer = Offer.new(title: "developpeur PHP/symfony", description: "Nous recherchons pour notre municipalité un
                          developpeur web qui maitrise le langage back-end afin d'améliorer les services de la ville.
                          Votre mission consistera a concevoir et mettre en place une base de donnée avec son interface
                          qui permettent de dématérialiser les archives de notre ville.", location: "Nice",
                          salary: 2_600, number_hour: 40, employement_type: "chef de projet", contract_type: "CDD",
                          company_name: "Ville de Nice")
-second_offer.photo.attach(io: file2, filename: 'Estrosi.jpg', content_type: 'image/png')
+second_offer.photo.attach(io: file2, filename: 'Estrosi.jpg', content_type: 'image/png', width: 428)
 second_offer.job = back_developper
 second_offer.user = estrosi_christian
 second_offer.save!
 
 puts "2"
 
-file3 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1641898067/development/bar-robert_mmlkto.jpg')
+file3 = URI.open('https://images.pexels.com/photos/4890733/pexels-photo-4890733.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 third_offer = Offer.new(title: "barista", description: "dans une brasserie traditionnelle vous serez amené a préparer
                         les boissons chaudes pour nos clients, nous privilégions l'experience et le savoir-faire.",
                         salary: 1_600, number_hour: 40, employement_type: "service", contract_type: "CDD",
                         location: "Nice", company_name: "Restaurant chez Robert")
-third_offer.photo.attach(io: file3, filename: 'Robert.jpg', content_type: 'image/png')
+third_offer.photo.attach(io: file3, filename: 'Robert.jpg', content_type: 'image/png', width: 428)
 third_offer.job = barista
 third_offer.user = restaurant
 third_offer.save!
 
 puts "3"
 
-file4 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1641898172/development/3535003-arnaud-lagardere-montee-des-marches-du-950x0-1_sfdmzl.jpg')
+file4 = URI.open('https://images.pexels.com/photos/2915216/pexels-photo-2915216.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 fourth_offer = Offer.new(title: "developpeur ruby", description: "Notre entreprise récemment installé sur la côte
                          recherche ses futurs collaborateurs, nous sommes a la recherche de developpeur web maitrisant
                          le langage ruby et le framework rails, vous devez être autonome et a même de travailler en
                          équipe. Des connaissances en Javascript sont un plus, le poste est ouvert a tout les profils.",
                          salary: 2_300, number_hour: 34, employement_type: "developpeur", contract_type: "CDI",
                          location: "Paris", company_name: "groupe Lagardère")
-fourth_offer.photo.attach(io: file4, filename: 'Lagardere.jpg', content_type: 'image/png')
+fourth_offer.photo.attach(io: file4, filename: 'Lagardere.jpg', content_type: 'image/png', width: 428)
 fourth_offer.job = affair_analyst
 fourth_offer.user = lagardere_arnaud
 fourth_offer.save!
 
 puts "4"
 
-file5 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1641898239/development/648x360_arnaud-lagardere-a-paris-le-10-mai-2019_o8smu9.jpg')
+file5 = URI.open('https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 fifth_offer = Offer.new(title: "developpeur fullstack", description: "Notre groupe recherche un développeur fullstack
                        pour la création de son site de vente en ligne. Vous aurez pour tâche de concevoir, créer et
                        mettre en ligne le site de vente pour notre marque et promouvoir l'image de celle-ci, nous
                        recherchons quelqu'un avec un minimum d'experience.", salary: 5_000, number_hour: 38,
                         employement_type: "salarié", contract_type: "CDI", location: "Nice", company_name: "groupe
                         Lagardère")
-fifth_offer.photo.attach(io: file5, filename: 'Lagardere2.jpg', content_type: 'image/png')
+fifth_offer.photo.attach(io: file5, filename: 'Lagardere2.jpg', content_type: 'image/png', width: 428)
 fifth_offer.job = affair_analyst
 fifth_offer.user = lagardere_arnaud
 fifth_offer.save!
 
 puts "5"
 
-file6 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1641898313/development/Nice_1_a0jly7.jpg')
+file6 = URI.open('https://images.pexels.com/photos/428364/pexels-photo-428364.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 sixth_offer = Offer.new(title: "graphiste web", description: "Nous recherchons actuellement un graphiste avec des
                         compétences de web-designer, capable de créer l'interface graphique et de dessiner les visuels.
                         Vous intégrerez une équipe où vous aiderez a la conception du design et a son intégration",
                         salary: 2_375, number_hour: 38, employement_type: "salarié", contract_type: "mission",
                         location: "Nice", company_name: "Ville de Nice")
-sixth_offer.photo.attach(io: file6, filename: 'Nissa.jpg', content_type: 'image/png')
+sixth_offer.photo.attach(io: file6, filename: 'Nissa.jpg', content_type: 'image/png', width: 428)
 sixth_offer.job = designer
 sixth_offer.user = estrosi_christian
 sixth_offer.save!
 
 puts "6"
 
-file7 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1642063029/development/sebastien_saunier_wbibow.jpg')
+file7 = URI.open('https://images.pexels.com/photos/3777931/pexels-photo-3777931.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 seventh_offer = Offer.new(title: "developpeur Ruby/stimulus", description: "Rejoignez notre équipe de développeur !
                           Vous maitriser les languages Ruby et stimulus ? Vous souhaitez améliorer vos connaissances
                           de ces languages au sein d'une équipe innovante et créative ? Nous avons peut-être une place
                           pour vous ! Au sein de nos équipes, développer vos talents et venez créer l'avenir. ",
                           salary: 2_900, number_hour: 35, employement_type: "salarié", contract_type: "CDI",
                           location: "Nice", company_name: "Le Wagon")
-seventh_offer.photo.attach(io: file7, filename: 'Saunier.jpg', content_type: 'image/png')
+seventh_offer.photo.attach(io: file7, filename: 'Saunier.jpg', content_type: 'image/png', width: 428)
 seventh_offer.job = back_developper
 seventh_offer.user = saunier_sebastien
 seventh_offer.save!
 
 puts "7"
 
-file8 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1641898637/development/tim_ksvdje.jpg')
+file8 = URI.open('https://images.pexels.com/photos/1680172/pexels-photo-1680172.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 eigth_offer = Offer.new(title: "Sauvez la princesse Leïa", description: "Nous avons besoin d'un Obi-Wan Kenobi, un
                         MAITRE (désolé Anakin) Jedi qui puisse être a même de nous aider a sauver l'empire galactique.
                         Vous devrez combattre les droïdes qui menacent l'empire et protéger la vie d'une jeune princesse
                         qui essaye de trouver une issue pacifique a la crise.",
                         salary: 0, number_hour: 168, employement_type: "style de vie", contract_type: "CDI",
                         location: "Coruscant", company_name: "Apple")
-eigth_offer.photo.attach(io: file8, filename: 'Jedicook.jpg', content_type: 'image/png')
+eigth_offer.photo.attach(io: file8, filename: 'Jedicook.jpg', content_type: 'image/png', width: 428)
 eigth_offer.job = jedi
 eigth_offer.user = cook_tim
 eigth_offer.save!
 
 puts "8"
 
-file9 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1641898730/development/800px-Tim_Cook__282017_2C_cropped_29_sx4zqf.jpg')
+file9 = URI.open('https://images.pexels.com/photos/2741701/pexels-photo-2741701.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 nine_offer = Offer.new(title: "ingénieur système d'information", description: "Placé(e) sous l'autorité hiérarchique de
                        la Direction Générale, le ou la chargée de mission SI est membre de l'équipe du siège de
                        l'Association.Ses missions seront axées autour du déploiement de la démarche qualité associative
@@ -272,28 +272,28 @@ nine_offer = Offer.new(title: "ingénieur système d'information", description: 
                        Missions liées à l'optimisation des processus métier et à la mise en oeuvre du logiciel dossier
                        unique de l'usager.", salary: 3_250, number_hour: 40, employement_type: "salarié", contract_type:
                        "CDI", location: "Dijon", company_name: "Apple")
-nine_offer.photo.attach(io: file9, filename: 'Cook.jpg', content_type: 'image/png')
+nine_offer.photo.attach(io: file9, filename: 'Cook.jpg', content_type: 'image/png', width: 428)
 nine_offer.job = system_engineer
 nine_offer.user = cook_tim
 nine_offer.save!
 
 puts "9"
 
-file10 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1641898703/development/Apple-CEO-Tim-Cook_pbjisn.jpg')
+file10 = URI.open('https://images.pexels.com/photos/3214772/pexels-photo-3214772.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 ten_offer = Offer.new(title: "Développeur web freelance", description: "OFFRE D'EMPLOI POUR PERSONNES INDÉPENDANTES
                       EXPERT(E) EN WEB MARKETING + copyrighting.
                       Pour développement d'un projet à long terme, si tu es une personne investi qui a du temps et
                       de l'expérience / résultat dans le domaine. J'attends TON e-mails ET j'espère que TU sauras mettre
                       en avant tes talents de copyrighteurs ", salary: 1_700, number_hour: 32,
                       employement_type: "salarié", contract_type: "CDD", location: "Californie", company_name: "Apple")
-ten_offer.photo.attach(io: file10, filename: 'Cook$.jpg', content_type: 'image/png')
+ten_offer.photo.attach(io: file10, filename: 'Cook$.jpg', content_type: 'image/png', width: 428)
 ten_offer.job = fullstack_developper
 ten_offer.user = cook_tim
 ten_offer.save!
 
 puts "10"
 
-file11 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1641898806/development/image-99737--1679066_p53o4k.jpg')
+file11 = URI.open('https://images.pexels.com/photos/1559486/pexels-photo-1559486.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 eleven_offer = Offer.new(title: "Backend Developers", description: "Backend Developers for long-term
                         contract roles (remote roles for EU residents)Enjoy the full flexibility and freedom of working
                         remotely as a Backend developer focusing on your favourite languages with ambitious tech
@@ -301,14 +301,14 @@ eleven_offer = Offer.new(title: "Backend Developers", description: "Backend Deve
                         tech professionals. We find incredible opportunities for talented professionals like you, who
                         prefer to work remotely in the tech industry.", salary: 2_400, number_hour: 40,
                          employement_type: "cadre", contract_type: "CDD", location: "France", company_name: "Apple")
-eleven_offer.photo.attach(io: file11, filename: 'Cook2.jpg', content_type: 'image/png')
+eleven_offer.photo.attach(io: file11, filename: 'Cook2.jpg', content_type: 'image/png', width: 428)
 eleven_offer.job = back_developper
 eleven_offer.user = cook_tim
 eleven_offer.save!
 
 puts "11"
 
-file12 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1641898891/development/1582205545497_jwtycz.jpg')
+file12 = URI.open('https://images.pexels.com/photos/7014621/pexels-photo-7014621.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 twelve_offer = Offer.new(title: "Developpeur Javascript Frontend", description: "Réseau H est un groupe de sociétés
                          innovantes qui exploitent les nouvelles technologies en plaçant le client au centre de toutes
                          ses démarches. Nous élaborons et proposons des solutions qui contribuent à l’éducation
@@ -319,34 +319,34 @@ twelve_offer = Offer.new(title: "Developpeur Javascript Frontend", description: 
                          des défis variés et qui saura les relever avec brio.", salary: 1_900, number_hour: 35,
                          employement_type: "salarié", contract_type: "CDI", location: "Nice",
                          company_name: "Handiréseau")
-twelve_offer.photo.attach(io: file12, filename: 'DuPaty.jpg', content_type: 'image/png')
+twelve_offer.photo.attach(io: file12, filename: 'DuPaty.jpg', content_type: 'image/png', width: 428)
 twelve_offer.job = front_developper
 twelve_offer.user = dominique_paty
 twelve_offer.save!
 
 puts "12"
 
-file13 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1641899080/development/la-salle-restaurant-robert_hpcpxu.jpg')
+file13 = URI.open('https://images.pexels.com/photos/839011/pexels-photo-839011.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 thirtenn_offer = Offer.new(title: "développeur fullstack javascript", description: "Afin de promouvoir notre image,
                           notre restaurant recherche actuellement un developpeur web fullstack connaissant les
                           technologies javascript et php afin de concevoir le design et l'intégralité de l'architecture
                           de notre future plate-forme de livraison en ligne.", salary: 1_800, number_hour: 40,
                            employement_type: "salarié", contract_type: "CDD", location: "Nice", company_name:
                            "Restaurant chez Robert")
-thirtenn_offer.photo.attach(io: file13, filename: 'Robertrestau.jpg', content_type: 'image/png')
+thirtenn_offer.photo.attach(io: file13, filename: 'Robertrestau.jpg', content_type: 'image/png', width: 428)
 thirtenn_offer.job = fullstack_developper
 thirtenn_offer.user = restaurant
 thirtenn_offer.save!
 
 puts "13"
 
-file14 = URI.open('https://res.cloudinary.com/dn5lpurr4/image/upload/w_408,h_650,c_fill/v1641899166/development/dpa-tim-cook-apple-93891281.jpg_ow5ldz.jpg')
+file14 = URI.open('https://images.pexels.com/photos/761115/pexels-photo-761115.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 fourteen_offer = Offer.new(title: "UX designer", description: "Dans le cadre du développement de notre entreprise nous
                            recrutons actuellement deux web-designer avec de l'expèrience en user experience afin de
                            dinamyser nos équipes et de créer une identité graphique nouvelle propre a notre marque pour
                            le secteur de la France.", salary: 2_300, number_hour: 38, employement_type: "salarié",
                            contract_type: "CDI", location: "Marseille", company_name: "Apple")
-fourteen_offer.photo.attach(io: file14, filename: 'CookOk.jpg', content_type: 'image/png')
+fourteen_offer.photo.attach(io: file14, filename: 'CookOk.jpg', content_type: 'image/png', width: 428)
 fourteen_offer.job = designer
 fourteen_offer.user = cook_tim
 fourteen_offer.save!
