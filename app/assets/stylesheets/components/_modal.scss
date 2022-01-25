@@ -4,6 +4,7 @@
   left: 0;
   height: 100vh;
   width: 100vw;
+  max-width: $iWidth;
   background-color: #4f3dc67f;
   backdrop-filter: blur(10px) saturate(1.3);
   z-index: 9999;

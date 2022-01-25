@@ -1,7 +1,7 @@
 .input-search-div {
   max-height: 100px;
   width: calc(#{$iWidth} - 60px);
-  position: fixed;
+  position: absolute;
   bottom: $tab-bar;
   left: 30px;
   border-radius: 40px;
