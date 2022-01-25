@@ -6,7 +6,7 @@ class MatchesController < ApplicationController
     @chatroom = Chatroom.where(user_id: @match.user.id).find_by_recrutor(@match.offer.user.id)
   end
 
-  def create # like
+  def like # like
     set_offer_user
     # check if match exists
     if @user.matches.find_by_offer_id(@offer.id).present?
@@ -40,7 +40,6 @@ class MatchesController < ApplicationController
     end
   end
 
-  # add a private method (refacto)
   private
 
   # identify user and offer
@@ -55,7 +54,7 @@ class MatchesController < ApplicationController
     @match.candidate_status = status
   end
 
-  # create match with candidate status if not match exists -> true or false
+  # create match with candidate status if no match exists -> true or false
   def create_match(status)
     @match = Match.new
     @match.offer_id = @offer.id
