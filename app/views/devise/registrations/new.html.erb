@@ -1,72 +1,67 @@
-<h2>inscription</h2>
+<div class="content-long rounded-0">
+<h2>Inscription</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
 
-    <%= f.input :first_name,
+    <%= f.input :first_name, label: "Prénom",
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "prénom" }
     %>
 
-    <%= f.input :last_name,
+    <%= f.input :last_name, label: "Nom",
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "nom" }
     %>
 
-    <p>genre</p>
-
-    <%= f.input :gender, collection: User::GENDER,
+    <%= f.input :gender, collection: User::GENDER, label: "Genre",
                 required: true,
                 autofocus: true
     %>
 
-    <%= f.input :city,
+    <%= f.input :city, label: "Ville",
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "ville" }
     %>
 
-    <p>Etes vous recruteur ou postuleur </p>
-
-    <%= f.input :recrutor, collection: User::RECRUTOR,
+    <%= f.input :recrutor, label: "Recruteur ?",
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" }
+                hint: ("Cochez cette case si vous souhaitez vous créer un compte en tant que recruteur")
      %>
 
-     <p> description </p>
-      <%= f.text_area :description, :cols => 40, :rows => 6,
+      <%= f.input :description, as: :text, :cols => 40, :rows => 6, label: "Description",
                 autofocus: true,
                 input_html: { autocomplete: "description" }
       %>
 
-      <p>Date de naissance</p>
 
-      <%= f.input :birthdate, as: :date, html5: true,
+      <%= f.input :birthdate, as: :date, html5: true, label: "Date de naissance",
           required: true,
           autofocus: true
       %>
 
-    <%= f.input :email,
+    <%= f.input :email, label: "Email",
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
+    <%= f.input :password, label: "Mot de passe",
                 required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length),
                 input_html: { autocomplete: "nouveaux mot de passe" } %>
-    <%= f.input :password_confirmation,
+    <%= f.input :password_confirmation, label: "Confirmation mot de passe",
                 required: true,
                 input_html: { autocomplete: "nouveaux mot de passe" } %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "inscription" %>
-  </div>
+  <div class="form-actions d-flex flex-column align-items-center">
+    <%= f.button :submit, "Inscription", class: "button-pill-md pill-blanc mb-3" %>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
