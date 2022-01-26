@@ -8,7 +8,16 @@
   <% @job_skill.each do |skill| %>
   <% nbtimes = UserSkill.find_by_skill_id(skill.skill_id).level%>
   <% stars = "⭐️"%>
-  <p class="dashboard-pill pill-lavande d-flex justify-content-center"><b><%= Skill.find(skill.skill_id).name %><br><%= stars * nbtimes.to_i %></p></b>
+  <p class="dashboard-pill pill-lavande d-flex justify-content-center choosen-skill" data-skill="<%= skill.skill_id %>"><b><%= Skill.find(skill.skill_id).name %><br><%= stars * nbtimes.to_i %></p></b>
+  <%= simple_form_for @skill, url: skill_update_path, method: :post do |f| %>
+  <div class="choosen-skill-form-<%= skill.skill_id %> d-none">
+    <div class= form-job-content>
+    <%= f.input :level, label: "Votre niveau sur 5", collection: UserSkill::LEVEL %>
+    <%= hidden_field_tag :skill_id, value: skill.skill_id %>
+    <%= f.submit "Modifier" %>
+    </div>
+    </div>
+  <% end %>
   <% end %>
 <% end %>
 
@@ -24,7 +33,7 @@
 
          <% end %>
   </span>
-<%= render "list_skills", skills: @skills %>
+  <%= render "list_skills", skills: @skills %>
 <div class="b-margin-40"></div>
 </div>
 </div>
