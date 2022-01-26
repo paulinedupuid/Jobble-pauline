@@ -6,7 +6,16 @@
   <h4>Mes métiers</h4>
   <div class="b-margin-20"></div>
   <% @job_user.each do |job| %>
-    <p class="dashboard-pill pill-lavande d-flex justify-content-center"><%= Job.find(job.job_id).name %> : <%= UserJob.find_by_job_id(job.job_id).experience %> mois</p>
+    <p class="dashboard-pill pill-lavande d-flex justify-content-center choosen-job" data-job="<%= job.job_id %>"><%= Job.find(job.job_id).name %> : <%= UserJob.find_by_job_id(job.job_id).experience %> mois</p>
+    <%= simple_form_for @job, url: job_update_test_path, method: :post do |f| %>
+    <div class="choosen-job-form-<%= job.job_id %> d-none">
+    <div class= form-job-content>
+    <%= f.input :experience, placeholder: "Votre experience en mois" %>
+    <%= hidden_field_tag :job_id, value: job.job_id %>
+    <%= f.submit "Modifier" %>
+    </div>
+    </div>
+  <% end %>
   <% end %>
 <% end %>
 
