@@ -20,7 +20,7 @@ require "open-uri"
 # "Développeur web freelance" by Thibaut Mondy
 # "developpeur Ruby/stimulus" by Jeanne Durand
 
-# and if you have added the frontend developper job to the jon lemon list the:
+# and if you have added the frontend developper job to the list the:
 #  "Developpeur Javascript Frontend" offer by Samia Ora
 
 # To test the non display (or recrutor_status false in a match)
@@ -86,10 +86,13 @@ jobconnect = User.create(email: "jobconnect@gmail.fr", password: "jc_011214", fi
 puts "recruteurs créés"
 # Candidat creation
 puts "creation des candidats"
+
+soline_photo = URI.open('https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 soline = User.create(email: "soline.lemoine@hotmail.com", password: "sl_091289", first_name: "Soline",
                         last_name: "Lemoine", city: "Nice", gender: "homme", birthdate: Date.new(1989, 12, 8),
                         description: "Développeuse Web, fraichement sortie du bootcamp")
-catarina = User.create(email: "catarina@gmail.fr", password: "123456", first_name: "Catarina", last_name:
+soline.photo.attach(io: soline_photo, filename: 'soline.png', content_type: 'image/png')
+catarina = User.create(email: "catarina@gmail.fr", password: "cr_151086", first_name: "Catarina", last_name:
                        "Repova", city: "Nice", gender: "femme", birthdate: Date.new(1986, 10, 15),
                        description: "developpeuse d'application web et web mobile")
 bot_test = User.create(email: "jobble@heroku.com", password: "123456", first_name: "bot", last_name: "test",

@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :skills, through: :user_skills
   has_many :offers, dependent: :destroy
   has_many :matches
+  has_one_attached :photo
   # pour les choix dans les form
   RECRUTOR = { oui: true, non: false }
   GENDER = ['homme', 'femme']
