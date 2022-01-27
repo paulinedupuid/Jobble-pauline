@@ -1,4 +1,4 @@
-  <% if @user.photo.attached? %>
+  <% if @user.photo.attached? && @user == current_user %>
     <div class="avatar" style= "background-image: url(<%= cl_image_path @user.photo.key, width: 200, height: 200, gravity: 'faces', crop: 'thumb' %>);">
     </div>
   <% else %>
