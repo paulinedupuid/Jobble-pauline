@@ -8,7 +8,7 @@
         <h3><%= @offer.title.capitalize %></h3>
         <h3>💼</h3>
         <h5><%= @offer.company_name.capitalize %></h5>
-        <p><%= @offer.user.first_name.capitalize %></p>
+        <p><%= @offer.user.first_name.capitalize %> <%= @offer.user.last_name.capitalize %></p>
         <div class="b-margin-20"></div>
 
         <p><%= @offer.description %></p>

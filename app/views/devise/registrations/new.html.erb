@@ -40,6 +40,8 @@
                 input_html: { autocomplete: "description" }
       %>
 
+      <%= f.input :photo, as: :file %>
+
 
       <%= f.input :birthdate, as: :date, html5: true, label: "Date de naissance",
           required: true,

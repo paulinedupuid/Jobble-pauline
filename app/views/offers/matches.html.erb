@@ -4,7 +4,7 @@
     <h2 class="mt-3">Mes matches</h2>
     <% @offers.each do |offer| %>
       <%= link_to offer_path(offer), class: "message-card pill-lavande" do %>
-        <div class="max-length text-center">
+        <div class="max-length">
           <h4><%= offer.title.capitalize %></h4>
           <p><%= offer.company_name.capitalize %></p>
           <p><%= offer.user.first_name.capitalize %> <%= offer.user.last_name.capitalize %></p>

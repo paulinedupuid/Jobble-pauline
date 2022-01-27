@@ -3,13 +3,17 @@
 
 <%= render '/shared/dashboardnavigationbar', pathname: 'Mes informations'%>
 
-<div class="content-long-dashboard dashboard">
+<div class="content-long-dashboard dashboard pr-3 pl-3">
 
     <!-- !!!! Attention, don't modify the existing class for JS !!!!!
     This div is here to display the user infos-->
 
     <div class="user-info">
-        <div class="b-margin-110"></div>
+      <div class="b-margin-20"></div>
+      <div class="d-flex justify-content-center">
+        <%= render '/shared/avatar' %>
+      </div>
+        <div class="b-margin-20"></div>
       <p class="dashboard-info-pill dash-grey"><b>👤 Nom : </b><%= @user.last_name %></p>
         <div class="b-margin-20"></div>
       <p class="dashboard-info-pill dash-grey"><b>👤 Prenom  : </b><%= @user.first_name %></p>
@@ -32,7 +36,8 @@
           <%= f.input :gender, label: 'Genre' %>
           <%= f.input :birthdate, label: 'Date de naissance' %>
           <%= f.input :city, label: 'Ville' %>
-          <%= f.submit "Modifier"%>
+          <%= f.input :photo, as: :file %>
+          <%= f.button :submit, "Modifier", class: "dashboard-info-pill pill-jaune ml-4" %>
       </div>
     </div>
 

@@ -20,7 +20,7 @@ require "open-uri"
 # "Développeur web freelance" by Thibaut Mondy
 # "developpeur Ruby/stimulus" by Jeanne Durand
 
-# and if you have added the frontend developper job to the jon lemon list the:
+# and if you have added the frontend developper job to the list the:
 #  "Developpeur Javascript Frontend" offer by Samia Ora
 
 # To test the non display (or recrutor_status false in a match)
@@ -58,10 +58,12 @@ jeanne_durand = User.create(email: "jeanne.durand@free.fr", password: "jd_250867
                                 last_name: "Durand", city: "Paris", recrutor: true, gender: "femme",
                                 birthdate: Date.new(1967, 8, 25), description: "Femme d'affaires, entrepreneure, business
                                 angel, fondatrice d'une grande entreprise de la tech")
-paul_dumond = User.create(email: "paul.dumont@nice.fr", password: "pd_010755", first_name: "Paul",
+paul_photo = URI.open('https://images.pexels.com/photos/5668878/pexels-photo-5668878.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
+paul_dumont = User.create(email: "paul.dumont@nice.fr", password: "pd_010755", first_name: "Paul",
                                 last_name: "Dumont", city: "Nice", recrutor: true, gender: "homme",
                                 birthdate: Date.new(1955, 7, 1), description: "Ancien sportif de haut niveau reconverti
                                 dans la politique")
+paul_dumont.photo.attach(io: paul_photo, filename: 'paul.png', content_type: 'image/png')
 emilie_carpi = User.create(email: "emilie.carpi@comm.org", password: "ec_180361", first_name: "Emilie",
                                last_name: "Carpi", city: "Paris", recrutor: true, gender: "femme",
                                birthdate: Date.new(1961, 3, 18), description: "Cheffe d'entreprise,
@@ -86,12 +88,15 @@ jobconnect = User.create(email: "jobconnect@gmail.fr", password: "jc_011214", fi
 puts "recruteurs créés"
 # Candidat creation
 puts "creation des candidats"
+
+soline_photo = URI.open('https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 soline = User.create(email: "soline.lemoine@hotmail.com", password: "sl_091289", first_name: "Soline",
-                        last_name: "Lemoine", city: "Nice", gender: "homme", birthdate: Date.new(1989, 12, 8),
+                        last_name: "Lemoine", city: "Nice", gender: "femme", birthdate: Date.new(1989, 12, 8),
                         description: "Développeuse Web, fraichement sortie du bootcamp")
-catarina = User.create(email: "catarina@gmail.fr", password: "123456", first_name: "Catarina", last_name:
+soline.photo.attach(io: soline_photo, filename: 'soline.png', content_type: 'image/png')
+catarina = User.create(email: "catarina@gmail.fr", password: "cr_151086", first_name: "Catarina", last_name:
                        "Repova", city: "Nice", gender: "femme", birthdate: Date.new(1986, 10, 15),
-                       description: "developpeuse d'application web et web mobile")
+                       description: "Web designer confirmée et motivée")
 bot_test = User.create(email: "jobble@heroku.com", password: "123456", first_name: "bot", last_name: "test",
                        city: "computer", gender: "homme", description: "Bot de test pour envoyer le premier message")
 
@@ -137,7 +142,7 @@ first_offer.save!
 puts "1"
 
 file1_1 = URI.open('https://images.pexels.com/photos/4065623/pexels-photo-4065623.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
-non_valid_offer = Offer.new(title: "Développeur React Front-end", description: "Tu rejoindras un collectif composé de 25
+non_valid_offer = Offer.new(title: "Développeur Node JS", description: "Tu rejoindras un collectif composé de 25
                             personnes dont 13 développeurs. 1 à 4 développeurs sont dédiés à chaque projet remporté. Les
                             projets peuvent se construire en parallèle (moyenne de 4 à 6 projets/an). Evidemment, tu ne
                             seras jamais seul au début.", location: "Nice", salary: 1_800, number_hour: 40,
@@ -172,7 +177,7 @@ second_offer = Offer.new(title: "Developpeur PHP/symfony", description: "Nous re
                          company_name: "Ville de Nice")
 second_offer.photo.attach(io: file2, filename: 'offer2.jpg', content_type: 'image/png')
 second_offer.job = back_developper
-second_offer.user = paul_dumond
+second_offer.user = paul_dumont
 second_offer.save!
 
 puts "2"
@@ -189,7 +194,7 @@ third_offer.save!
 
 puts "3"
 
-file4 = URI.open('https://images.pexels.com/photos/6457490/pexels-photo-6457490.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
+file4 = URI.open('https://images.pexels.com/photos/6457511/pexels-photo-6457511.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 fourth_offer = Offer.new(title: "Developpeur ruby", description: "Notre entreprise récemment installé sur la côte
                          recherche ses futurs collaborateurs, nous sommes à la recherche de developpeurs Web maitrisant
                          le langage Ruby et le framework Rails, vous devez être autonome et a même de travailler en
@@ -225,7 +230,7 @@ sixth_offer = Offer.new(title: "graphiste web", description: "Nous recherchons a
                         location: "Nice", company_name: "Ville de Nice")
 sixth_offer.photo.attach(io: file6, filename: 'offer6.jpg', content_type: 'image/png')
 sixth_offer.job = designer
-sixth_offer.user = paul_dumond
+sixth_offer.user = paul_dumont
 sixth_offer.save!
 
 puts "6"
@@ -244,7 +249,7 @@ seventh_offer.save!
 
 puts "7"
 
-file8 = URI.open('https://images.pexels.com/photos/6953922/pexels-photo-6953922.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
+file8 = URI.open('https://images.pexels.com/photos/6953859/pexels-photo-6953859.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 eigth_offer = Offer.new(title: "Développeur Web", description: "Nous recherchons un développeur Web polyvalent justifiant d'une
                         grande expérience dans les langages JavaScript et Python. Vous serez autonome dans vos tâches et
                         superviserez le reste de l'équipe de développeurs.",
