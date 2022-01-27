@@ -59,11 +59,11 @@ jeanne_durand = User.create(email: "jeanne.durand@free.fr", password: "jd_250867
                                 birthdate: Date.new(1967, 8, 25), description: "Femme d'affaires, entrepreneure, business
                                 angel, fondatrice d'une grande entreprise de la tech")
 paul_photo = URI.open('https://images.pexels.com/photos/5668878/pexels-photo-5668878.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
-paul_dumond = User.create(email: "paul.dumont@nice.fr", password: "pd_010755", first_name: "Paul",
+paul_dumont = User.create(email: "paul.dumont@nice.fr", password: "pd_010755", first_name: "Paul",
                                 last_name: "Dumont", city: "Nice", recrutor: true, gender: "homme",
                                 birthdate: Date.new(1955, 7, 1), description: "Ancien sportif de haut niveau reconverti
                                 dans la politique")
-paul_dumond.photo.attach(io: paul_photo, filename: 'paul.png', content_type: 'image/png')
+paul_dumont.photo.attach(io: paul_photo, filename: 'paul.png', content_type: 'image/png')
 emilie_carpi = User.create(email: "emilie.carpi@comm.org", password: "ec_180361", first_name: "Emilie",
                                last_name: "Carpi", city: "Paris", recrutor: true, gender: "femme",
                                birthdate: Date.new(1961, 3, 18), description: "Cheffe d'entreprise,
@@ -177,7 +177,7 @@ second_offer = Offer.new(title: "Developpeur PHP/symfony", description: "Nous re
                          company_name: "Ville de Nice")
 second_offer.photo.attach(io: file2, filename: 'offer2.jpg', content_type: 'image/png')
 second_offer.job = back_developper
-second_offer.user = paul_dumond
+second_offer.user = paul_dumont
 second_offer.save!
 
 puts "2"
@@ -230,7 +230,7 @@ sixth_offer = Offer.new(title: "graphiste web", description: "Nous recherchons a
                         location: "Nice", company_name: "Ville de Nice")
 sixth_offer.photo.attach(io: file6, filename: 'offer6.jpg', content_type: 'image/png')
 sixth_offer.job = designer
-sixth_offer.user = paul_dumond
+sixth_offer.user = paul_dumont
 sixth_offer.save!
 
 puts "6"
