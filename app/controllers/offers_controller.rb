@@ -30,5 +30,4 @@ class OffersController < ApplicationController
       @offers << Offer.find(match.offer_id)
     end
   end
-
 end

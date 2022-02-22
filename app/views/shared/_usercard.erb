@@ -1,19 +1,11 @@
 <div class="usercard">
-
   <%= render "shared/avatar"%>
-
   <div id="usercard-text">
-
     <%= link_to destroy_user_session_path, method: :delete, class: "logout-pill dash-orange" do%>
-    <p>Deconnexion</p>
+      <p>Deconnexion</p>
     <% end %>
-
     <div class="b-margin-15"></div>
-
     <h4><%= @user.first_name.first(12).capitalize %></h4>
     <h4 style="font-weight:normal;"><%= @user.last_name.first(11).capitalize %></h4>
-
-
   </div>
-
 </div>

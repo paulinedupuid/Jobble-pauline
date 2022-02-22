@@ -1,67 +1,43 @@
-<!--  conteneur -->
 <div class="content-long dashboard">
-<!--  conteneur -->
-
-<% if @chatrooms.count.positive? %>
-  <!--  boucle principale-->
-  <% @chatrooms.each do |chatroom| %>
-  <!--  boucle principale -->
-
-
-    <!--  fonction nom utilisateur et recruteur -->
-    <% if chatroom.user_id == current_user.id %>
-      <% prenom = User.find(chatroom.recrutor).first_name %>
-      <% nom = User.find(chatroom.recrutor).last_name %>
-      <% patronyme = "#{prenom} #{nom}"%>
-    <% else %>
-      <% prenom = User.find(chatroom.user_id).first_name %>
-      <% nom = User.find(chatroom.user_id).last_name %>
-      <% patronyme = "#{prenom} #{nom}"%>
-    <% end %>
-    <!--  fonction nom utilisateur et recruteur -->
-
-
-
-    <!--  condition de style en fonction de qui à envoyer le dernier message  -->
-    <% if  chatroom.messages.last && chatroom.messages.last.user_id == current_user.id %>
-    <% css_class = 'pill-obsydian'%> <% else %> <% css_class = 'pill-lavande'%> <% end %>
-    <!--  condition de style en fonction de qui à envoyer le dernier message  -->
-
-
-      <!-- message repondu par l'utilisateur--->
+  <% if @chatrooms.count.positive? %>
+    <% @chatrooms.each do |chatroom| %>
+      <% if chatroom.user_id == current_user.id %>
+        <% prenom = User.find(chatroom.recrutor).first_name %>
+        <% nom = User.find(chatroom.recrutor).last_name %>
+        <% patronyme = "#{prenom} #{nom}"%>
+      <% else %>
+        <% prenom = User.find(chatroom.user_id).first_name %>
+        <% nom = User.find(chatroom.user_id).last_name %>
+        <% patronyme = "#{prenom} #{nom}"%>
+      <% end %>
+      <% if  chatroom.messages.last && chatroom.messages.last.user_id == current_user.id %>
+        <% css_class = 'pill-obsydian'%> <% else %> <% css_class = 'pill-lavande'%> <% end %>
       <%= link_to chatroom_path(chatroom), id: 'relative-notif' do%>
-      <div class="message-card <%=css_class%>">
-      <% if chatroom.messages %>
-        <% chatroom.messages.each do |message|%>
-          <% # dans boucle message%>
-          <% unless message.user_id == current_user.id %>
-            <% if message.status == false %>
-              <div class="index-message-notif"></div>
+        <div class="message-card <%=css_class%>">
+          <% if chatroom.messages %>
+            <% chatroom.messages.each do |message|%>
+              <% unless message.user_id == current_user.id %>
+                <% if message.status == false %>
+                  <div class="index-message-notif"></div>
+                <% end %>
+              <% end %>
             <% end %>
           <% end %>
-        <% end %>
-      <% end %>
-      <%= render 'shared/avatar_recrutor', chatroom: chatroom, imageurl: "cl_image_path chatroom.offer.photo.key, width: 50, height: 50" %>
-      <div class="max-lenght">
-      <h4><%=patronyme.titleize%></h4>
-      <h6><%= Offer.where(user_id: chatroom.recrutor).first.company_name %></h6>
-      <p><%=chatroom.name.capitalize%></p>
-      </div>
-      </div>
-      <% end %>
-      <!-- message repondu par l'utilisateur--->
-
-
-  <!--  boucle principale-->
-  <% end %>
-  <!--  boucle principale-->
-
-  <% else %>
-        <div class="nothingfound">
-        <span class="d-flex justify-content-center" style="font-size: 100px;">😭</span>
-        <h5 style="text-align: center;">Personne ne<br>vous a encore<br>écrit...</h5>
+          <%= render 'shared/avatar_recrutor', chatroom: chatroom, imageurl: "cl_image_path chatroom.offer.photo.key, width: 50, height: 50" %>
+          <div class="max-lenght">
+            <h4><%=patronyme.titleize%></h4>
+            <h6><%= Offer.where(user_id: chatroom.recrutor).first.company_name %></h6>
+            <p><%=chatroom.name.capitalize%></p>
+          </div>
         </div>
+      <% end %>
+    <% end %>
+  <% else %>
+    <div class="nothingfound">
+      <span class="d-flex justify-content-center" style="font-size: 100px;">😭</span>
+      <h5 style="text-align: center;">Personne ne<br>
+        vous a encore<br>
+        écrit...</h5>
+    </div>
   <% end %>
-<!--  conteneur -->
 </div>
-<!--  conteneur -->

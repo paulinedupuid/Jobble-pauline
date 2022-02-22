@@ -1,49 +1,34 @@
 <%= render "/shared/dashboardnavigationbar", pathname: "Profil professionnel "%>
-
 <div class="content-long-dashboard dashboard text-center">
-<div class="b-margin-30"></div>
-<% if @job_user.count.positive? %>
-  <h4>Mes métiers</h4>
-  <div class="b-margin-20"></div>
-  <% @job_user.each do |job| %>
-    <p class="dashboard-pill pill-lavande d-flex justify-content-center choosen-job" data-job="<%= job.job_id %>"><%= Job.find(job.job_id).name %> : <%= UserJob.find_by_job_id(job.job_id).experience %> mois</p>
-    <%= simple_form_for @job, url: job_update_test_path, method: :post do |f| %>
-    <div class="choosen-job-form-<%= job.job_id %> d-none">
-    <div class= form-job-content>
-    <%= f.input :experience, placeholder: "Votre experience en mois" %>
-    <%= hidden_field_tag :job_id, value: job.job_id %>
-    <%= f.submit "Modifier" %>
-    </div>
-    </div>
+  <div class="b-margin-30"></div>
+  <% if @job_user.count.positive? %>
+    <h4>Mes métiers</h4>
+    <div class="b-margin-20"></div>
+    <% @job_user.each do |job| %>
+      <p class="dashboard-pill pill-lavande d-flex justify-content-center choosen-job" data-job="<%= job.job_id %>"><%= Job.find(job.job_id).name %> : <%= UserJob.find_by_job_id(job.job_id).experience %> mois</p>
+      <%= simple_form_for @job, url: job_update_test_path, method: :post do |f| %>
+        <div class="choosen-job-form-<%= job.job_id %> d-none">
+          <div class= form-job-content>
+            <%= f.input :experience, placeholder: "Votre experience en mois" %>
+            <%= hidden_field_tag :job_id, value: job.job_id %>
+            <%= f.submit "Modifier" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   <% end %>
-  <% end %>
-<% end %>
-
-
-<div data-controller="hello" class="relative-content-searchbar">
-  <%= form_with url: job_show_path, method: :get, html: {
+  <div data-controller="hello" class="relative-content-searchbar">
+    <%= form_with url: job_show_path, method: :get, html: {
    data: { hello_target: 'formulaire' } } do |f| %>
-    <span class="input-search-div">
-    <%= f.text_field :query,
+      <span class="input-search-div">
+        <%= f.text_field :query,
                      class: "form-control",
                      placeholder: 'chercher un métier',
                      value: params[:query],
                      data: { hello_target: 'button', action: 'keyup->hello#update' } %>
-
-         <% end %>
+      <% end %>
     </span>
-<%= render "list_jobs", jobs: @jobs %>
-<div class="b-margin-40"></div>
-</div>
-<%# action: "keyup->search_jobs#update", %>
-<%#
- <% @jobs.each do |job| %>
-      <%# simple_form_for @job, url: job_update_test_path, method: :post do |f| %>
-      <%# f.label job.name %>
-      <%# f.input :experience %>
-      <%# hidden_field_tag :job_id, value: job.id %>
-      <%# f.submit %>
-
-<%# end %>
-<%# end %>
+    <%= render "list_jobs", jobs: @jobs %>
+    <div class="b-margin-40"></div>
+  </div>
 </div>

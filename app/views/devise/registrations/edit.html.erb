@@ -1,38 +1,30 @@
 <%= render '/shared/dashboardnavigationbar', pathname: 'Mes informations'%>
 <div class="content-long-dashboard dashboard pr-3 pl-3">
-<h2 class="mt-3 text-center">Editer mon profil</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
-<%# :last_name, :city, :recrutor, :description, :gender, :birthdate %>
-  <div class="form-inputs">
-    <%= f.input :email, label: "Email", required: true, autofocus: true %>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>en attente de confirmation <%= resource.unconfirmed_email %></p>
-    <% end %>
-
-    <%= f.input :password, label: "Mot de passe",
+  <h2 class="mt-3 text-center">Editer mon profil</h2>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= f.error_notification %>
+    <div class="form-inputs">
+      <%= f.input :email, label: "Email", required: true, autofocus: true %>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <p>en attente de confirmation <%= resource.unconfirmed_email %></p>
+      <% end %>
+      <%= f.input :password, label: "Mot de passe",
                 hint: "Ne pas remplir ce champ si vous ne souhaitez pas le modifier",
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation, label: "Confirmation mot de passe",
+      <%= f.input :password_confirmation, label: "Confirmation mot de passe",
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password, label: "Mot de passe actuel",
+      <%= f.input :current_password, label: "Mot de passe actuel",
                 hint: "Nous avons besoin de votre mot de passe actuel pour confirmer les modifications",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
-  </div>
-
-  <div class="form-actions d-flex flex-column align-items-center">
-    <%= f.button :submit, "Mettre a jour", class: "pill-jaune button-pill-large mb-3" %>
-  </div>
-<% end %>
-
-<br>
-
-<p class="info-pill pill-obsydian"><%= link_to "Supprimer", registration_path(resource_name), data: { confirm: "Etes-vous sur ?" }, method: :delete %></p>
-
-<p class="info-pill pill-obsydian"><%= link_to "Retour", :back %></p>
+    </div>
+    <div class="form-actions d-flex flex-column align-items-center">
+      <%= f.button :submit, "Mettre a jour", class: "pill-jaune button-pill-large mb-3" %>
+    </div>
+  <% end %>
+  <br>
+  <p class="info-pill pill-obsydian"><%= link_to "Supprimer", registration_path(resource_name), data: { confirm: "Etes-vous sur ?" }, method: :delete %></p>
+  <p class="info-pill pill-obsydian"><%= link_to "Retour", :back %></p>
 </div>

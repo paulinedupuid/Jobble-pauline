@@ -1,44 +1,29 @@
 <div class="content-long">
-
-    <div class="offer-content">
-
-      <div>
-
-        <div class="b-margin-20"></div>
-        <h3><%= @offer.title.capitalize %></h3>
-        <h3>💼</h3>
-        <h5><%= @offer.company_name.capitalize %></h5>
-        <p><%= @offer.user.first_name.capitalize %> <%= @offer.user.last_name.capitalize %></p>
-        <div class="b-margin-20"></div>
-
-        <p><%= @offer.description %></p>
-
-      </div>
-
-      <div class="b-margin-30"></div>
-
-      <div>
-        <p class="large-info-pill">📍 Lieu d'exécution : <b><%= @offer.location %></b></p>
-        <div class="b-margin-10"></div>
-
-        <p class="large-info-pill">💰 Salaire mensuel net : <b><%=@offer.salary%>€</b></p>
-        <div class="b-margin-10"></div>
-
-        <p class="large-info-pill">🕦 Temps de travail : <b><%= @offer.number_hour %> heures</b></p>
-        <div class="b-margin-10"></div>
-
-        <p class="large-info-pill">📝 Type de contrat : <b><%=@offer.contract_type %></b></p>
-        <div class="b-margin-10"></div>
-
-        <p class="large-info-pill">👔 Statut juridique : <b><%=@offer.employement_type.capitalize %></b></p>
-      </div>
-
+  <div class="offer-content">
+    <div>
       <div class="b-margin-20"></div>
-
-      <%= link_to :back do %>
-      <h6 class="button-pill-large pill-jaune"><b>↩️ retour</b></h6>
-      <% end %>
-
+      <h3><%= @offer.title.capitalize %></h3>
+      <h3>💼</h3>
+      <h5><%= @offer.company_name.capitalize %></h5>
+      <p><%= @offer.user.first_name.capitalize %> <%= @offer.user.last_name.capitalize %></p>
+      <div class="b-margin-20"></div>
+      <p><%= @offer.description %></p>
     </div>
-
+    <div class="b-margin-30"></div>
+    <div>
+      <p class="large-info-pill">📍 Lieu d'exécution : <b><%= @offer.location %></b></p>
+      <div class="b-margin-10"></div>
+      <p class="large-info-pill">💰 Salaire mensuel net : <b><%=@offer.salary%>€</b></p>
+      <div class="b-margin-10"></div>
+      <p class="large-info-pill">🕦 Temps de travail : <b><%= @offer.number_hour %> heures</b></p>
+      <div class="b-margin-10"></div>
+      <p class="large-info-pill">📝 Type de contrat : <b><%=@offer.contract_type %></b></p>
+      <div class="b-margin-10"></div>
+      <p class="large-info-pill">👔 Statut juridique : <b><%=@offer.employement_type.capitalize %></b></p>
+    </div>
+    <div class="b-margin-20"></div>
+    <%= link_to :back do %>
+      <h6 class="button-pill-large pill-jaune"><b>↩️ retour</b></h6>
+    <% end %>
+  </div>
 </div>

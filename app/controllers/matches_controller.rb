@@ -6,13 +6,12 @@ class MatchesController < ApplicationController
     @chatroom = Chatroom.where(user_id: @match.user.id).find_by_recrutor(@match.offer.user.id)
   end
 
-  def like # like
+  def like
     set_offer_user
     # check if match exists
     if @user.matches.find_by_offer_id(@offer.id).present?
       change_candidate_status(true)
       if @match.save
-        # render 'shared/animation'
         chatroom
         if @match.recrutor_status == true
           redirect_to match_path(@match)
@@ -33,11 +32,10 @@ class MatchesController < ApplicationController
     # check if match exists
     if @user.matches.find_by_offer_id(@offer.id).present?
       change_candidate_status(false)
-      match_save
     else
       create_match(false)
-      match_save
     end
+    match_save
   end
 
   private
@@ -75,7 +73,8 @@ class MatchesController < ApplicationController
       @chatroom = Chatroom.new(name: @offer.title, user_id: @user.id, recrutor: @offer.user_id)
       if @chatroom.save
         teste = User.find_by_first_name('bot')
-        Message.create(content: 'Ceci est le début de votre conversation', user_id: teste.id, chatroom_id: @chatroom.id )
+        Message.create(content: 'Ceci est le début de votre conversation', user_id: teste.id,
+                       chatroom_id: @chatroom.id)
       end
     end
   end

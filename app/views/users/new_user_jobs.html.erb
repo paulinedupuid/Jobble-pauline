@@ -1,5 +1,5 @@
 <%= simple_form_for @user_job, url: create_user_jobs_users_path do |f| %>
-<%= f.input :experience, collection: UserJob::EXPERIENCE %>
-<%= f.input :job_id, as: :check_boxes, collection: Job.all, wrapper: :vertical_collection_inline %>
-<%= f.submit %>
+  <%= f.input :experience, collection: UserJob::EXPERIENCE %>
+  <%= f.input :job_id, as: :check_boxes, collection: Job.all, wrapper: :vertical_collection_inline %>
+  <%= f.submit %>
 <% end %>
