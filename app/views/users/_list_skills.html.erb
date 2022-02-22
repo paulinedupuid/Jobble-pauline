@@ -1,6 +1,4 @@
 <div data-hello-target="liste">
-
-
   <% if params[:query].blank? %>
     <div class="b-margin-20"></div>
     <h4>Choisir mes compétences</h4>
@@ -8,17 +6,16 @@
   <% else %>
     <h5><%= pluralize @skills.count, 'resultats' %> pour <code><%= params[:query] %> </code></h5>
   <% end %>
-
- <% @skills.each do |skill| %>
+  <% @skills.each do |skill| %>
     <%= simple_form_for @skill, url: skill_update_path, method: :post do |f| %>
-    <%= f.label skill.name, class: @job_skill.find_by_skill_id(skill.id) ? "d-none" : "skill-name info-pill pill-obsydian", data: {skill: skill.id} %>
-    <div class="skill-form-<%= skill.id %> d-none">
-    <div class= form-job-content>
-    <%= f.input :level, label: "Votre niveau sur 5", collection: UserSkill::LEVEL %>
-    <%= hidden_field_tag :skill_id, value: skill.id %>
-    <%= f.submit "Ajouter" %>
-    </div>
-    </div>
+      <%= f.label skill.name, class: @job_skill.find_by_skill_id(skill.id) ? "d-none" : "skill-name info-pill pill-obsydian", data: {skill: skill.id} %>
+      <div class="skill-form-<%= skill.id %> d-none">
+        <div class= form-job-content>
+          <%= f.input :level, label: "Votre niveau sur 5", collection: UserSkill::LEVEL %>
+          <%= hidden_field_tag :skill_id, value: skill.id %>
+          <%= f.submit "Ajouter" %>
+        </div>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
 </div>

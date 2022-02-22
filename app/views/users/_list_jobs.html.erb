@@ -1,5 +1,4 @@
 <div data-hello-target="liste">
-
   <% if params[:query].blank? %>
     <div class="b-margin-20"></div>
     <h4>Choisir un métier</h4>
@@ -7,18 +6,16 @@
   <% else %>
     <h5><%= pluralize @jobs.count, 'resultats' %> pour <code><%= params[:query] %> </code></h5>
   <% end %>
-
- <% @jobs.each do |job| %>
-
-      <%= simple_form_for @job, url: job_update_test_path, method: :post do |f| %>
+  <% @jobs.each do |job| %>
+    <%= simple_form_for @job, url: job_update_test_path, method: :post do |f| %>
       <%= f.label job.name, class: @job_user.find_by_job_id(job.id) ? "d-none" : "job-name info-pill pill-obsydian ", data: {job: job.id} %>
       <div class="job-form-<%= job.id %> d-none">
-         <div class= form-job-content>
+        <div class= form-job-content>
           <%= f.input :experience, placeholder: "Votre experience en mois" %>
           <%= hidden_field_tag :job_id, value: job.id %>
           <%= f.submit "Ajouter" %>
+        </div>
       </div>
-      </div>
-<% end %>
-<% end %>
+    <% end %>
+  <% end %>
 </div>

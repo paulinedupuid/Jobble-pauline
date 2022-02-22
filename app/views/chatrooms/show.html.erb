@@ -1,80 +1,39 @@
-<!--  conteneur -->
 <%= render '/shared/messagenavigationbar', chatroom: @chatroom %>
 <div class="content-long-messages dashboard">
-<!--  conteneur -->
-
-  <!-- div data set -->
   <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-  <!-- div data set -->
-
-    <!--  boucle principale  -->
     <% @chatroom.messages.each do |message| %>
-    <!--  boucle principale -->
-
-      <!--  condition -->
       <% if message.user_id == current_user.id %>
-      <!--  condition -->
-
-        <!--  user message -->
         <div class="user-message">
-        <div class="message-content-user" >
-        <p class="message-container message" id="message-<%= message.id %>">
-          <%= message.content %>
-        </p>
+          <div class="message-content-user" >
+            <p class="message-container message" id="message-<%= message.id %>">
+              <%= message.content %>
+            </p>
             <i class="author">
-            <small><%= message.created_at.strftime("%e %b à %l:%M") %></small>
+              <small><%= message.created_at.strftime("%e %b à %l:%M") %></small>
             </i>
-        </div>
+          </div>
         </div>
         <div class="b-margin-20"></div>
-        <!--  user message -->
-
       <% else %>
-
-        <!--  recrutor message -->
-                <div class="recrutor-message">
-        <div class="message-content-recrutor" >
-        <p class="message-container message" id="message-<%= message.id %>">
-          <%= message.content %>
-        </p>
+        <div class="recrutor-message">
+          <div class="message-content-recrutor" >
+            <p class="message-container message" id="message-<%= message.id %>">
+              <%= message.content %>
+            </p>
             <i class="author">
-            <small><%= message.created_at.strftime("%e %b à %l:%M") %></small>
+              <small><%= message.created_at.strftime("%e %b à %l:%M") %></small>
             </i>
-        </div>
+          </div>
         </div>
         <div class="b-margin-20"></div>
-          <!--<span><%= message.user.first_name %></span> -->
-
-        <!--  recrutor message -->
-
-      <!--  condition -->
       <% end %>
-      <!--  condition -->
-
-    <!--  boucle principale -->
     <% end %>
-    <!--  boucle principale -->
-
-
-   <!-- margin pour afficher les messages par dessus l'input -->
-   <!-- margin pour afficher les messages par dessus l'input -->
-
-  <!-- div data set -->
   </div>
-   <div class="b-margin-100"></div>
-  <!-- div data set -->
-
-
-  <!-- Input Formulaire -->
+  <div class="b-margin-100"></div>
   <span class="input-chatroom-div">
-  <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-    <%= f.input_field :content, label: false, placeholder: "Aa" %>
-    <%= f.submit "envoyer " %>
-  <% end %>
+    <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+      <%= f.input_field :content, label: false, placeholder: "Aa" %>
+      <%= f.submit "envoyer " %>
+    <% end %>
   </span>
-  <!-- Input Formulaire -->
-
-
-<!--  conteneur -->
 </div>
-<!--  conteneur -->

@@ -1,41 +1,29 @@
-  <!-- Fonction Loic -->
-  <% message_count = 0 %>
-    <%chatrooms = Chatroom.where(user_id: current_user.id)%>
-     <% chatrooms.each do |chatroom| %>
-        <% if chatroom.messages %>
-          <% chatroom.messages.each do |message|%>
-           <% # dans boucle message%>
-          <% unless message.user_id == current_user.id %>
-            <% if message.status == false %>
-              <% message_count += 1 %>
-           <% end %>
-          <% end %>
-        <% end %>  <%# end du each message%>
-      <%end%>  <%# end de la condi %>
-   <%end%>
-  <!------------------>
-
+<% message_count = 0 %>
+<%chatrooms = Chatroom.where(user_id: current_user.id)%>
+<% chatrooms.each do |chatroom| %>
+  <% if chatroom.messages %>
+    <% chatroom.messages.each do |message|%>
+      <% unless message.user_id == current_user.id %>
+        <% if message.status == false %>
+          <% message_count += 1 %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <%end%>
+<%end%>
+<!------------------>
 <nav class="tabbar anim-js-div">
-
   <%= link_to dashboard_path(@user), class: controller_name == "users" && action_name == "dashboard"? "tabbar-active tabbar-icons" : "tabbar-icons" do %>
-  <%= render '/shared/svg/dashboard.svg' %>
-  <p>Mon Profil</p>
+    <%= render '/shared/svg/dashboard.svg' %>
+    <p>Mon Profil</p>
   <% end %>
-
-
-
   <%= link_to offers_path, class: controller_name == "offers" && action_name == "index"? "tabbar-active tabbar-icons" : "tabbar-icons" do %>
-  <%= render '/shared/svg/matchs.svg' %>
-  <p>Swipez!</p>
+    <%= render '/shared/svg/matchs.svg' %>
+    <p>Swipez!</p>
   <% end %>
-  <%# </div> %>
-
-
-
   <%= link_to message_index_path, class: (controller_name == "messages" && action_name == "create" || controller_name == "users" && action_name == "message_index") || (controller_name == "chatrooms" && action_name == "show") ? "tabbar-active tabbar-icons" : "tabbar-icons", id: "relative-notif" do %>
-        <div id='message-notif' class="d-none" data-message="<%= message_count %>"></div>
+    <div id='message-notif' class="d-none" data-message="<%= message_count %>"></div>
     <%= render '/shared/svg/messages.svg' %>
     <p>Messages</p>
   <% end %>
-
 </nav>

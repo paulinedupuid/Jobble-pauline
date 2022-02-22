@@ -1,7 +1,7 @@
-  <% if @profile_user.photo.attached? %>
-    <div class="avatar" style= "background-image: url(<%= cl_image_path @profile_user.photo.key, width: 200, height: 200, gravity: 'faces', crop: 'thumb' %>);">
-    </div>
-  <% else %>
-    <div class="avatar" style= "background-image: url(<%= image_path "silhouette.png"%>);">
-    </div>
-  <% end %>
+<% if @profile_user.photo.attached? %>
+  <div class="avatar" style= "background-image: url(<%= cl_image_path @profile_user.photo.key, width: 200, height: 200, gravity: 'faces', crop: 'thumb' %>);">
+  </div>
+<% else %>
+  <div class="avatar" style= "background-image: url(<%= image_path "silhouette.png"%>);">
+  </div>
+<% end %>

@@ -1,32 +1,26 @@
 <%# Condition to verify if the user is on is own profile and can access to the change %>
 <% if @user == @profile_user %>
-
-<%= render '/shared/dashboardnavigationbar', pathname: 'Mes informations'%>
-
-<div class="content-long-dashboard dashboard pr-3 pl-3">
-
+  <%= render '/shared/dashboardnavigationbar', pathname: 'Mes informations'%>
+  <div class="content-long-dashboard dashboard pr-3 pl-3">
     <!-- !!!! Attention, don't modify the existing class for JS !!!!!
     This div is here to display the user infos-->
-
     <div class="user-info">
       <div class="b-margin-20"></div>
       <div class="d-flex justify-content-center">
         <%= render '/shared/avatar' %>
       </div>
-        <div class="b-margin-20"></div>
+      <div class="b-margin-20"></div>
       <p class="dashboard-info-pill dash-grey"><b>👤 Nom : </b><%= @user.last_name %></p>
-        <div class="b-margin-20"></div>
+      <div class="b-margin-20"></div>
       <p class="dashboard-info-pill dash-grey"><b>👤 Prenom  : </b><%= @user.first_name %></p>
-        <div class="b-margin-20"></div>
+      <div class="b-margin-20"></div>
       <p class="dashboard-info-pill dash-grey"><b>🚻 Genre  : </b><%= @user.gender %></p>
-        <div class="b-margin-20"></div>
+      <div class="b-margin-20"></div>
       <p class="dashboard-info-pill dash-grey"><b>🐣 Age  : </b><%= Time.now.year - @user.birthdate.year %> ans</p>
-        <div class="b-margin-20"></div>
+      <div class="b-margin-20"></div>
       <p class="dashboard-info-pill dash-grey"><b>📍 Ville  : </b><%= @user.city %></p>
     </div>
-
     <!-- This div contains the form to modify the user info (and send the new entry to the DB)-->
-
     <div class="user-form d-none ">
       <div class="b-margin-40"></div>
       <div class="content-center">
@@ -38,40 +32,32 @@
           <%= f.input :city, label: 'Ville' %>
           <%= f.input :photo, as: :file %>
           <%= f.button :submit, "Modifier", class: "dashboard-info-pill pill-jaune ml-4" %>
+        </div>
       </div>
-    </div>
-
-    <!-- This div is the button to display the form and hidde the user info (and can be use to toggle)-->
-    <div class="b-margin-20"></div>
-    <div class= "user-info-btn dashboard-info-pill pill-jaune", remote="true">Modifier mes informations</div>
+      <!-- This div is the button to display the form and hidde the user info (and can be use to toggle)-->
+      <div class="b-margin-20"></div>
+      <div class= "user-info-btn dashboard-info-pill pill-jaune", remote="true">Modifier mes informations</div>
     <% end %>
     <!-- link_to destroy ? -->
     <div class="b-margin-40"></div>
-</div>
-
-<!------------------------------------------------------------------------>
-<!--  If the user just visit another profile, display some information. -->
-<!------------------------------------------------------------------------>
-
+  </div>
+  <!------------------------------------------------------------------------>
+  <!--  If the user just visit another profile, display some information. -->
+  <!------------------------------------------------------------------------>
 <% else %>
   <div class="content">
     <div class="offer-content">
-
-        <%= render "shared/recrutorcard"%>
-        <div class="b-margin-20"></div>
-        <p class="xlarge-info-pill"><%= @profile_user.description %></p>
-        <div class="b-margin-20"></div>
-
-        <a href="mailto:moderation@jobble.fun ?subject=🤬 Signalement à propos de l'utilisateur <%=@profile_user.first_name%> <%=@profile_user.last_name%> &body=Bonjour j'aimerai signaler l'utilisateur <%=@profile_user.first_name%> <%=@profile_user.last_name%> ( UserID-<%=@profile_user.id%> ) pour les raisons ci-dessous: ">
+      <%= render "shared/recrutorcard"%>
+      <div class="b-margin-20"></div>
+      <p class="xlarge-info-pill"><%= @profile_user.description %></p>
+      <div class="b-margin-20"></div>
+      <a href="mailto:moderation@jobble.fun ?subject=🤬 Signalement à propos de l'utilisateur <%=@profile_user.first_name%> <%=@profile_user.last_name%> &body=Bonjour j'aimerai signaler l'utilisateur <%=@profile_user.first_name%> <%=@profile_user.last_name%> ( UserID-<%=@profile_user.id%> ) pour les raisons ci-dessous: ">
         <h6 class="button-pill-large pill-orange"><b>🤬 Signaler</b></h6>
-        </a>
-
-        <%= link_to offers_path do %>
+      </a>
+      <%= link_to offers_path do %>
         <h6 class="button-pill-large pill-jaune"><b>↩️ retour</b></h6>
-        <% end %>
-
+      <% end %>
     </div>
   </div>
 <% end %>
-
 <%# <%= link_to "Modifier mon mot de passe", edit_user_password_path %>

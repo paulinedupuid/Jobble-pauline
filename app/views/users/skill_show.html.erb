@@ -1,39 +1,38 @@
 <%= render "/shared/dashboardnavigationbar", pathname: "Mes compétences" %>
-
 <div class="content-long-dashboard dashboard text-center">
-<div class="b-margin-30"></div>
-<% if @job_skill.count.positive? %>
-  <h4>Mes compétences</h4>
-  <div class="b-margin-20"></div>
-  <% @job_skill.each do |skill| %>
-  <% nbtimes = UserSkill.find_by_skill_id(skill.skill_id).level%>
-  <% stars = "⭐️"%>
-  <p class="dashboard-pill pill-lavande d-flex justify-content-center choosen-skill" data-skill="<%= skill.skill_id %>"><b><%= Skill.find(skill.skill_id).name %><br><%= stars * nbtimes.to_i %></p></b>
-  <%= simple_form_for @skill, url: skill_update_path, method: :post do |f| %>
-  <div class="choosen-skill-form-<%= skill.skill_id %> d-none">
-    <div class= form-job-content>
-    <%= f.input :level, label: "Votre niveau sur 5", collection: UserSkill::LEVEL %>
-    <%= hidden_field_tag :skill_id, value: skill.skill_id %>
-    <%= f.submit "Modifier" %>
-    </div>
-    </div>
+  <div class="b-margin-30"></div>
+  <% if @job_skill.count.positive? %>
+    <h4>Mes compétences</h4>
+    <div class="b-margin-20"></div>
+    <% @job_skill.each do |skill| %>
+      <% nbtimes = UserSkill.find_by_skill_id(skill.skill_id).level%>
+      <% stars = "⭐️"%>
+      <p class="dashboard-pill pill-lavande d-flex justify-content-center choosen-skill" data-skill="<%= skill.skill_id %>"><b><%= Skill.find(skill.skill_id).name %><br>
+          <%= stars * nbtimes.to_i %></p>
+      </b>
+      <%= simple_form_for @skill, url: skill_update_path, method: :post do |f| %>
+        <div class="choosen-skill-form-<%= skill.skill_id %> d-none">
+          <div class= form-job-content>
+            <%= f.input :level, label: "Votre niveau sur 5", collection: UserSkill::LEVEL %>
+            <%= hidden_field_tag :skill_id, value: skill.skill_id %>
+            <%= f.submit "Modifier" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   <% end %>
-  <% end %>
-<% end %>
-
-<div data-controller="hello">
-  <%= form_with url: skill_show_path, method: :get, html: {
+  <div data-controller="hello">
+    <%= form_with url: skill_show_path, method: :get, html: {
    data: { hello_target: 'formulaire' } } do |f| %>
-    <span class="input-search-div">
-    <%= f.text_field :query,
+      <span class="input-search-div">
+        <%= f.text_field :query,
                      class: "form-control",
                      placeholder: 'chercher une compétence',
                      value: params[:query],
                      data: { hello_target: 'button', action: 'keyup->hello#update' } %>
-
-         <% end %>
-  </span>
-  <%= render "list_skills", skills: @skills %>
-<div class="b-margin-40"></div>
-</div>
+      <% end %>
+    </span>
+    <%= render "list_skills", skills: @skills %>
+    <div class="b-margin-40"></div>
+  </div>
 </div>

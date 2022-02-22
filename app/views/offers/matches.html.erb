@@ -9,12 +9,14 @@
           <p><%= offer.company_name.capitalize %></p>
           <p><%= offer.user.first_name.capitalize %> <%= offer.user.last_name.capitalize %></p>
         </div>
-        <% end %>
       <% end %>
+    <% end %>
   <% else %>
-        <div class="nothingfound">
-        <span class="d-flex justify-content-center" style="font-size: 100px;">💔</span>
-        <h5 style="text-align: center;">Vous n'avez pas<br>encore de<br>matchs.</h5>
-        </div>
+    <div class="nothingfound">
+      <span class="d-flex justify-content-center" style="font-size: 100px;">💔</span>
+      <h5 style="text-align: center;">Vous n'avez pas<br>
+        encore de<br>
+        matchs.</h5>
+    </div>
   <% end %>
 </div>
